@@ -26,7 +26,7 @@ struct Word {
 
 #[tokio::test]
 async fn vector_seizzyh_test() {
-    // Setup a local Neo 4J container for testing. NOTE: docker service must be running.
+    // Setup a local Neo 4J container for testing. NOTE: docker service must be running. 
     let container = GenericImage::new("neo4j", "latest")
         .with_wait_for(WaitFor::Duration {
             length: std::time::Duration::from_secs(5),
