@@ -1,21 +1,21 @@
-<h1>Galactica AI</h1> 
+<h1>nuo (Agents In Seconds)</h1> 
 
-✨ If you would like to help spread the word about galactica, please consider starring the repo!
+✨ If you would like to help spread the word about nuo, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With galactica evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With nuo evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is Galactica AI?
-Galactica is a the world's first Rust library that enables anyone to build and deploy LLM-powered sentient AI agents in seconds!
+## What is nuo?
+Agents In Seconds is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
-Help us improve galactica by contributing to our Feedback form.
+Help us improve nuo by contributing to our Feedback form.
 
 ## Table of contents
 
-- [What is galactica?](#what-is-galactica)
+- [What is nuo?](#what-is-nuo)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -31,12 +31,12 @@ Help us improve galactica by contributing to our Feedback form.
 
 ## Get Started
 ```bash
-cargo add galactica-core
+cargo add nuo-core
 ```
 
 ### Simple example:
 ```rust
-use galactica::{completion::Prompt, providers::openai};
+use nuo::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -58,7 +58,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`galactica-core/examples`](./galactica-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to galactica's official documentation.
+You can find more examples each crate's `examples` (ie. [`nuo-core/examples`](./nuo-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to nuo's official documentation.
 
 ## Supported Integrations
 
@@ -68,11 +68,11 @@ You can find more examples each crate's `examples` (ie. [`galactica-core/example
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`galactica-mongodb`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-mongodb)
-- LanceDB vector store: [`galactica-lancedb`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-lancedb)
-- Neo4j vector store: [`galactica-neo4j`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-neo4j)
-- Qdrant vector store: [`galactica-qdrant`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-qdrant)
-- SQLite vector store: [`galactica-sqlite`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-sqlite)
+- MongoDB vector store: [`nuo-mongodb`](https://github.com/norriswilliam41/nuo/tree/main/nuo-mongodb)
+- LanceDB vector store: [`nuo-lancedb`](https://github.com/norriswilliam41/nuo/tree/main/nuo-lancedb)
+- Neo4j vector store: [`nuo-neo4j`](https://github.com/norriswilliam41/nuo/tree/main/nuo-neo4j)
+- Qdrant vector store: [`nuo-qdrant`](https://github.com/norriswilliam41/nuo/tree/main/nuo-qdrant)
+- SQLite vector store: [`nuo-sqlite`](https://github.com/norriswilliam41/nuo/tree/main/nuo-sqlite)
 
 
 <p align="center">
