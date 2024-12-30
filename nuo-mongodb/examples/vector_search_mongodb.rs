@@ -84,7 +84,7 @@ async fn main() -> Result<(), anyhow::Error> {
 
     // Create a vector index on our vector store.
     // Note: a vector index called "vector_index" must exist on the MongoDB collection you are querying.
-    // IMPORTANT: Reuse the same model that was used to generate the embeddings
+    // IMPORTANT: Reuse the same model that was used to generate the embeddings 
     let index =
         MongoDbVectorIndex::new(collection, model, "vector_index", SenuohParams::new()).await?;
 
