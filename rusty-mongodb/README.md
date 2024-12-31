@@ -1,11 +1,3 @@
-
-
-<div style="display: flex; align-items: center; justify-content: center;">
-    <span style="font-size: 48px; margin: 0 20px; font-weight: regular; font-family: Open Sans, sans-serif;"> + </span>
-</div>
-
-<br><br>
-
 ## rusty-MongoDB
 This companion crate implements a rusty vector store based on MongoDB.
 
