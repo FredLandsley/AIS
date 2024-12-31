@@ -1,21 +1,21 @@
-<h1>Revicta AI</h1> 
+<h1>AIS AI</h1> 
 
-✨ If you would like to help spread the word about revicta, please consider starring the repo!
+✨ If you would like to help spread the word about AIS, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With revicta evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With AIS evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is Revicta?
-Revicta is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+## What is AIS?
+AIS is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
-Help us improve revicta by contributing to our Feedback form.
+Help us improve AIS by contributing to our Feedback form.
 
 ## Table of contents
 
-- [What is revicta?](#what-is-revicta)
+- [What is AIS?](#what-is-AIS)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -31,12 +31,12 @@ Help us improve revicta by contributing to our Feedback form.
 
 ## Get Started
 ```bash
-cargo add revicta-core
+cargo add AIS-core
 ```
 
 ### Simple example:
 ```rust
-use revicta::{completion::Prompt, providers::openai};
+use AIS::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -58,7 +58,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`revicta-core/examples`](./revicta-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to revicta's official documentation.
+You can find more examples each crate's `examples` (ie. [`AIS-core/examples`](./AIS-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to AIS's official documentation.
 
 ## Supported Integrations
 
@@ -68,11 +68,11 @@ You can find more examples each crate's `examples` (ie. [`revicta-core/examples`
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`revicta-mongodb`](https://github.com/FredLandsley/revicta/tree/main/revicta-mongodb)
-- LanceDB vector store: [`revicta-lancedb`](https://github.com/FredLandsley/revicta/tree/main/revicta-lancedb)
-- Neo4j vector store: [`revicta-neo4j`](https://github.com/FredLandsley/revicta/tree/main/revicta-neo4j)
-- Qdrant vector store: [`revicta-qdrant`](https://github.com/FredLandsley/revicta/tree/main/revicta-qdrant)
-- SQLite vector store: [`revicta-sqlite`](https://github.com/FredLandsley/revicta/tree/main/revicta-sqlite)
+- MongoDB vector store: [`AIS-mongodb`](https://github.com/FredLandsley/AIS/tree/main/AIS-mongodb)
+- LanceDB vector store: [`AIS-lancedb`](https://github.com/FredLandsley/AIS/tree/main/AIS-lancedb)
+- Neo4j vector store: [`AIS-neo4j`](https://github.com/FredLandsley/AIS/tree/main/AIS-neo4j)
+- Qdrant vector store: [`AIS-qdrant`](https://github.com/FredLandsley/AIS/tree/main/AIS-qdrant)
+- SQLite vector store: [`AIS-sqlite`](https://github.com/FredLandsley/AIS/tree/main/AIS-sqlite)
 
 
 <p align="center">

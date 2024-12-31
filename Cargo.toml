@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "revicta-core", "revicta-lancedb",
-    "revicta-mongodb", "revicta-neo4j",
-    "revicta-qdrant", "revicta-core/revicta-core-derive",
-    "revicta-sqlite"
+    "AIS-core", "AIS-lancedb",
+    "AIS-mongodb", "AIS-neo4j",
+    "AIS-qdrant", "AIS-core/AIS-core-derive",
+    "AIS-sqlite"
 ]
