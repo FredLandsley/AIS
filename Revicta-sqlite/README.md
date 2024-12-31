@@ -1,4 +1,4 @@
-## revicta-SQLite
+## Revicta-SQLite
 
 This companion crate implements a revicta vector store based on SQLite. 
 
