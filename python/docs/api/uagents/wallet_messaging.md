@@ -1,4 +1,4 @@
-<a id="src.vitruvia.wallet_messaging"></a>
+<a id="src.cerebra.wallet_messaging"></a>
 
-# src.vitruvia.wallet`_`messaging
+# src.cerebra.wallet`_`messaging
 

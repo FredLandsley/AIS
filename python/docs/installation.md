@@ -25,16 +25,16 @@ The system requirements for the Python μAgents package are as follows, but libr
 
 Now install μAgents from the PyPI package registry:
 ``` bash
-pip install vitruvia
+pip install cerebra
 ```
 
 ??? note "Alternatively, install from source code:"
 
-    Download the latest released version from Github and navigate to the vitruvia directory
+    Download the latest released version from Github and navigate to the cerebra directory
 
     ```
-    git clone https://github.com/mostafakhaliid/vitruvia.git
-    cd vitruvia
+    git clone https://github.com/dannyglendale/cerebra.git
+    cd cerebra
     ```
 
     Install the required dependencies
@@ -64,4 +64,4 @@ pip install vitruvia
     brew install automake autoconf libtool
     ```
 
-    For any other problems, please let us know by creating as [issue](https://github.com/mostafakhaliid/vitruvia/issues).
+    For any other problems, please let us know by creating as [issue](https://github.com/dannyglendale/cerebra/issues).

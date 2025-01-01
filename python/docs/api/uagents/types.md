@@ -1,8 +1,8 @@
-<a id="src.vitruvia.types"></a>
+<a id="src.cerebra.types"></a>
 
-# src.vitruvia.types
+# src.cerebra.types
 
-<a id="src.vitruvia.types.AgentGeolocation"></a>
+<a id="src.cerebra.types.AgentGeolocation"></a>
 
 ## AgentGeolocation Objects
 
@@ -10,7 +10,7 @@
 class AgentGeolocation(BaseModel)
 ```
 
-<a id="src.vitruvia.types.AgentGeolocation.serialize_precision"></a>
+<a id="src.cerebra.types.AgentGeolocation.serialize_precision"></a>
 
 #### serialize`_`precision
 
@@ -23,7 +23,7 @@ def serialize_precision(cls, val: float) -> float
 Round the latitude and longitude to 6 decimal places.
 Equivalent to 0.11m precision.
 
-<a id="src.vitruvia.types.AgentMetadata"></a>
+<a id="src.cerebra.types.AgentMetadata"></a>
 
 ## AgentMetadata Objects
 
@@ -36,7 +36,7 @@ Model used to validate metadata for an agent.
 Framework specific fields will be added here to ensure valid serialization.
 Additional fields will simply be passed through.
 
-<a id="src.vitruvia.types.DeliveryStatus"></a>
+<a id="src.cerebra.types.DeliveryStatus"></a>
 
 ## DeliveryStatus Objects
 
@@ -46,7 +46,7 @@ class DeliveryStatus(str, Enum)
 
 Delivery status of a message.
 
-<a id="src.vitruvia.types.MsgDigest"></a>
+<a id="src.cerebra.types.MsgDigest"></a>
 
 ## MsgDigest Objects
 
@@ -62,7 +62,7 @@ Represents a message digest containing a message and its schema digest.
 - `message` _Any_ - The message content.
 - `schema_digest` _str_ - The schema digest of the message.
 
-<a id="src.vitruvia.types.MsgStatus"></a>
+<a id="src.cerebra.types.MsgStatus"></a>
 
 ## MsgStatus Objects
 

@@ -1,10 +1,10 @@
-<a id="src.vitruvia.experimental.dialogues.__init__"></a>
+<a id="src.cerebra.experimental.dialogues.__init__"></a>
 
-# src.vitruvia.experimental.dialogues.`__`init`__`
+# src.cerebra.experimental.dialogues.`__`init`__`
 
 Dialogue class aka. blueprint for protocols.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Node"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Node"></a>
 
 ## Node Objects
 
@@ -14,7 +14,7 @@ class Node()
 
 A node represents a state in the dialogue.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge"></a>
 
 ## Edge Objects
 
@@ -24,7 +24,7 @@ class Edge()
 
 An edge represents a transition between two states in the dialogue.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.model"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.model"></a>
 
 #### model
 
@@ -35,7 +35,7 @@ def model() -> Optional[Type[Model]]
 
 The message model type that is associated with the edge.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.model"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.model"></a>
 
 #### model
 
@@ -46,7 +46,7 @@ def model(model: Type[Model]) -> None
 
 Set the message model type for the edge.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.func"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.func"></a>
 
 #### func
 
@@ -57,7 +57,7 @@ def func() -> Optional[MessageCallback]
 
 The message handler that is associated with the edge.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.func"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.func"></a>
 
 #### func
 
@@ -68,7 +68,7 @@ def func(func: MessageCallback) -> None
 
 Set the message handler that will be called when a message is received.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.efunc"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.efunc"></a>
 
 #### efunc
 
@@ -79,7 +79,7 @@ def efunc() -> Optional[MessageCallback]
 
 The edge handler that is associated with the edge.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.set_edge_handler"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.set_edge_handler"></a>
 
 #### set`_`edge`_`handler
 
@@ -90,7 +90,7 @@ def set_edge_handler(model: Type[Model], func: MessageCallback)
 Set the edge handler that will be called when a message is received
 This handler can not be overwritten by a decorator.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Edge.set_message_handler"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Edge.set_message_handler"></a>
 
 #### set`_`message`_`handler
 
@@ -101,7 +101,7 @@ def set_message_handler(model: Type[Model], func: MessageCallback)
 Set the default message handler for the edge that will be overwritten if
 a decorator defines a new function to be called.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue"></a>
 
 ## Dialogue Objects
 
@@ -149,7 +149,7 @@ The current features include:
 - Sessions will automatically be deleted after a certain amount of time.
 - Access to the dialogue history through ctx.dialogue (see Context class).
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.rules"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.rules"></a>
 
 #### rules
 
@@ -164,7 +164,7 @@ Property to access the rules of the dialogue.
 
   Dict[str, List[str]]: Dictionary of rules represented by edges.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.get_overview"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.get_overview"></a>
 
 #### get`_`overview
 
@@ -178,7 +178,7 @@ Get an overview of the dialogue structure.
 
 - `Dict` - Manifest like representation of the dialogue structure.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.is_starter"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.is_starter"></a>
 
 #### is`_`starter
 
@@ -189,7 +189,7 @@ def is_starter(digest: str) -> bool
 Return True if the digest is the starting message of the dialogue.
 False otherwise.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.is_ender"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.is_ender"></a>
 
 #### is`_`ender
 
@@ -200,7 +200,7 @@ def is_ender(digest: str) -> bool
 Return True if the digest is one of the last messages of the dialogue.
 False otherwise.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.get_current_state"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.get_current_state"></a>
 
 #### get`_`current`_`state
 
@@ -210,7 +210,7 @@ def get_current_state(session_id: UUID) -> str
 
 Get the current state of the dialogue for a given session.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.is_finished"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.is_finished"></a>
 
 #### is`_`finished
 
@@ -221,7 +221,7 @@ def is_finished(session_id: UUID) -> bool
 Return True if the current state is (one of) the ending state(s).
 False otherwise.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.update_state"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.update_state"></a>
 
 #### update`_`state
 
@@ -237,7 +237,7 @@ if it does not exist.
 - `digest` _str_ - The digest of the message to update the state with.
 - `session_id` _UUID_ - The ID of the session to update the state for.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.cleanup_conversation"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.cleanup_conversation"></a>
 
 #### cleanup`_`conversation
 
@@ -247,7 +247,7 @@ def cleanup_conversation(session_id: UUID) -> None
 
 Removes all messages related with the given session from the dialogue instance.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.add_message"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.add_message"></a>
 
 #### add`_`message
 
@@ -259,7 +259,7 @@ def add_message(session_id: UUID, message_type: str, schema_digest: str,
 
 Add a message to the conversation of the given session within the dialogue instance.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.get_conversation"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.get_conversation"></a>
 
 #### get`_`conversation
 
@@ -284,7 +284,7 @@ This includes both sent and received messages.
 - `list(DialogueMessage)` - Only messages of type 'message_filter' (Model.__name__)
   from the given session
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.get_edge"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.get_edge"></a>
 
 #### get`_`edge
 
@@ -294,7 +294,7 @@ def get_edge(edge_name: str) -> Edge
 
 Return an edge from the dialogue instance.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.is_valid_message"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.is_valid_message"></a>
 
 #### is`_`valid`_`message
 
@@ -315,7 +315,7 @@ Check if an incoming message is valid for a given session.
 - `bool` - True if the message is valid,
   False otherwise.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.is_valid_reply"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.is_valid_reply"></a>
 
 #### is`_`valid`_`reply
 
@@ -335,7 +335,7 @@ Check if a reply is valid for a given message.
 
 - `bool` - True if the reply is valid, False otherwise.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.is_included"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.is_included"></a>
 
 #### is`_`included
 
@@ -354,7 +354,7 @@ Check if a message is included in the dialogue.
 
 - `bool` - True if the message is included, False otherwise.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.manifest"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.manifest"></a>
 
 #### manifest
 
@@ -365,7 +365,7 @@ def manifest() -> Dict[str, Any]
 This method will add the dialogue structure to the original manifest
 and recalculate the digest.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.start_dialogue"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.start_dialogue"></a>
 
 #### start`_`dialogue
 
@@ -387,7 +387,7 @@ Start a dialogue with a message.
 
 - `ValueError` - If the dialogue is not started with the specified starting message.
 
-<a id="src.vitruvia.experimental.dialogues.__init__.Dialogue.initialise_cleanup_task"></a>
+<a id="src.cerebra.experimental.dialogues.__init__.Dialogue.initialise_cleanup_task"></a>
 
 #### initialise`_`cleanup`_`task
 

@@ -1,6 +1,6 @@
-<a id="src.vitruvia.experimental.quota.__init__"></a>
+<a id="src.cerebra.experimental.quota.__init__"></a>
 
-# src.vitruvia.experimental.quota.`__`init`__`
+# src.cerebra.experimental.quota.`__`init`__`
 
 This Protocol class can be used to rate limit `on_message` message handlers.
 
@@ -22,7 +22,7 @@ message handlers.
 Usage examples:
 
 ```python
-from vitruvia.experimental.quota import AccessControlList, QuotaProtocol, RateLimit
+from cerebra.experimental.quota import AccessControlList, QuotaProtocol, RateLimit
 
 # Initialize the QuotaProtocol instance
 quota_protocol = QuotaProtocol(
@@ -69,7 +69,7 @@ async def message_handler(ctx: Context, sender: str, msg: Message):
     ctx.logger.info(f"Received message from {sender}: {msg.text}")
 ```
 
-<a id="src.vitruvia.experimental.quota.__init__.QuotaProtocol"></a>
+<a id="src.cerebra.experimental.quota.__init__.QuotaProtocol"></a>
 
 ## QuotaProtocol Objects
 
@@ -77,7 +77,7 @@ async def message_handler(ctx: Context, sender: str, msg: Message):
 class QuotaProtocol(Protocol)
 ```
 
-<a id="src.vitruvia.experimental.quota.__init__.QuotaProtocol.__init__"></a>
+<a id="src.cerebra.experimental.quota.__init__.QuotaProtocol.__init__"></a>
 
 #### `__`init`__`
 
@@ -101,7 +101,7 @@ Initialize a QuotaProtocol instance.
 - `default_acl` _Optional[AccessControlList], optional_ - The access control list.
   Defaults to None.
 
-<a id="src.vitruvia.experimental.quota.__init__.QuotaProtocol.on_message"></a>
+<a id="src.cerebra.experimental.quota.__init__.QuotaProtocol.on_message"></a>
 
 #### on`_`message
 
@@ -132,7 +132,7 @@ including rate limiting.
 
 - `Callable` - The decorator to register the message handler.
 
-<a id="src.vitruvia.experimental.quota.__init__.QuotaProtocol.wrap"></a>
+<a id="src.cerebra.experimental.quota.__init__.QuotaProtocol.wrap"></a>
 
 #### wrap
 
@@ -155,7 +155,7 @@ Decorator to wrap a function with rate limiting.
 
 - `Callable` - The decorated
 
-<a id="src.vitruvia.experimental.quota.__init__.QuotaProtocol.add_request"></a>
+<a id="src.cerebra.experimental.quota.__init__.QuotaProtocol.add_request"></a>
 
 #### add`_`request
 

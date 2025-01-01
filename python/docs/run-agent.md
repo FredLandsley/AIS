@@ -5,7 +5,7 @@
 You can create your first μAgent by building a Python script with the following steps:
 
 ```python
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 alice = Agent(name="alice", seed="alice recovery phrase")
 ```
@@ -28,7 +28,7 @@ The `Context` object is a collection of data and functions related to the agent.
 You can now run your first μAgent!
 
 ```python
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 alice = Agent(name="alice", seed="alice recovery phrase")
 

@@ -7,7 +7,7 @@ We also need to import `Context` to have access to the information that the agen
 In this case, we will just define a `say_hello` function that will print out the agent name every 2 seconds.
 
 ```python
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 alice = Agent(name="alice")
 

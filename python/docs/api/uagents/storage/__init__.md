@@ -1,8 +1,8 @@
-<a id="src.vitruvia.storage.__init__"></a>
+<a id="src.cerebra.storage.__init__"></a>
 
-# src.vitruvia.storage.`__`init`__`
+# src.cerebra.storage.`__`init`__`
 
-<a id="src.vitruvia.storage.__init__.StorageAPI"></a>
+<a id="src.cerebra.storage.__init__.StorageAPI"></a>
 
 ## StorageAPI Objects
 
@@ -12,7 +12,7 @@ class StorageAPI(ABC)
 
 Interface for a key-value like storage system.
 
-<a id="src.vitruvia.storage.__init__.KeyValueStore"></a>
+<a id="src.cerebra.storage.__init__.KeyValueStore"></a>
 
 ## KeyValueStore Objects
 
@@ -40,7 +40,7 @@ A simple key-value store implementation for data storage.
 - `_load` - Load data from the file into the store.
 - `_save` - Save the store data to the file.
 
-<a id="src.vitruvia.storage.__init__.KeyValueStore.__init__"></a>
+<a id="src.cerebra.storage.__init__.KeyValueStore.__init__"></a>
 
 #### `__`init`__`
 
@@ -55,7 +55,7 @@ Initialize the KeyValueStore instance.
 - `name` _str_ - The name associated with the store.
 - `cwd` _str, optional_ - The current working directory. Defaults to None.
 
-<a id="src.vitruvia.storage.__init__.load_all_keys"></a>
+<a id="src.cerebra.storage.__init__.load_all_keys"></a>
 
 #### load`_`all`_`keys
 
@@ -69,7 +69,7 @@ Load all private keys from the private keys file.
 
 - `dict` - A dictionary containing loaded private keys.
 
-<a id="src.vitruvia.storage.__init__.save_private_keys"></a>
+<a id="src.cerebra.storage.__init__.save_private_keys"></a>
 
 #### save`_`private`_`keys
 
@@ -85,7 +85,7 @@ Save private keys to the private keys file.
 - `identity_key` _str_ - The identity private key.
 - `wallet_key` _str_ - The wallet private key.
 
-<a id="src.vitruvia.storage.__init__.get_or_create_private_keys"></a>
+<a id="src.cerebra.storage.__init__.get_or_create_private_keys"></a>
 
 #### get`_`or`_`create`_`private`_`keys
 

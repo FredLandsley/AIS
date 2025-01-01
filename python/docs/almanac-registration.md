@@ -5,8 +5,8 @@ Agent registration in the almanac-contract is a key part for remote agents commu
 To be found by other μAgents, each μAgent needs to register (paying a small fee) in the almanac contract using their [agent address](addresses.md). Therefore, your agents need to have funds available in their [Fetch address](addresses.md). When using the testnet, you can use the function `fund_agent_if_low` to fund your agent:
 
 ```python
-from vitruvia.setup import fund_agent_if_low
-from vitruvia import Agent
+from cerebra.setup import fund_agent_if_low
+from cerebra import Agent
 
 agent = Agent(name="alice", seed="agent1 secret phrase")
 

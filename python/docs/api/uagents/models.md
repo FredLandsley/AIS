@@ -1,8 +1,8 @@
-<a id="src.vitruvia.models"></a>
+<a id="src.cerebra.models"></a>
 
-# src.vitruvia.models
+# src.cerebra.models
 
-<a id="src.vitruvia.models.ErrorMessage"></a>
+<a id="src.cerebra.models.ErrorMessage"></a>
 
 ## ErrorMessage Objects
 

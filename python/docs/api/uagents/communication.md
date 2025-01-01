@@ -1,10 +1,10 @@
-<a id="src.vitruvia.communication"></a>
+<a id="src.cerebra.communication"></a>
 
-# src.vitruvia.communication
+# src.cerebra.communication
 
 Agent dispatch of exchange envelopes and synchronous messages.
 
-<a id="src.vitruvia.communication.Dispenser"></a>
+<a id="src.cerebra.communication.Dispenser"></a>
 
 ## Dispenser Objects
 
@@ -14,7 +14,7 @@ class Dispenser()
 
 Dispenses messages externally.
 
-<a id="src.vitruvia.communication.Dispenser.add_envelope"></a>
+<a id="src.cerebra.communication.Dispenser.add_envelope"></a>
 
 #### add`_`envelope
 
@@ -34,7 +34,7 @@ Add an envelope to the dispenser.
 - `response_future` _asyncio.Future_ - The future to set the response on.
 - `sync` _bool, optional_ - True if the message is synchronous. Defaults to False.
 
-<a id="src.vitruvia.communication.Dispenser.run"></a>
+<a id="src.cerebra.communication.Dispenser.run"></a>
 
 #### run
 
@@ -44,7 +44,7 @@ async def run()
 
 Run the dispenser routine.
 
-<a id="src.vitruvia.communication.dispatch_local_message"></a>
+<a id="src.cerebra.communication.dispatch_local_message"></a>
 
 #### dispatch`_`local`_`message
 
@@ -56,7 +56,7 @@ async def dispatch_local_message(sender: str, destination: str,
 
 Process a message locally.
 
-<a id="src.vitruvia.communication.send_exchange_envelope"></a>
+<a id="src.cerebra.communication.send_exchange_envelope"></a>
 
 #### send`_`exchange`_`envelope
 
@@ -80,7 +80,7 @@ Method to send an exchange envelope.
 
   Union[MsgStatus, Envelope]: Either the status of the message or the response envelope.
 
-<a id="src.vitruvia.communication.dispatch_sync_response_envelope"></a>
+<a id="src.cerebra.communication.dispatch_sync_response_envelope"></a>
 
 #### dispatch`_`sync`_`response`_`envelope
 
@@ -91,7 +91,7 @@ async def dispatch_sync_response_envelope(
 
 Dispatch a synchronous response envelope locally.
 
-<a id="src.vitruvia.communication.send_message_raw"></a>
+<a id="src.cerebra.communication.send_message_raw"></a>
 
 #### send`_`message`_`raw
 
@@ -128,7 +128,7 @@ Standalone function to send a message to an agent.
   If the sender is a user address, the response envelope is returned.
   On failure, a message status is returned.
 
-<a id="src.vitruvia.communication.send_message"></a>
+<a id="src.cerebra.communication.send_message"></a>
 
 #### send`_`message
 
@@ -163,7 +163,7 @@ Standalone function to send a message to an agent.
   If the sender is a user address, the response envelope is returned.
   On failure, a message status is returned.
 
-<a id="src.vitruvia.communication.send_sync_message"></a>
+<a id="src.cerebra.communication.send_sync_message"></a>
 
 #### send`_`sync`_`message
 
@@ -198,7 +198,7 @@ Standalone function to send a synchronous message to an agent.
   If the sender is a user address, the response envelope is returned.
   On failure, a message status is returned.
 
-<a id="src.vitruvia.communication.enclose_response"></a>
+<a id="src.cerebra.communication.enclose_response"></a>
 
 #### enclose`_`response
 
@@ -223,7 +223,7 @@ Enclose a response message within an envelope.
 
 - `str` - The JSON representation of the response envelope.
 
-<a id="src.vitruvia.communication.enclose_response_raw"></a>
+<a id="src.cerebra.communication.enclose_response_raw"></a>
 
 #### enclose`_`response`_`raw
 

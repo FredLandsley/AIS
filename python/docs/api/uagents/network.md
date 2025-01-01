@@ -1,10 +1,10 @@
-<a id="src.vitruvia.network"></a>
+<a id="src.cerebra.network"></a>
 
-# src.vitruvia.network
+# src.cerebra.network
 
 Network and Contracts.
 
-<a id="src.vitruvia.network.InsufficientFundsError"></a>
+<a id="src.cerebra.network.InsufficientFundsError"></a>
 
 ## InsufficientFundsError Objects
 
@@ -14,7 +14,7 @@ class InsufficientFundsError(Exception)
 
 Raised when an agent has insufficient funds for a transaction.
 
-<a id="src.vitruvia.network.get_ledger"></a>
+<a id="src.cerebra.network.get_ledger"></a>
 
 #### get`_`ledger
 
@@ -33,7 +33,7 @@ Get the Ledger client.
 
 - `LedgerClient` - The Ledger client instance.
 
-<a id="src.vitruvia.network.get_faucet"></a>
+<a id="src.cerebra.network.get_faucet"></a>
 
 #### get`_`faucet
 
@@ -47,7 +47,7 @@ Get the Faucet API instance.
 
 - `FaucetApi` - The Faucet API instance.
 
-<a id="src.vitruvia.network.add_testnet_funds"></a>
+<a id="src.cerebra.network.add_testnet_funds"></a>
 
 #### add`_`testnet`_`funds
 
@@ -61,7 +61,7 @@ Add testnet funds to the provided wallet address.
 
 - `wallet_address` _str_ - The wallet address to add funds to.
 
-<a id="src.vitruvia.network.parse_record_config"></a>
+<a id="src.cerebra.network.parse_record_config"></a>
 
 #### parse`_`record`_`config
 
@@ -77,7 +77,7 @@ Parse the user-provided record configuration.
 
   Optional[List[Dict[str, Any]]]: The parsed record configuration in correct format.
 
-<a id="src.vitruvia.network.wait_for_tx_to_complete"></a>
+<a id="src.cerebra.network.wait_for_tx_to_complete"></a>
 
 #### wait`_`for`_`tx`_`to`_`complete
 
@@ -104,7 +104,7 @@ Wait for a transaction to complete on the Ledger.
 
 - `TxResponse` - The response object containing the transaction details.
 
-<a id="src.vitruvia.network.AlmanacContract"></a>
+<a id="src.cerebra.network.AlmanacContract"></a>
 
 ## AlmanacContract Objects
 
@@ -118,7 +118,7 @@ This class provides methods to interact with the Almanac contract, including
 checking if an agent is registered, retrieving the expiry height of an agent's
 registration, and getting the endpoints associated with an agent's registration.
 
-<a id="src.vitruvia.network.AlmanacContract.check_version"></a>
+<a id="src.cerebra.network.AlmanacContract.check_version"></a>
 
 #### check`_`version
 
@@ -126,14 +126,14 @@ registration, and getting the endpoints associated with an agent's registration.
 def check_version() -> bool
 ```
 
-Check if the contract version supported by this version of vitruvia matches the
+Check if the contract version supported by this version of cerebra matches the
 deployed version.
 
 **Returns**:
 
 - `bool` - True if the contract version is supported, False otherwise.
 
-<a id="src.vitruvia.network.AlmanacContract.query_contract"></a>
+<a id="src.cerebra.network.AlmanacContract.query_contract"></a>
 
 #### query`_`contract
 
@@ -157,7 +157,7 @@ Execute a query with additional checks and error handling.
 
 - `RuntimeError` - If the contract address is not set or the query fails.
 
-<a id="src.vitruvia.network.AlmanacContract.get_contract_version"></a>
+<a id="src.cerebra.network.AlmanacContract.get_contract_version"></a>
 
 #### get`_`contract`_`version
 
@@ -171,7 +171,7 @@ Get the version of the contract.
 
 - `str` - The version of the contract.
 
-<a id="src.vitruvia.network.AlmanacContract.is_registered"></a>
+<a id="src.cerebra.network.AlmanacContract.is_registered"></a>
 
 #### is`_`registered
 
@@ -190,7 +190,7 @@ Check if an agent is registered in the Almanac contract.
 
 - `bool` - True if the agent is registered, False otherwise.
 
-<a id="src.vitruvia.network.AlmanacContract.registration_needs_update"></a>
+<a id="src.cerebra.network.AlmanacContract.registration_needs_update"></a>
 
 #### registration`_`needs`_`update
 
@@ -215,7 +215,7 @@ Check if an agent's registration needs to be updated.
 - `bool` - True if the agent's registration needs to be updated or will expire sooner
   than the specified minimum time, False otherwise.
 
-<a id="src.vitruvia.network.AlmanacContract.query_agent_record"></a>
+<a id="src.cerebra.network.AlmanacContract.query_agent_record"></a>
 
 #### query`_`agent`_`record
 
@@ -236,7 +236,7 @@ Get the records associated with an agent's registration.
   Tuple[int, List[AgentEndpoint], List[str]]: The expiry height of the agent's
   registration, the agent's endpoints, and the agent's protocols.
 
-<a id="src.vitruvia.network.AlmanacContract.get_expiry"></a>
+<a id="src.cerebra.network.AlmanacContract.get_expiry"></a>
 
 #### get`_`expiry
 
@@ -255,7 +255,7 @@ Get the approximate seconds to expiry of an agent's registration.
 
 - `int` - The approximate seconds to expiry of the agent's registration.
 
-<a id="src.vitruvia.network.AlmanacContract.get_endpoints"></a>
+<a id="src.cerebra.network.AlmanacContract.get_endpoints"></a>
 
 #### get`_`endpoints
 
@@ -274,7 +274,7 @@ Get the endpoints associated with an agent's registration.
 
 - `List[AgentEndpoint]` - The agent's registered endpoints.
 
-<a id="src.vitruvia.network.AlmanacContract.get_protocols"></a>
+<a id="src.cerebra.network.AlmanacContract.get_protocols"></a>
 
 #### get`_`protocols
 
@@ -293,7 +293,7 @@ Get the protocols associated with an agent's registration.
 
 - `List[str]` - The agent's registered protocols.
 
-<a id="src.vitruvia.network.AlmanacContract.register"></a>
+<a id="src.cerebra.network.AlmanacContract.register"></a>
 
 #### register
 
@@ -315,7 +315,7 @@ Register an agent with the Almanac contract.
 - `endpoints` _List[Dict[str, Any]]_ - List of endpoint dictionaries.
 - `signature` _str_ - The agent's signature.
 
-<a id="src.vitruvia.network.AlmanacContract.register_batch"></a>
+<a id="src.cerebra.network.AlmanacContract.register_batch"></a>
 
 #### register`_`batch
 
@@ -332,7 +332,7 @@ Register multiple agents with the Almanac contract.
 - `wallet` _LocalWallet_ - The wallet of the registration sender.
 - `agents` _List[ALmanacContractRecord]_ - The list of signed agent records to register.
 
-<a id="src.vitruvia.network.AlmanacContract.get_sequence"></a>
+<a id="src.cerebra.network.AlmanacContract.get_sequence"></a>
 
 #### get`_`sequence
 
@@ -351,7 +351,7 @@ Get the agent's sequence number for Almanac registration.
 
 - `int` - The agent's sequence number.
 
-<a id="src.vitruvia.network.get_almanac_contract"></a>
+<a id="src.cerebra.network.get_almanac_contract"></a>
 
 #### get`_`almanac`_`contract
 
@@ -370,7 +370,7 @@ Get the AlmanacContract instance.
 
 - `AlmanacContract` - The AlmanacContract instance if version is supported.
 
-<a id="src.vitruvia.network.NameServiceContract"></a>
+<a id="src.cerebra.network.NameServiceContract"></a>
 
 ## NameServiceContract Objects
 
@@ -384,7 +384,7 @@ This class provides methods to interact with the NameService contract, including
 checking name availability, checking ownership, querying domain public status,
 obtaining registration transaction details, and registering a name within a domain.
 
-<a id="src.vitruvia.network.NameServiceContract.query_contract"></a>
+<a id="src.cerebra.network.NameServiceContract.query_contract"></a>
 
 #### query`_`contract
 
@@ -408,7 +408,7 @@ Execute a query with additional checks and error handling.
 
 - `RuntimeError` - If the contract address is not set or the query fails.
 
-<a id="src.vitruvia.network.NameServiceContract.is_name_available"></a>
+<a id="src.cerebra.network.NameServiceContract.is_name_available"></a>
 
 #### is`_`name`_`available
 
@@ -428,7 +428,7 @@ Check if a name is available within a domain.
 
 - `bool` - True if the name is available, False otherwise.
 
-<a id="src.vitruvia.network.NameServiceContract.is_owner"></a>
+<a id="src.cerebra.network.NameServiceContract.is_owner"></a>
 
 #### is`_`owner
 
@@ -449,7 +449,7 @@ Check if the provided wallet address is the owner of a name within a domain.
 
 - `bool` - True if the wallet address is the owner, False otherwise.
 
-<a id="src.vitruvia.network.NameServiceContract.is_domain_public"></a>
+<a id="src.cerebra.network.NameServiceContract.is_domain_public"></a>
 
 #### is`_`domain`_`public
 
@@ -468,7 +468,7 @@ Check if a domain is public.
 
 - `bool` - True if the domain is public, False otherwise.
 
-<a id="src.vitruvia.network.NameServiceContract.get_previous_records"></a>
+<a id="src.cerebra.network.NameServiceContract.get_previous_records"></a>
 
 #### get`_`previous`_`records
 
@@ -489,7 +489,7 @@ Retrieve the previous records for a given name within a specified domain.
   A list of dictionaries, where each dictionary contains
   details of a record associated with the given name.
 
-<a id="src.vitruvia.network.NameServiceContract.get_registration_tx"></a>
+<a id="src.cerebra.network.NameServiceContract.get_registration_tx"></a>
 
 #### get`_`registration`_`tx
 
@@ -515,7 +515,7 @@ Get the registration transaction for registering a name within a domain.
 - `Optional[Transaction]` - The registration transaction, or None if the name is not
   available or not owned by the wallet address.
 
-<a id="src.vitruvia.network.NameServiceContract.register"></a>
+<a id="src.cerebra.network.NameServiceContract.register"></a>
 
 #### register
 
@@ -542,7 +542,7 @@ Register a name within a domain using the NameService contract.
   addresses registered to the domain. If False, the address will be
   appended to the previous records. Defaults to True.
 
-<a id="src.vitruvia.network.NameServiceContract.unregister"></a>
+<a id="src.cerebra.network.NameServiceContract.unregister"></a>
 
 #### unregister
 
@@ -558,7 +558,7 @@ Unregister a name within a domain using the NameService contract.
 - `domain` _str_ - The domain in which the name is registered.
 - `wallet` _LocalWallet_ - The wallet of the agent.
 
-<a id="src.vitruvia.network.get_name_service_contract"></a>
+<a id="src.cerebra.network.get_name_service_contract"></a>
 
 #### get`_`name`_`service`_`contract
 

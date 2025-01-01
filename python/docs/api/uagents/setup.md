@@ -1,10 +1,10 @@
-<a id="src.vitruvia.setup"></a>
+<a id="src.cerebra.setup"></a>
 
-# src.vitruvia.setup
+# src.cerebra.setup
 
 Agent's Setup.
 
-<a id="src.vitruvia.setup.fund_agent_if_low"></a>
+<a id="src.cerebra.setup.fund_agent_if_low"></a>
 
 #### fund`_`agent`_`if`_`low
 
@@ -25,7 +25,7 @@ Checks the agent's wallet balance and adds testnet funds if it's below min_balan
 
   None
 
-<a id="src.vitruvia.setup.register_agent_with_mailbox"></a>
+<a id="src.cerebra.setup.register_agent_with_mailbox"></a>
 
 #### register`_`agent`_`with`_`mailbox
 

@@ -1,8 +1,8 @@
-<a id="src.vitruvia.registration"></a>
+<a id="src.cerebra.registration"></a>
 
-# src.vitruvia.registration
+# src.cerebra.registration
 
-<a id="src.vitruvia.registration.generate_backoff_time"></a>
+<a id="src.cerebra.registration.generate_backoff_time"></a>
 
 #### generate`_`backoff`_`time
 
@@ -12,7 +12,7 @@ def generate_backoff_time(retry: int) -> float
 
 Generate a backoff time starting from 0.128 seconds and limited to ~131 seconds
 
-<a id="src.vitruvia.registration.coerce_metadata_to_str"></a>
+<a id="src.cerebra.registration.coerce_metadata_to_str"></a>
 
 #### coerce`_`metadata`_`to`_`str
 
@@ -24,7 +24,7 @@ def coerce_metadata_to_str(
 
 Step through the metadata and convert any non-string values to strings.
 
-<a id="src.vitruvia.registration.extract_geo_metadata"></a>
+<a id="src.cerebra.registration.extract_geo_metadata"></a>
 
 #### extract`_`geo`_`metadata
 
@@ -35,7 +35,7 @@ def extract_geo_metadata(
 
 Extract geo-location metadata from the metadata dictionary.
 
-<a id="src.vitruvia.registration.LedgerBasedRegistrationPolicy"></a>
+<a id="src.cerebra.registration.LedgerBasedRegistrationPolicy"></a>
 
 ## LedgerBasedRegistrationPolicy Objects
 
@@ -43,7 +43,7 @@ Extract geo-location metadata from the metadata dictionary.
 class LedgerBasedRegistrationPolicy(AgentRegistrationPolicy)
 ```
 
-<a id="src.vitruvia.registration.LedgerBasedRegistrationPolicy.check_contract_version"></a>
+<a id="src.cerebra.registration.LedgerBasedRegistrationPolicy.check_contract_version"></a>
 
 #### check`_`contract`_`version
 
@@ -54,7 +54,7 @@ def check_contract_version()
 Check the version of the deployed Almanac contract and log a warning
 if it is different from the supported version.
 
-<a id="src.vitruvia.registration.LedgerBasedRegistrationPolicy.register"></a>
+<a id="src.cerebra.registration.LedgerBasedRegistrationPolicy.register"></a>
 
 #### register
 

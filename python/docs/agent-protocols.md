@@ -11,7 +11,7 @@ We first need to define the type of messages that the handler will receive and s
 Here we define `BookTableRequest` which will contain the requested table number and `BookTableResponse` which will inform the user if that table is available.
 
 ```python
-from vitruvia import Context, Model, Protocol
+from cerebra import Context, Model, Protocol
 
 
 class BookTableRequest(Model):

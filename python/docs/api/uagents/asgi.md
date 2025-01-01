@@ -1,8 +1,8 @@
-<a id="src.vitruvia.asgi"></a>
+<a id="src.cerebra.asgi"></a>
 
-# src.vitruvia.asgi
+# src.cerebra.asgi
 
-<a id="src.vitruvia.asgi.ASGIServer"></a>
+<a id="src.cerebra.asgi.ASGIServer"></a>
 
 ## ASGIServer Objects
 
@@ -12,7 +12,7 @@ class ASGIServer()
 
 ASGI server for receiving incoming envelopes.
 
-<a id="src.vitruvia.asgi.ASGIServer.__init__"></a>
+<a id="src.cerebra.asgi.ASGIServer.__init__"></a>
 
 #### `__`init`__`
 
@@ -32,7 +32,7 @@ Initialize the ASGI server.
 - `queries` _Dict[str, asyncio.Future]_ - The dictionary of queries to resolve.
 - `logger` _Optional[Logger]_ - The logger to use.
 
-<a id="src.vitruvia.asgi.ASGIServer.server"></a>
+<a id="src.cerebra.asgi.ASGIServer.server"></a>
 
 #### server
 
@@ -45,7 +45,7 @@ Property to access the underlying uvicorn server.
 
 Returns: The server.
 
-<a id="src.vitruvia.asgi.ASGIServer.add_rest_endpoint"></a>
+<a id="src.cerebra.asgi.ASGIServer.add_rest_endpoint"></a>
 
 #### add`_`rest`_`endpoint
 
@@ -57,7 +57,7 @@ def add_rest_endpoint(address: str, method: RestMethod, endpoint: str,
 
 Add a REST endpoint to the server.
 
-<a id="src.vitruvia.asgi.ASGIServer.has_rest_endpoint"></a>
+<a id="src.cerebra.asgi.ASGIServer.has_rest_endpoint"></a>
 
 #### has`_`rest`_`endpoint
 
@@ -67,7 +67,7 @@ def has_rest_endpoint(method: RestMethod, endpoint: str) -> bool
 
 Check if the server has a REST endpoint registered.
 
-<a id="src.vitruvia.asgi.ASGIServer.handle_readiness_probe"></a>
+<a id="src.cerebra.asgi.ASGIServer.handle_readiness_probe"></a>
 
 #### handle`_`readiness`_`probe
 
@@ -77,7 +77,7 @@ async def handle_readiness_probe(headers: CaseInsensitiveDict, send)
 
 Handle a readiness probe sent via the HEAD method.
 
-<a id="src.vitruvia.asgi.ASGIServer.handle_missing_content_type"></a>
+<a id="src.cerebra.asgi.ASGIServer.handle_missing_content_type"></a>
 
 #### handle`_`missing`_`content`_`type
 
@@ -87,7 +87,7 @@ async def handle_missing_content_type(headers: CaseInsensitiveDict, send)
 
 Handle missing content type header.
 
-<a id="src.vitruvia.asgi.ASGIServer.serve"></a>
+<a id="src.cerebra.asgi.ASGIServer.serve"></a>
 
 #### serve
 
@@ -97,7 +97,7 @@ async def serve()
 
 Start the server.
 
-<a id="src.vitruvia.asgi.ASGIServer.__call__"></a>
+<a id="src.cerebra.asgi.ASGIServer.__call__"></a>
 
 #### `__`call`__`
 

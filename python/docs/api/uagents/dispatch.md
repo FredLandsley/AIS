@@ -1,8 +1,8 @@
-<a id="src.vitruvia.dispatch"></a>
+<a id="src.cerebra.dispatch"></a>
 
-# src.vitruvia.dispatch
+# src.cerebra.dispatch
 
-<a id="src.vitruvia.dispatch.Sink"></a>
+<a id="src.cerebra.dispatch.Sink"></a>
 
 ## Sink Objects
 
@@ -12,7 +12,7 @@ class Sink(ABC)
 
 Abstract base class for sinks that handle messages.
 
-<a id="src.vitruvia.dispatch.Dispatcher"></a>
+<a id="src.cerebra.dispatch.Dispatcher"></a>
 
 ## Dispatcher Objects
 

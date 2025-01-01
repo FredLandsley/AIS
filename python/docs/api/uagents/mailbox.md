@@ -1,8 +1,8 @@
-<a id="src.vitruvia.mailbox"></a>
+<a id="src.cerebra.mailbox"></a>
 
-# src.vitruvia.mailbox
+# src.cerebra.mailbox
 
-<a id="src.vitruvia.mailbox.is_mailbox_agent"></a>
+<a id="src.cerebra.mailbox.is_mailbox_agent"></a>
 
 #### is`_`mailbox`_`agent
 
@@ -17,7 +17,7 @@ Check if the agent is a mailbox agent.
 
 - `bool` - True if the agent is a mailbox agent, False otherwise.
 
-<a id="src.vitruvia.mailbox.is_proxy_agent"></a>
+<a id="src.cerebra.mailbox.is_proxy_agent"></a>
 
 #### is`_`proxy`_`agent
 
@@ -32,7 +32,7 @@ Check if the agent is a proxy agent.
 
 - `bool` - True if the agent is a proxy agent, False otherwise.
 
-<a id="src.vitruvia.mailbox.register_in_agentverse"></a>
+<a id="src.cerebra.mailbox.register_in_agentverse"></a>
 
 #### register`_`in`_`agentverse
 
@@ -61,7 +61,7 @@ Registers agent in Agentverse
 
 - `RegistrationResponse` - Registration
 
-<a id="src.vitruvia.mailbox.update_agent_details"></a>
+<a id="src.cerebra.mailbox.update_agent_details"></a>
 
 #### update`_`agent`_`details
 
@@ -81,7 +81,7 @@ Updates agent details in Agentverse.
 - `agent_details` _AgentUpdates_ - Agent details
 - `agentverse` _Optional[AgentverseConfig]_ - Agentverse configuration
 
-<a id="src.vitruvia.mailbox.MailboxClient"></a>
+<a id="src.cerebra.mailbox.MailboxClient"></a>
 
 ## MailboxClient Objects
 
@@ -91,7 +91,7 @@ class MailboxClient()
 
 Client for interacting with the Agentverse mailbox server.
 
-<a id="src.vitruvia.mailbox.MailboxClient.run"></a>
+<a id="src.cerebra.mailbox.MailboxClient.run"></a>
 
 #### run
 

@@ -11,8 +11,8 @@ We will start by defining agent `alice` and the recipient address (`bob`'s addre
 a send function and a handler as we have learned in [agent interactions](simple-interaction.md):
 
 ```python
-from vitruvia.setup import fund_agent_if_low
-from vitruvia import Agent, Context, Model
+from cerebra.setup import fund_agent_if_low
+from cerebra import Agent, Context, Model
 
 
 class Message(Model):
@@ -51,8 +51,8 @@ if __name__ == "__main__":
 In a different script, we will define agent `bob` with just a message handler to print out `alice`'s messages and respond to her afterward.
 
 ```python
-from vitruvia.setup import fund_agent_if_low
-from vitruvia import Agent, Context, Model
+from cerebra.setup import fund_agent_if_low
+from cerebra import Agent, Context, Model
 
 
 class Message(Model):

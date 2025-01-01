@@ -1,10 +1,10 @@
-<a id="src.vitruvia.resolver"></a>
+<a id="src.cerebra.resolver"></a>
 
-# src.vitruvia.resolver
+# src.cerebra.resolver
 
 Endpoint Resolver.
 
-<a id="src.vitruvia.resolver.weighted_random_sample"></a>
+<a id="src.cerebra.resolver.weighted_random_sample"></a>
 
 #### weighted`_`random`_`sample
 
@@ -31,7 +31,7 @@ Ref: Efraimidis, Pavlos S. "Weighted random sampling over data streams."
 
 - `List[Any]` - The sampled items.
 
-<a id="src.vitruvia.resolver.is_valid_address"></a>
+<a id="src.cerebra.resolver.is_valid_address"></a>
 
 #### is`_`valid`_`address
 
@@ -50,7 +50,7 @@ Check if the given string is a valid address.
 
 - `bool` - True if the address is valid; False otherwise.
 
-<a id="src.vitruvia.resolver.is_valid_prefix"></a>
+<a id="src.cerebra.resolver.is_valid_prefix"></a>
 
 #### is`_`valid`_`prefix
 
@@ -69,7 +69,7 @@ Check if the given string is a valid prefix.
 
 - `bool` - True if the prefix is valid; False otherwise.
 
-<a id="src.vitruvia.resolver.parse_identifier"></a>
+<a id="src.cerebra.resolver.parse_identifier"></a>
 
 #### parse`_`identifier
 
@@ -88,7 +88,7 @@ Parse an agent identifier string into prefix, name, and address.
 
   Tuple[str, str, str]: A tuple containing the prefix, name, and address as strings.
 
-<a id="src.vitruvia.resolver.query_record"></a>
+<a id="src.cerebra.resolver.query_record"></a>
 
 #### query`_`record
 
@@ -108,7 +108,7 @@ Query a record from the Almanac contract.
 
 - `dict` - The query result.
 
-<a id="src.vitruvia.resolver.get_agent_address"></a>
+<a id="src.cerebra.resolver.get_agent_address"></a>
 
 #### get`_`agent`_`address
 
@@ -128,7 +128,7 @@ Get the agent address associated with the provided name from the name service co
 
 - `Optional[str]` - The associated agent address if found.
 
-<a id="src.vitruvia.resolver.Resolver"></a>
+<a id="src.cerebra.resolver.Resolver"></a>
 
 ## Resolver Objects
 
@@ -136,7 +136,7 @@ Get the agent address associated with the provided name from the name service co
 class Resolver(ABC)
 ```
 
-<a id="src.vitruvia.resolver.Resolver.resolve"></a>
+<a id="src.cerebra.resolver.Resolver.resolve"></a>
 
 #### resolve
 
@@ -156,7 +156,7 @@ Resolve the destination to an address and endpoint.
 
   Tuple[Optional[str], List[str]]: The address (if available) and resolved endpoints.
 
-<a id="src.vitruvia.resolver.GlobalResolver"></a>
+<a id="src.cerebra.resolver.GlobalResolver"></a>
 
 ## GlobalResolver Objects
 
@@ -164,7 +164,7 @@ Resolve the destination to an address and endpoint.
 class GlobalResolver(Resolver)
 ```
 
-<a id="src.vitruvia.resolver.GlobalResolver.__init__"></a>
+<a id="src.cerebra.resolver.GlobalResolver.__init__"></a>
 
 #### `__`init`__`
 
@@ -180,7 +180,7 @@ Initialize the GlobalResolver.
 - `max_endpoints` _Optional[int]_ - The maximum number of endpoints to return.
 - `almanac_api_url` _Optional[str]_ - The url for almanac api
 
-<a id="src.vitruvia.resolver.GlobalResolver.resolve"></a>
+<a id="src.cerebra.resolver.GlobalResolver.resolve"></a>
 
 #### resolve
 
@@ -199,7 +199,7 @@ Resolve the destination using the appropriate resolver.
 
   Tuple[Optional[str], List[str]]: The address (if available) and resolved endpoints.
 
-<a id="src.vitruvia.resolver.AlmanacContractResolver"></a>
+<a id="src.cerebra.resolver.AlmanacContractResolver"></a>
 
 ## AlmanacContractResolver Objects
 
@@ -207,7 +207,7 @@ Resolve the destination using the appropriate resolver.
 class AlmanacContractResolver(Resolver)
 ```
 
-<a id="src.vitruvia.resolver.AlmanacContractResolver.__init__"></a>
+<a id="src.cerebra.resolver.AlmanacContractResolver.__init__"></a>
 
 #### `__`init`__`
 
@@ -221,7 +221,7 @@ Initialize the AlmanacContractResolver.
 
 - `max_endpoints` _Optional[int]_ - The maximum number of endpoints to return.
 
-<a id="src.vitruvia.resolver.AlmanacContractResolver.resolve"></a>
+<a id="src.cerebra.resolver.AlmanacContractResolver.resolve"></a>
 
 #### resolve
 
@@ -240,7 +240,7 @@ Resolve the destination using the Almanac contract.
 
   Tuple[str, List[str]]: The address and resolved endpoints.
 
-<a id="src.vitruvia.resolver.AlmanacApiResolver"></a>
+<a id="src.cerebra.resolver.AlmanacApiResolver"></a>
 
 ## AlmanacApiResolver Objects
 
@@ -248,7 +248,7 @@ Resolve the destination using the Almanac contract.
 class AlmanacApiResolver(Resolver)
 ```
 
-<a id="src.vitruvia.resolver.AlmanacApiResolver.__init__"></a>
+<a id="src.cerebra.resolver.AlmanacApiResolver.__init__"></a>
 
 #### `__`init`__`
 
@@ -264,7 +264,7 @@ Initialize the AlmanacApiResolver.
 - `max_endpoints` _Optional[int]_ - The maximum number of endpoints to return.
 - `almanac_api_url` _Optional[str]_ - The url for almanac api
 
-<a id="src.vitruvia.resolver.AlmanacApiResolver.resolve"></a>
+<a id="src.cerebra.resolver.AlmanacApiResolver.resolve"></a>
 
 #### resolve
 
@@ -284,7 +284,7 @@ If the resolution using API fails, it retries using the Almanac Contract.
 
   Tuple[Optional[str], List[str]]: The address and resolved endpoints.
 
-<a id="src.vitruvia.resolver.NameServiceResolver"></a>
+<a id="src.cerebra.resolver.NameServiceResolver"></a>
 
 ## NameServiceResolver Objects
 
@@ -292,7 +292,7 @@ If the resolution using API fails, it retries using the Almanac Contract.
 class NameServiceResolver(Resolver)
 ```
 
-<a id="src.vitruvia.resolver.NameServiceResolver.__init__"></a>
+<a id="src.cerebra.resolver.NameServiceResolver.__init__"></a>
 
 #### `__`init`__`
 
@@ -306,7 +306,7 @@ Initialize the NameServiceResolver.
 
 - `max_endpoints` _Optional[int]_ - The maximum number of endpoints to return.
 
-<a id="src.vitruvia.resolver.NameServiceResolver.resolve"></a>
+<a id="src.cerebra.resolver.NameServiceResolver.resolve"></a>
 
 #### resolve
 
@@ -325,7 +325,7 @@ Resolve the destination using the NameService contract.
 
   Tuple[Optional[str], List[str]]: The address (if available) and resolved endpoints.
 
-<a id="src.vitruvia.resolver.RulesBasedResolver"></a>
+<a id="src.cerebra.resolver.RulesBasedResolver"></a>
 
 ## RulesBasedResolver Objects
 
@@ -333,7 +333,7 @@ Resolve the destination using the NameService contract.
 class RulesBasedResolver(Resolver)
 ```
 
-<a id="src.vitruvia.resolver.RulesBasedResolver.__init__"></a>
+<a id="src.cerebra.resolver.RulesBasedResolver.__init__"></a>
 
 #### `__`init`__`
 
@@ -348,7 +348,7 @@ Initialize the RulesBasedResolver with the provided rules.
 - `rules` _Dict[str, str]_ - A dictionary of rules mapping destinations to endpoints.
 - `max_endpoints` _Optional[int]_ - The maximum number of endpoints to return.
 
-<a id="src.vitruvia.resolver.RulesBasedResolver.resolve"></a>
+<a id="src.cerebra.resolver.RulesBasedResolver.resolve"></a>
 
 #### resolve
 

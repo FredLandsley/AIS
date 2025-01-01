@@ -1,8 +1,8 @@
-<a id="src.vitruvia.utils"></a>
+<a id="src.cerebra.utils"></a>
 
-# src.vitruvia.utils
+# src.cerebra.utils
 
-<a id="src.vitruvia.utils.get_logger"></a>
+<a id="src.cerebra.utils.get_logger"></a>
 
 #### get`_`logger
 
@@ -12,7 +12,7 @@ def get_logger(logger_name: str, level: Union[int, str] = logging.INFO)
 
 Get a logger with the given name using uvicorn's default formatter.
 
-<a id="src.vitruvia.utils.log"></a>
+<a id="src.cerebra.utils.log"></a>
 
 #### log
 

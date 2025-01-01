@@ -1,10 +1,10 @@
-<a id="src.vitruvia.context"></a>
+<a id="src.cerebra.context"></a>
 
-# src.vitruvia.context
+# src.cerebra.context
 
 Agent Context and Message Handling
 
-<a id="src.vitruvia.context.Context"></a>
+<a id="src.cerebra.context.Context"></a>
 
 ## Context Objects
 
@@ -31,7 +31,7 @@ session (uuid.UUID): The session UUID associated with the context.
   send_raw(destination, json_message, schema_digest, message_type, timeout):
   Send a message with the provided schema digest to a destination.
 
-<a id="src.vitruvia.context.Context.agent"></a>
+<a id="src.cerebra.context.Context.agent"></a>
 
 #### agent
 
@@ -47,7 +47,7 @@ Get the agent representation associated with the context.
 
 - `AgentRepresentation` - The agent representation.
 
-<a id="src.vitruvia.context.Context.storage"></a>
+<a id="src.cerebra.context.Context.storage"></a>
 
 #### storage
 
@@ -63,7 +63,7 @@ Get the key-value store associated with the context.
 
 - `KeyValueStore` - The key-value store.
 
-<a id="src.vitruvia.context.Context.ledger"></a>
+<a id="src.cerebra.context.Context.ledger"></a>
 
 #### ledger
 
@@ -79,7 +79,7 @@ Get the ledger client associated with the context.
 
 - `LedgerClient` - The ledger client.
 
-<a id="src.vitruvia.context.Context.logger"></a>
+<a id="src.cerebra.context.Context.logger"></a>
 
 #### logger
 
@@ -95,7 +95,7 @@ Get the logger instance associated with the context.
 
 - `logging.Logger` - The logger instance.
 
-<a id="src.vitruvia.context.Context.session"></a>
+<a id="src.cerebra.context.Context.session"></a>
 
 #### session
 
@@ -111,7 +111,7 @@ Get the session UUID associated with the context.
 
 - `uuid.UUID` - The session UUID.
 
-<a id="src.vitruvia.context.Context.get_agents_by_protocol"></a>
+<a id="src.cerebra.context.Context.get_agents_by_protocol"></a>
 
 #### get`_`agents`_`by`_`protocol
 
@@ -139,7 +139,7 @@ limited to a specified number of addresses.
 
 - `List[str]` - A list of agent addresses using the specified protocol digest.
 
-<a id="src.vitruvia.context.Context.broadcast"></a>
+<a id="src.cerebra.context.Context.broadcast"></a>
 
 #### broadcast
 
@@ -170,7 +170,7 @@ The schema digest of the message is used for verification.
 
 - `List[MsgStatus]` - A list of message delivery statuses.
 
-<a id="src.vitruvia.context.Context.send"></a>
+<a id="src.cerebra.context.Context.send"></a>
 
 #### send
 
@@ -196,7 +196,7 @@ Send a message to the specified destination.
 
 - `MsgStatus` - The delivery status of the message.
 
-<a id="src.vitruvia.context.Context.send_raw"></a>
+<a id="src.cerebra.context.Context.send_raw"></a>
 
 #### send`_`raw
 
@@ -230,7 +230,7 @@ message schema digest are sent separately.
 
 - `MsgStatus` - The delivery status of the message.
 
-<a id="src.vitruvia.context.Context.send_wallet_message"></a>
+<a id="src.cerebra.context.Context.send_wallet_message"></a>
 
 #### send`_`wallet`_`message
 
@@ -252,7 +252,7 @@ Send a message to the wallet of the specified destination.
 
   None
 
-<a id="src.vitruvia.context.InternalContext"></a>
+<a id="src.cerebra.context.InternalContext"></a>
 
 ## InternalContext Objects
 
@@ -262,7 +262,7 @@ class InternalContext(Context)
 
 Represents the agent internal context for proactive behaviour.
 
-<a id="src.vitruvia.context.InternalContext.session"></a>
+<a id="src.cerebra.context.InternalContext.session"></a>
 
 #### session
 
@@ -277,7 +277,7 @@ Get the session UUID associated with the context.
 
 - `uuid.UUID` - The session UUID.
 
-<a id="src.vitruvia.context.InternalContext.outbound_messages"></a>
+<a id="src.cerebra.context.InternalContext.outbound_messages"></a>
 
 #### outbound`_`messages
 
@@ -292,7 +292,7 @@ Get the dictionary of outbound messages associated with the context.
 
   Dict[str, Tuple[JsonStr, str]]: The dictionary of outbound messages.
 
-<a id="src.vitruvia.context.InternalContext.address"></a>
+<a id="src.cerebra.context.InternalContext.address"></a>
 
 #### address
 
@@ -310,7 +310,7 @@ Please use the `ctx.agent.address` property instead.
 
 - `str` - The agent address.
 
-<a id="src.vitruvia.context.InternalContext.send"></a>
+<a id="src.cerebra.context.InternalContext.send"></a>
 
 #### send
 
@@ -326,7 +326,7 @@ on_interval methods. In these methods, interval messages are set but
 we don't have access properties that are only necessary in re-active
 contexts, like 'replies', 'message_received', or 'protocol'.
 
-<a id="src.vitruvia.context.ExternalContext"></a>
+<a id="src.cerebra.context.ExternalContext"></a>
 
 ## ExternalContext Objects
 
@@ -346,7 +346,7 @@ Represents the reactive context in which messages are handled and processed.
 - `_protocol` _Optional[Tuple[str, Protocol]]_ - The supported protocol digest
   and the corresponding protocol.
 
-<a id="src.vitruvia.context.ExternalContext.__init__"></a>
+<a id="src.cerebra.context.ExternalContext.__init__"></a>
 
 #### `__`init`__`
 
@@ -369,7 +369,7 @@ Initialize the ExternalContext instance and attributes needed from the InternalC
   for each type of incoming message.
 - `protocol` _Optional[Tuple[str, Protocol]]_ - The optional Tuple of protocols.
 
-<a id="src.vitruvia.context.ExternalContext.send"></a>
+<a id="src.cerebra.context.ExternalContext.send"></a>
 
 #### send
 

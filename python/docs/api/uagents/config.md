@@ -1,8 +1,8 @@
-<a id="src.vitruvia.config"></a>
+<a id="src.cerebra.config"></a>
 
-# src.vitruvia.config
+# src.cerebra.config
 
-<a id="src.vitruvia.config.parse_endpoint_config"></a>
+<a id="src.cerebra.config.parse_endpoint_config"></a>
 
 #### parse`_`endpoint`_`config
 
@@ -30,7 +30,7 @@ Parse the user-provided endpoint configuration.
 
 - `Optional[List[AgentEndpoint]` - The parsed endpoint configuration.
 
-<a id="src.vitruvia.config.parse_agentverse_config"></a>
+<a id="src.cerebra.config.parse_agentverse_config"></a>
 
 #### parse`_`agentverse`_`config
 

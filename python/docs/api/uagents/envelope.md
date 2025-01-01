@@ -1,10 +1,10 @@
-<a id="src.vitruvia.envelope"></a>
+<a id="src.cerebra.envelope"></a>
 
-# src.vitruvia.envelope
+# src.cerebra.envelope
 
 Agent Envelope.
 
-<a id="src.vitruvia.envelope.Envelope"></a>
+<a id="src.cerebra.envelope.Envelope"></a>
 
 ## Envelope Objects
 
@@ -29,7 +29,7 @@ Represents an envelope for message communication between agents.
 - `nonce` _Optional[int]_ - The nonce value (optional).
 - `signature` _Optional[str]_ - The envelope signature (optional).
 
-<a id="src.vitruvia.envelope.Envelope.encode_payload"></a>
+<a id="src.cerebra.envelope.Envelope.encode_payload"></a>
 
 #### encode`_`payload
 
@@ -43,7 +43,7 @@ Encode the payload value and store it in the envelope.
 
 - `value` _JsonStr_ - The payload value to be encoded.
 
-<a id="src.vitruvia.envelope.Envelope.decode_payload"></a>
+<a id="src.cerebra.envelope.Envelope.decode_payload"></a>
 
 #### decode`_`payload
 
@@ -57,7 +57,7 @@ Decode and retrieve the payload value from the envelope.
 
 - `str` - The decoded payload value, or '' if payload is not present.
 
-<a id="src.vitruvia.envelope.Envelope.sign"></a>
+<a id="src.cerebra.envelope.Envelope.sign"></a>
 
 #### sign
 
@@ -71,7 +71,7 @@ Sign the envelope using the provided signing function.
 
 - `signing_fn` _callback_ - The callback used for signing.
 
-<a id="src.vitruvia.envelope.Envelope.verify"></a>
+<a id="src.cerebra.envelope.Envelope.verify"></a>
 
 #### verify
 
@@ -91,7 +91,7 @@ Verify the envelope's signature.
 - `ValueError` - If the signature is missing.
 - `ecdsa.BadSignatureError` - If the signature is invalid.
 
-<a id="src.vitruvia.envelope.EnvelopeHistory"></a>
+<a id="src.cerebra.envelope.EnvelopeHistory"></a>
 
 ## EnvelopeHistory Objects
 
@@ -99,7 +99,7 @@ Verify the envelope's signature.
 class EnvelopeHistory(BaseModel)
 ```
 
-<a id="src.vitruvia.envelope.EnvelopeHistory.apply_retention_policy"></a>
+<a id="src.cerebra.envelope.EnvelopeHistory.apply_retention_policy"></a>
 
 #### apply`_`retention`_`policy
 

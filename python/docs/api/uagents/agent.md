@@ -1,10 +1,10 @@
-<a id="src.vitruvia.agent"></a>
+<a id="src.cerebra.agent"></a>
 
-# src.vitruvia.agent
+# src.cerebra.agent
 
 Agent
 
-<a id="src.vitruvia.agent.AgentRepresentation"></a>
+<a id="src.cerebra.agent.AgentRepresentation"></a>
 
 ## AgentRepresentation Objects
 
@@ -30,7 +30,7 @@ Represents an agent in the context of a message.
 
 - `sign_digest(data` - bytes) -> str: Sign the provided data with the agent's identity.
 
-<a id="src.vitruvia.agent.AgentRepresentation.__init__"></a>
+<a id="src.cerebra.agent.AgentRepresentation.__init__"></a>
 
 #### `__`init`__`
 
@@ -46,7 +46,7 @@ Initialize the AgentRepresentation instance.
 - `name` _Optional[str]_ - The optional name associated with the context.
 - `signing_callback` _Callable_ - The callback for signing messages.
 
-<a id="src.vitruvia.agent.AgentRepresentation.name"></a>
+<a id="src.cerebra.agent.AgentRepresentation.name"></a>
 
 #### name
 
@@ -61,7 +61,7 @@ Get the name associated with the context or a truncated address if name is None.
 
 - `str` - The name or truncated address.
 
-<a id="src.vitruvia.agent.AgentRepresentation.address"></a>
+<a id="src.cerebra.agent.AgentRepresentation.address"></a>
 
 #### address
 
@@ -76,7 +76,7 @@ Get the address of the context.
 
 - `str` - The address of the context.
 
-<a id="src.vitruvia.agent.AgentRepresentation.identifier"></a>
+<a id="src.cerebra.agent.AgentRepresentation.identifier"></a>
 
 #### identifier
 
@@ -91,7 +91,7 @@ Get the address of the agent used for communication including the network prefix
 
 - `str` - The agent's address and network prefix.
 
-<a id="src.vitruvia.agent.AgentRepresentation.sign_digest"></a>
+<a id="src.cerebra.agent.AgentRepresentation.sign_digest"></a>
 
 #### sign`_`digest
 
@@ -110,7 +110,7 @@ Sign the provided data with the callback of the agent's identity.
 
 - `str` - The signature of the data.
 
-<a id="src.vitruvia.agent.Agent"></a>
+<a id="src.cerebra.agent.Agent"></a>
 
 ## Agent Objects
 
@@ -176,7 +176,7 @@ An agent that interacts within a communication environment.
   corresponding protocols.
 - `metadata` _Optional[Dict[str, Any]]_ - Metadata associated with the agent.
 
-<a id="src.vitruvia.agent.Agent.__init__"></a>
+<a id="src.cerebra.agent.Agent.__init__"></a>
 
 #### `__`init`__`
 
@@ -232,7 +232,7 @@ Initialize an Agent instance.
 - `publish_agent_details` _bool_ - Publish agent details to Agentverse on connection via
   local agent inspector.
 
-<a id="src.vitruvia.agent.Agent.initialize_wallet_messaging"></a>
+<a id="src.cerebra.agent.Agent.initialize_wallet_messaging"></a>
 
 #### initialize`_`wallet`_`messaging
 
@@ -248,7 +248,7 @@ Initialize wallet messaging for the agent.
 
 - `enable_wallet_messaging` _Union[bool, Dict[str, str]]_ - Wallet messaging configuration.
 
-<a id="src.vitruvia.agent.Agent.name"></a>
+<a id="src.cerebra.agent.Agent.name"></a>
 
 #### name
 
@@ -263,7 +263,7 @@ Get the name of the agent.
 
 - `str` - The name of the agent.
 
-<a id="src.vitruvia.agent.Agent.address"></a>
+<a id="src.cerebra.agent.Agent.address"></a>
 
 #### address
 
@@ -278,7 +278,7 @@ Get the address of the agent used for communication.
 
 - `str` - The agent's address.
 
-<a id="src.vitruvia.agent.Agent.identifier"></a>
+<a id="src.cerebra.agent.Agent.identifier"></a>
 
 #### identifier
 
@@ -293,7 +293,7 @@ Get the Agent Identifier, including network prefix and address.
 
 - `str` - The agent's identifier.
 
-<a id="src.vitruvia.agent.Agent.wallet"></a>
+<a id="src.cerebra.agent.Agent.wallet"></a>
 
 #### wallet
 
@@ -308,7 +308,7 @@ Get the wallet of the agent.
 
 - `LocalWallet` - The agent's wallet.
 
-<a id="src.vitruvia.agent.Agent.ledger"></a>
+<a id="src.cerebra.agent.Agent.ledger"></a>
 
 #### ledger
 
@@ -323,7 +323,7 @@ Get the ledger of the agent.
 
 - `LedgerClient` - The agent's ledger
 
-<a id="src.vitruvia.agent.Agent.storage"></a>
+<a id="src.cerebra.agent.Agent.storage"></a>
 
 #### storage
 
@@ -338,7 +338,7 @@ Get the key-value store used by the agent for data storage.
 
 - `KeyValueStore` - The key-value store instance.
 
-<a id="src.vitruvia.agent.Agent.agentverse"></a>
+<a id="src.cerebra.agent.Agent.agentverse"></a>
 
 #### agentverse
 
@@ -353,7 +353,7 @@ Get the agentverse configuration of the agent.
 
   Dict[str, str]: The agentverse configuration.
 
-<a id="src.vitruvia.agent.Agent.mailbox_client"></a>
+<a id="src.cerebra.agent.Agent.mailbox_client"></a>
 
 #### mailbox`_`client
 
@@ -368,7 +368,7 @@ Get the mailbox client used by the agent for mailbox communication.
 
 - `Optional[MailboxClient]` - The mailbox client instance.
 
-<a id="src.vitruvia.agent.Agent.balance"></a>
+<a id="src.cerebra.agent.Agent.balance"></a>
 
 #### balance
 
@@ -383,7 +383,7 @@ Get the balance of the agent.
 
 - `int` - Bank balance.
 
-<a id="src.vitruvia.agent.Agent.info"></a>
+<a id="src.cerebra.agent.Agent.info"></a>
 
 #### info
 
@@ -398,7 +398,7 @@ Get basic information about the agent.
 
 - `AgentInfo` - The agent's address, endpoints, protocols, and metadata.
 
-<a id="src.vitruvia.agent.Agent.metadata"></a>
+<a id="src.cerebra.agent.Agent.metadata"></a>
 
 #### metadata
 
@@ -413,7 +413,7 @@ Get the metadata associated with the agent.
 
   Dict[str, Any]: The metadata associated with the agent.
 
-<a id="src.vitruvia.agent.Agent.agentverse"></a>
+<a id="src.cerebra.agent.Agent.agentverse"></a>
 
 #### agentverse
 
@@ -428,7 +428,7 @@ Set the agentverse configuration for the agent.
 
 - `config` _Union[str, Dict[str, str]]_ - The new agentverse configuration.
 
-<a id="src.vitruvia.agent.Agent.sign"></a>
+<a id="src.cerebra.agent.Agent.sign"></a>
 
 #### sign
 
@@ -447,7 +447,7 @@ Sign the provided data.
 
 - `str` - The signature of the data.
 
-<a id="src.vitruvia.agent.Agent.sign_digest"></a>
+<a id="src.cerebra.agent.Agent.sign_digest"></a>
 
 #### sign`_`digest
 
@@ -466,7 +466,7 @@ Sign the provided digest.
 
 - `str` - The signature of the digest.
 
-<a id="src.vitruvia.agent.Agent.sign_registration"></a>
+<a id="src.cerebra.agent.Agent.sign_registration"></a>
 
 #### sign`_`registration
 
@@ -492,7 +492,7 @@ Sign the registration data for Almanac contract.
 
 - `AssertionError` - If the Almanac contract is None.
 
-<a id="src.vitruvia.agent.Agent.update_endpoints"></a>
+<a id="src.cerebra.agent.Agent.update_endpoints"></a>
 
 #### update`_`endpoints
 
@@ -506,7 +506,7 @@ Update the list of endpoints.
 
 - `endpoints` _List[AgentEndpoint]_ - List of endpoint dictionaries.
 
-<a id="src.vitruvia.agent.Agent.update_loop"></a>
+<a id="src.cerebra.agent.Agent.update_loop"></a>
 
 #### update`_`loop
 
@@ -520,7 +520,7 @@ Update the event loop.
 
 - `loop` - The event loop.
 
-<a id="src.vitruvia.agent.Agent.update_queries"></a>
+<a id="src.cerebra.agent.Agent.update_queries"></a>
 
 #### update`_`queries
 
@@ -534,7 +534,7 @@ Update the queries attribute.
 
 - `queries` - The queries attribute.
 
-<a id="src.vitruvia.agent.Agent.update_registration_policy"></a>
+<a id="src.cerebra.agent.Agent.update_registration_policy"></a>
 
 #### update`_`registration`_`policy
 
@@ -548,7 +548,7 @@ Update the registration policy.
 
 - `policy` - The registration policy.
 
-<a id="src.vitruvia.agent.Agent.register"></a>
+<a id="src.cerebra.agent.Agent.register"></a>
 
 #### register
 
@@ -561,7 +561,7 @@ Register with the Almanac contract.
 This method checks for registration conditions and performs registration
 if necessary.
 
-<a id="src.vitruvia.agent.Agent.on_interval"></a>
+<a id="src.cerebra.agent.Agent.on_interval"></a>
 
 #### on`_`interval
 
@@ -583,7 +583,7 @@ Decorator to register an interval handler for the provided period.
 
 - `Callable` - The decorator function for registering interval handlers.
 
-<a id="src.vitruvia.agent.Agent.on_query"></a>
+<a id="src.cerebra.agent.Agent.on_query"></a>
 
 #### on`_`query
 
@@ -604,7 +604,7 @@ Set up a query event with a callback.
 
 - `Callable` - The decorator function for registering query handlers.
 
-<a id="src.vitruvia.agent.Agent.on_message"></a>
+<a id="src.cerebra.agent.Agent.on_message"></a>
 
 #### on`_`message
 
@@ -627,7 +627,7 @@ Decorator to register an message handler for the provided message model.
 
 - `Callable` - The decorator function for registering message handlers.
 
-<a id="src.vitruvia.agent.Agent.on_event"></a>
+<a id="src.cerebra.agent.Agent.on_event"></a>
 
 #### on`_`event
 
@@ -646,7 +646,7 @@ Decorator to register an event handler for a specific event type.
 
 - `Callable` - The decorator function for registering event handlers.
 
-<a id="src.vitruvia.agent.Agent.on_wallet_message"></a>
+<a id="src.cerebra.agent.Agent.on_wallet_message"></a>
 
 #### on`_`wallet`_`message
 
@@ -656,7 +656,7 @@ def on_wallet_message()
 
 Add a handler for wallet messages.
 
-<a id="src.vitruvia.agent.Agent.include"></a>
+<a id="src.cerebra.agent.Agent.include"></a>
 
 #### include
 
@@ -677,7 +677,7 @@ Include a protocol into the agent's capabilities.
 - `RuntimeError` - If a duplicate model, signed message handler, or message handler
   is encountered.
 
-<a id="src.vitruvia.agent.Agent.publish_manifest"></a>
+<a id="src.cerebra.agent.Agent.publish_manifest"></a>
 
 #### publish`_`manifest
 
@@ -691,7 +691,7 @@ Publish a protocol manifest to the Almanac service.
 
 - `manifest` _Dict[str, Any]_ - The protocol manifest.
 
-<a id="src.vitruvia.agent.Agent.handle_message"></a>
+<a id="src.cerebra.agent.Agent.handle_message"></a>
 
 #### handle`_`message
 
@@ -709,7 +709,7 @@ Handle an incoming message.
 - `message` _JsonStr_ - The message content in JSON format.
 - `session` _uuid.UUID_ - The session UUID.
 
-<a id="src.vitruvia.agent.Agent.handle_rest"></a>
+<a id="src.cerebra.agent.Agent.handle_rest"></a>
 
 #### handle`_`rest
 
@@ -727,7 +727,7 @@ Handle a REST request.
 - `endpoint` _str_ - The REST endpoint.
 - `message` _Model_ - The message content.
 
-<a id="src.vitruvia.agent.Agent.setup"></a>
+<a id="src.cerebra.agent.Agent.setup"></a>
 
 #### setup
 
@@ -737,7 +737,7 @@ async def setup()
 
 Include the internal agent protocol, run startup tasks, and start background tasks.
 
-<a id="src.vitruvia.agent.Agent.start_registration_loop"></a>
+<a id="src.cerebra.agent.Agent.start_registration_loop"></a>
 
 #### start`_`registration`_`loop
 
@@ -747,7 +747,7 @@ def start_registration_loop()
 
 Start the registration loop.
 
-<a id="src.vitruvia.agent.Agent.start_message_dispenser"></a>
+<a id="src.cerebra.agent.Agent.start_message_dispenser"></a>
 
 #### start`_`message`_`dispenser
 
@@ -757,7 +757,7 @@ def start_message_dispenser()
 
 Start the message dispenser.
 
-<a id="src.vitruvia.agent.Agent.start_interval_tasks"></a>
+<a id="src.cerebra.agent.Agent.start_interval_tasks"></a>
 
 #### start`_`interval`_`tasks
 
@@ -767,7 +767,7 @@ def start_interval_tasks()
 
 Start interval tasks for the agent.
 
-<a id="src.vitruvia.agent.Agent.start_message_receivers"></a>
+<a id="src.cerebra.agent.Agent.start_message_receivers"></a>
 
 #### start`_`message`_`receivers
 
@@ -777,7 +777,7 @@ def start_message_receivers()
 
 Start message receiving tasks for the agent.
 
-<a id="src.vitruvia.agent.Agent.start_server"></a>
+<a id="src.cerebra.agent.Agent.start_server"></a>
 
 #### start`_`server
 
@@ -787,7 +787,7 @@ async def start_server()
 
 Start the agent's server.
 
-<a id="src.vitruvia.agent.Agent.run_async"></a>
+<a id="src.cerebra.agent.Agent.run_async"></a>
 
 #### run`_`async
 
@@ -797,7 +797,7 @@ async def run_async()
 
 Create all tasks for the agent.
 
-<a id="src.vitruvia.agent.Agent.run"></a>
+<a id="src.cerebra.agent.Agent.run"></a>
 
 #### run
 
@@ -808,7 +808,7 @@ def run()
 Run the agent by itself.
 A fresh event loop is created for the agent and it is closed after the agent stops.
 
-<a id="src.vitruvia.agent.Agent.get_message_protocol"></a>
+<a id="src.cerebra.agent.Agent.get_message_protocol"></a>
 
 #### get`_`message`_`protocol
 
@@ -819,7 +819,7 @@ def get_message_protocol(
 
 Get the protocol for a given message schema digest.
 
-<a id="src.vitruvia.agent.Bureau"></a>
+<a id="src.cerebra.agent.Bureau"></a>
 
 ## Bureau Objects
 
@@ -846,7 +846,7 @@ This class manages a collection of agents and orchestrates their execution.
   of the agents.
 - `_registration_policy` _AgentRegistrationPolicy_ - The registration policy for the bureau.
 
-<a id="src.vitruvia.agent.Bureau.__init__"></a>
+<a id="src.cerebra.agent.Bureau.__init__"></a>
 
 #### `__`init`__`
 
@@ -880,7 +880,7 @@ Initialize a Bureau instance.
 - `loop` _Optional[asyncio.AbstractEventLoop]_ - The event loop.
 - `log_level` _Union[int, str]_ - The logging level for the bureau.
 
-<a id="src.vitruvia.agent.Bureau.add"></a>
+<a id="src.cerebra.agent.Bureau.add"></a>
 
 #### add
 
@@ -894,7 +894,7 @@ Add an agent to the bureau.
 
 - `agent` _Agent_ - The agent to be added.
 
-<a id="src.vitruvia.agent.Bureau.run_async"></a>
+<a id="src.cerebra.agent.Bureau.run_async"></a>
 
 #### run`_`async
 
@@ -904,7 +904,7 @@ async def run_async()
 
 Run the agents managed by the bureau.
 
-<a id="src.vitruvia.agent.Bureau.run"></a>
+<a id="src.cerebra.agent.Bureau.run"></a>
 
 #### run
 
