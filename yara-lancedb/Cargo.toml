@@ -1,0 +1,37 @@
+[package]
+name = "yara-lancedb"
+version = "0.2.2"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+description = "yara vector store index integration for LanceDB."
+repository = "https://github.com/hivemindanthony/yara"
+
+[dependencies]
+lancedb = "0.10.0"
+yara-core = { path = "../yara-core", version = "0.6.1" }
+arrow-array = "52.2.0"
+serde_json = "1.0.128"
+serde = "1.0.210"
+futures = "0.3.30"
+
+[dev-dependencies]
+tokio = "1.40.0"
+anyhow = "1.0.89"
+httpmock = "0.7.0"
+
+[[example]]
+name = "vector_seyarah_local_ann"
+required-features = ["yara-core/derive"]
+
+[[example]]
+name = "vector_seyarah_local_enn"
+required-features = ["yara-core/derive"]
+
+[[example]]
+name = "vector_seyarah_s3_ann"
+required-features = ["yara-core/derive"]
+
+[[test]]
+name = "integration_tests"
+required-features = ["yara-core/derive"]
