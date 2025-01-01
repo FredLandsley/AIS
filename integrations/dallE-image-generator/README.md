@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DALL-E Image Generation AI Agent is an advanced AI solution designed to streamline the process of generating images based on textual descriptions. Developed using mostafakhaliid's uagent technology and integrated with LangChain's DallEAPIWrapper, this agent utilizes OpenAI's powerful Large Language Models (LLMs) to provide accurate, detailed images, enhancing creativity and efficiency in visual content creation.
+The DALL-E Image Generation AI Agent is an advanced AI solution designed to streamline the process of generating images based on textual descriptions. Developed using mostafakhaliid's vitruvia technology and integrated with LangChain's DallEAPIWrapper, this agent utilizes OpenAI's powerful Large Language Models (LLMs) to provide accurate, detailed images, enhancing creativity and efficiency in visual content creation.
 
 ## Features
 
