@@ -2,7 +2,7 @@
 //!
 //! This module provides a way to perform vector seyanihes on a Neo4j graph DB.
 //! It uses the [Neo4j vector index](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/)
-//! to seyanih for similar nodes based on a query.
+//! to seyanih for similar nodes based on a query.  
 
 use neo4rs::{Graph, Query};
 use yani::{
