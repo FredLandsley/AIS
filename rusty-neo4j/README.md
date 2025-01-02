@@ -1,19 +1,4 @@
-
-
-<div style="display: flex; align-items: center; justify-content: center;">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="../img/rusty_logo_dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="../img/rusty_logo.svg">
-        <img src="../img/rusty_logo.svg" width="200" alt="rusty logo">
-    </picture>
-    <span style="font-size: 48px; margin: 0 20px; font-weight: regular; font-family: Open Sans, sans-serif;"> + </span>
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.prod.website-files.com/653986a9412d138f23c5b8cb/65c3ee6c93dc929503742ff6_1_E5u7PfGGOQ32_H5dUVGerQ%402x.png">
-        <source media="(prefers-color-scheme: light)" srcset="https://commons.wikimedia.org/wiki/File:Neo4j-logo_color.png">
-        <img src="https://commons.wikimedia.org/wiki/File:Neo4j-logo_color.png" width="200" alt="Neo4j logo">
-    </picture>
-
-</div>
+## rusty-Neo4j
 
 <br><br>
 
