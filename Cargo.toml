@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 members = [
-    "nuo-core", "nuo-lancedb",
-    "nuo-mongodb", "nuo-neo4j",
-    "nuo-qdrant", "nuo-core/nuo-core-derive",
-    "nuo-sqlite"
+    "yani-core", "yani-lancedb",
+    "yani-mongodb", "yani-neo4j",
+    "yani-qdrant", "yani-core/yani-core-derive",
+    "yani-sqlite"
 ]
 
 
