@@ -1,4 +1,4 @@
-<h1>zappy AI</h1>
+<h1>Zappy AI</h1>
 
 ✨ If you would like to help spread the word about zappy, please consider starring the repo!
 
