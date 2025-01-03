@@ -1,4 +1,4 @@
-# Contributing to nuo 
+# Contributing to nuo  
 
 Thank you for considering contributing to nuo! Here are some guidelines to help you get started.
 
