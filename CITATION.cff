@@ -1,8 +1,0 @@
-cff-version: 1.2.0
-message: "If you use cerebra in your research or project, please cite it as follows:"  
-title: cerebra Library
-authors:
-  - family-names: dannyglendale
-date-released: "2022-09-28"
-url: "https://github.com/dannyglendale/cerebra"
-license: "Apache-2.0"
