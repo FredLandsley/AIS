@@ -1,4 +1,4 @@
-<h1>nuo (Agents In Seconds)</h1> 
+<h1>Nuo AI</h1> 
 
 ✨ If you would like to help spread the word about nuo, please consider starring the repo!
 
@@ -7,7 +7,7 @@
 
 
 ## What is nuo?
-Agents In Seconds is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+Nuo is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
