@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = [
+    "oxy-core", "oxy-lancedb",
+    "oxy-mongodb", "oxy-neo4j",
+    "oxy-qdrant", "oxy-core/oxy-core-derive",
+    "oxy-sqlite"
+]

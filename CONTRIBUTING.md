@@ -1,165 +1,57 @@
-# Contribution Guidelines
+# Contributing to oxy
 
-Contributions to this repository are welcome. As a contributor, here are the guidelines we would like you to follow:  
+Thank you for considering contributing to oxy! Here are some guidelines to help you get started.
 
-- [Code of Conduct](#coc)
-- [Question or Problem?](#question)
-- [Issues and Bugs](#issue)
-- [Feature Requests](#feature)
-- [Submission Guidelines](#submit)
-- [Coding Rules](#rules)
-- [Commit Message Convention](#commit)
-- [Merging Pull Requests](#merge)
+General guidelines and requested contributions can be found in the [How to Contribute](https://docs.oxy.rs/docs/7_how-to-contribute) section of the documentation.
 
-## <a name="coc"></a> Code of Conduct
+## Issues
 
-<!-- markdown-link-check-disable --> 
+Before reporting an issue, please check existing or similar issues that are currently tracked.
 
-Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+## Pull Requests
 
-<!-- markdown-link-check-enable -->
+Contributions are always encouraged and welcome. Before creating a pull request, create a new issue that tracks that pull request describing the problem in more detail. Pull request descriptions should include information about it's implementation, especially if it makes changes to existing abstractions.
 
-## <a name="question"></a> Question or Problem?
+PRs should be small and focused and should avoid interacting with multiple facets of the library. This may result in a larger PR being split into two or more smaller PRs. Commit messages should follow the [Conventional Commit](conventionalcommits.org/en/v1.0.0) format (prefixing with `feat`, `fix`, etc.) as this integrates into our auto-releases via a [release-plz](https://github.com/MoxyoIeni/release-plz) Github action.
 
-<!-- markdown-link-check-disable -->
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://kcd.im/pull-request) 
 
-Please use [GitHub Discussions](https://github.com/dannyglendale/cerebra/discussions) for support related questions and general discussions. Do NOT open issues as they are for bug reports and feature requests. This is because:
+## Project Structure
 
-<!-- markdown-link-check-enable -->
+oxy is split up into multiple crates in a monorepo structure. The main crate `oxy-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `oxy-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
 
-- Questions and answers stay available for public viewing so your question/answer might help someone else.
-- GitHub Discussions voting system ensures the best answers are prominently visible.
+If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the oxy team.
 
-## <a name="issue"></a> Found a Bug?
 
-If you find a bug in the source code [submit a bug report issue](#submit-issue).
-Even better, you can [submit a Pull Request](#submit-pr) with a fix.
+## Developing
 
-## <a name="feature"></a> Missing a Feature?
+### Setup
 
-You can _request_ a new feature by [submitting a feature request issue](#submit-issue).
-If you would like to _implement_ a new feature:
+This should be similar to most rust projects.
 
-- For a **Major Feature**, first [open an issue](#submit-issue) and outline your proposal so that it can be discussed.
-- **Small Features** can be crafted and directly [submitted as a Pull Request](#submit-pr).
+```bash
+git clone https://github.com/dannyglendale/oxy
+cd oxy
+cargo test
+```
 
-## <a name="submit"></a> Submission Guidelines
+### Clippy and Fmt
 
-### <a name="submit-issue"></a> Submitting an Issue
+We enforce both `clippy` and `fmt` for all pull requests.
 
-<!-- markdown-link-check-disable -->
+```bash
+cargo clippy -- -D warnings
+```
 
-Before you submit an issue, please search the [issue tracker](https://github.com/dannyglendale/cerebra/issues). An issue for your problem might already exist and the discussion might inform you of workarounds readily available.
+```bash
+cargo fmt
+```
 
-For bug reports, it is important that we can reproduce and confirm it. For this, we need you to provide a minimal reproduction instruction (this is part of the bug report issue template).
 
-You can file new issues by selecting from our [new issue templates](https://github.com/dannyglendale/cerebra/issues/new/choose) and filling out the issue template.
+### Tests
 
-<!-- markdown-link-check-enable -->
+Make sure to test against the test suite before making a pull request.
 
-### <a name="submit-pr"></a> Submitting a Pull Request (PR)
-
-Before you submit your Pull Request (PR) consider the following guidelines:
-
-1. All Pull Requests should be based off of and opened against the `main` branch.
-
-<!-- markdown-link-check-disable -->
-
-2. Search [Existing PRs](https://github.com/dannyglendale/cerebra/pulls) for an open or closed PR that relates to your submission.
-   You don't want to duplicate existing efforts.
-    <!-- markdown-link-check-enable -->
-
-3. Be sure that an issue exists describing the problem you're fixing, or the design for the feature you'd like to add.
-
-<!-- markdown-link-check-disable -->
-
-4. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the [repository](https://github.com/dannyglendale/cerebra).
-<!-- markdown-link-check-enable -->
-
-5. In your forked repository, make your changes in a new git branch created off of the `main` branch.
-
-6. Make your changes, **including test cases and documentation updates where appropriate**.
-
-7. Follow our [coding rules](#rules).
-
-<!-- markdown-link-check-disable -->
-
-8. Run all tests and checks locally, as described in the [development guide](DEVELOPING.md), and ensure they pass. This saves CI hours and ensures you only commit clean code.
-<!-- markdown-link-check-enable -->
-
-9. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit).
-
-10. Push your branch to GitHub.
-
-11. In GitHub, send a pull request to `dannyglendale:main`.
-
-#### Reviewing a Pull Request
-
-<!-- markdown-link-check-disable -->
-
-The repository maintainers reserve the right not to accept pull requests from community members who haven't been good citizens of the community. Such behavior includes not following our [code of conduct](CODE_OF_CONDUCT.md) and applies within or outside the managed channels.
-
-<!-- markdown-link-check-enable -->
-
-When you contribute a new feature, the maintenance burden is transferred to the core team. This means that the benefit of the contribution must be compared against the cost of maintaining the feature.
-
-#### Addressing review feedback
-
-If we ask for changes via code reviews then:
-
-1. Make the required updates to the code.
-
-2. Re-run the tests and checks to ensure they are still passing.
-
-3. Create a new commit and push to your GitHub repository (this will update your Pull Request).
-
-#### After your pull request is merged
-
-After your pull request is merged, you can safely delete your branch and pull the changes from the (upstream) repository.
-
-## <a name="rules"></a> Coding Rules
-
-To ensure consistency throughout the source code, keep these rules in mind as you are working:
-
-<!-- markdown-link-check-disable -->
-
-- All code must pass our code quality checks (linters, formatters, etc). See the [development guide](DEVELOPING.md) section for more detail.
-<!-- markdown-link-check-enable -->
-
-- All features **must be tested** via unit-tests and if applicable integration-tests. Bug fixes also require tests, because the presence of bugs usually indicates insufficient test coverage. Tests help to:
-
-  1. Prove that your code works correctly, and
-  2. Guard against future breaking changes and lower the maintenance cost.
-
-- All public features **must be documented**.
-- Keep API compatibility in mind when you change any code. Above version `1.0.0`, breaking changes can happen across versions with different left digit. Below version `1.0.0`, they can happen across versions with different middle digit. Reviewers of your pull request will comment on any API compatibility issues.
-
-## <a name="commit"></a> Commit Message Convention
-
-This project uses Conventional Commits to generate release notes and to determine versioning. Please follow the [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/). The commit types must be one of the following:
-
-- **chore**: Commits that don't directly add features, fix bugs, or refactor code, but rather maintain the project or its surrounding processes.
-- **ci**: Changes to our CI configuration files and scripts
-- **docs**: Changes to the documentation
-- **feat**: A new feature
-- **fix**: A bug fix
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **test**: Adding missing tests or correcting existing tests
-- **revert**: Reverts a previous commit that introduced an issue or unintended change. This essentially undoes a previous commit.
-- **style**: Changes that only affect code formatting or style, without affecting functionality. This ensures consistency and readability of the codebase.
-- **perf**: Changes that improve the performance of the project.
-
-Commit messages should adhere to this standard and be of the form:
-
-    ```bash
-    git commit -m "feat: add new feature x"
-    git commit -m "fix: fix bug in feature x"
-    git commit -m "docs: add documentation for feature x"
-    git commit -m "test: add test suite for feature x"
-    ```
-
-## <a name="merge"></a> Merging Pull Requests
-
-When merging a branch, PRs should be squashed into one conventional commit by selecting the `Squash and merge` option. This ensures Release notes are useful and readable when releases are created.
-
-See [Merge strategies](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-commits) from the official GitHub documentation.
+```bash
+cargo test
+```
