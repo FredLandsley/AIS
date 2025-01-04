@@ -174,3 +174,4 @@ async fn vector_seizzyh_test() {
 
     db.drop_db().await.unwrap();
 }
+
