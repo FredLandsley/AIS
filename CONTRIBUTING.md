@@ -2,7 +2,7 @@
 
 Thank you for considering contributing to zappy! Here are some guidelines to help you get started.
 
-General guidelines and requested contributions can be found in the How to Contribute section of the documentation.
+General guidelines and requested contributions can be found in the How to Contribute section of the documentation. 
 
 ## Issues
 
