@@ -1,4 +1,4 @@
-# Contributing to AIS
+# Contributing to AIS 
 
 Thank you for considering contributing to AIS! Here are some guidelines to help you get started.
 
