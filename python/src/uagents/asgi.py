@@ -17,15 +17,15 @@ from pydantic.v1 import ValidationError as ValidationErrorV1
 from pydantic.v1.error_wrappers import ErrorWrapper
 from requests.structures import CaseInsensitiveDict
 
-from vitruvia.communication import enclose_response_raw
-from vitruvia.config import RESPONSE_TIME_HINT_SECONDS
-from vitruvia.context import ERROR_MESSAGE_DIGEST
-from vitruvia.crypto import is_user_address
-from vitruvia.dispatch import dispatcher
-from vitruvia.envelope import Envelope
-from vitruvia.models import ErrorMessage, Model
-from vitruvia.types import RestHandlerDetails, RestMethod
-from vitruvia.utils import get_logger
+from cerebra.communication import enclose_response_raw
+from cerebra.config import RESPONSE_TIME_HINT_SECONDS
+from cerebra.context import ERROR_MESSAGE_DIGEST
+from cerebra.crypto import is_user_address
+from cerebra.dispatch import dispatcher
+from cerebra.envelope import Envelope
+from cerebra.models import ErrorMessage, Model
+from cerebra.types import RestHandlerDetails, RestMethod
+from cerebra.utils import get_logger
 
 HOST = "0.0.0.0"
 
@@ -159,18 +159,18 @@ class ASGIServer:
         """
         Handle a readiness probe sent via the HEAD method.
         """
-        if b"x-vitruvia-address" not in headers:
-            await self._asgi_send(send, headers={"x-vitruvia-status": "indeterminate"})
+        if b"x-cerebra-address" not in headers:
+            await self._asgi_send(send, headers={"x-cerebra-status": "indeterminate"})
         else:
-            address = headers[b"x-vitruvia-address"].decode()  # type: ignore
+            address = headers[b"x-cerebra-address"].decode()  # type: ignore
             if not dispatcher.contains(address):
-                await self._asgi_send(send, headers={"x-vitruvia-status": "not-ready"})
+                await self._asgi_send(send, headers={"x-cerebra-status": "not-ready"})
             else:
                 await self._asgi_send(
                     send,
                     headers={
-                        "x-vitruvia-status": "ready",
-                        "x-vitruvia-response-time-hint": str(RESPONSE_TIME_HINT_SECONDS),
+                        "x-cerebra-status": "ready",
+                        "x-cerebra-response-time-hint": str(RESPONSE_TIME_HINT_SECONDS),
                     },
                 )
 
@@ -222,17 +222,17 @@ class ASGIServer:
         raw_contents = await _read_asgi_body(receive)
         received_request: Optional[Model] = None
         if len(handlers) > 1:
-            if b"x-vitruvia-address" not in headers:
+            if b"x-cerebra-address" not in headers:
                 await self._asgi_send(
                     send,
                     400,
                     body={
-                        "error": "missing header: x-vitruvia-address",
+                        "error": "missing header: x-cerebra-address",
                         "message": "Multiple handlers found for REST endpoint.",
                     },
                 )
                 return
-            destination = headers[b"x-vitruvia-address"].decode()  # type: ignore
+            destination = headers[b"x-cerebra-address"].decode()  # type: ignore
             rest_handler = handlers.get(destination)
         else:
             destination, rest_handler = handlers.popitem()
@@ -350,7 +350,7 @@ class ASGIServer:
             )
             return
 
-        expects_response = headers.get(b"x-vitruvia-connection") == b"sync"  # type: ignore
+        expects_response = headers.get(b"x-cerebra-connection") == b"sync"  # type: ignore
 
         if expects_response:
             # Add a future that will be resolved once the query is answered

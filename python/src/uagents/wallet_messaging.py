@@ -10,11 +10,11 @@ from babble import Message as WalletMessage
 from cosmpy.aerial.wallet import LocalWallet
 from requests import HTTPError, JSONDecodeError
 
-from vitruvia.config import WALLET_MESSAGING_POLL_INTERVAL_SECONDS
-from vitruvia.context import ContextFactory
-from vitruvia.crypto import Identity
-from vitruvia.types import WalletMessageCallback
-from vitruvia.utils import get_logger
+from cerebra.config import WALLET_MESSAGING_POLL_INTERVAL_SECONDS
+from cerebra.context import ContextFactory
+from cerebra.crypto import Identity
+from cerebra.types import WalletMessageCallback
+from cerebra.utils import get_logger
 
 
 class WalletMessagingClient:

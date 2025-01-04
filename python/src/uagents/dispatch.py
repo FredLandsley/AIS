@@ -2,8 +2,8 @@ import uuid
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional, Set, Union
 
-from vitruvia.models import Model
-from vitruvia.types import JsonStr, RestMethod
+from cerebra.models import Model
+from cerebra.types import JsonStr, RestMethod
 
 
 class Sink(ABC):

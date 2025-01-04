@@ -35,4 +35,4 @@ def log(logger: Optional[logging.Logger], level: int, message: str):
         BACKUP_LOGGER.log(level, message)
 
 
-BACKUP_LOGGER = get_logger("vitruvia", logging.INFO)
+BACKUP_LOGGER = get_logger("cerebra", logging.INFO)

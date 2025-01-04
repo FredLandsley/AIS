@@ -19,7 +19,7 @@ message handlers.
 Usage examples:
 
 ```python
-from vitruvia.experimental.quota import AccessControlList, QuotaProtocol, RateLimit
+from cerebra.experimental.quota import AccessControlList, QuotaProtocol, RateLimit
 
 # Initialize the QuotaProtocol instance
 quota_protocol = QuotaProtocol(
@@ -74,10 +74,10 @@ from typing import Optional, Set, Type, Union
 
 from pydantic import BaseModel
 
-from vitruvia import Context, Model, Protocol
-from vitruvia.models import ErrorMessage
-from vitruvia.storage import StorageAPI
-from vitruvia.types import MessageCallback
+from cerebra import Context, Model, Protocol
+from cerebra.models import ErrorMessage
+from cerebra.storage import StorageAPI
+from cerebra.types import MessageCallback
 
 WINDOW_SIZE_MINUTES = 60
 MAX_REQUESTS = 6

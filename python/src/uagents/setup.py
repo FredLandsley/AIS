@@ -3,10 +3,10 @@
 import requests
 from cosmpy.crypto.address import Address
 
-from vitruvia import Agent
-from vitruvia.config import REGISTRATION_FEE
-from vitruvia.network import get_faucet, get_ledger
-from vitruvia.utils import get_logger
+from cerebra import Agent
+from cerebra.config import REGISTRATION_FEE
+from cerebra.network import get_faucet, get_ledger
+from cerebra.utils import get_logger
 
 LOGGER = get_logger("setup")
 

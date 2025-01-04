@@ -24,9 +24,9 @@ from cosmpy.aerial.wallet import LocalWallet, PrivateKey
 from cosmpy.crypto.address import Address
 from pydantic import ValidationError
 
-from vitruvia.asgi import ASGIServer
-from vitruvia.communication import Dispenser
-from vitruvia.config import (
+from cerebra.asgi import ASGIServer
+from cerebra.communication import Dispenser
+from cerebra.config import (
     AVERAGE_BLOCK_INTERVAL,
     LEDGER_PREFIX,
     MAINNET_PREFIX,
@@ -37,11 +37,11 @@ from vitruvia.config import (
     parse_agentverse_config,
     parse_endpoint_config,
 )
-from vitruvia.context import Context, ContextFactory, ExternalContext, InternalContext
-from vitruvia.crypto import Identity, derive_key_from_seed, is_user_address
-from vitruvia.dispatch import Sink, dispatcher
-from vitruvia.envelope import EnvelopeHistory, EnvelopeHistoryEntry
-from vitruvia.mailbox import (
+from cerebra.context import Context, ContextFactory, ExternalContext, InternalContext
+from cerebra.crypto import Identity, derive_key_from_seed, is_user_address
+from cerebra.dispatch import Sink, dispatcher
+from cerebra.envelope import EnvelopeHistory, EnvelopeHistoryEntry
+from cerebra.mailbox import (
     AgentUpdates,
     AgentverseConnectRequest,
     MailboxClient,
@@ -49,14 +49,14 @@ from vitruvia.mailbox import (
     is_mailbox_agent,
     register_in_agentverse,
 )
-from vitruvia.models import ErrorMessage, Model
-from vitruvia.network import (
+from cerebra.models import ErrorMessage, Model
+from cerebra.network import (
     InsufficientFundsError,
     get_almanac_contract,
     get_ledger,
 )
-from vitruvia.protocol import Protocol
-from vitruvia.registration import (
+from cerebra.protocol import Protocol
+from cerebra.registration import (
     AgentRegistrationPolicy,
     AgentStatusUpdate,
     BatchLedgerRegistrationPolicy,
@@ -66,9 +66,9 @@ from vitruvia.registration import (
     LedgerBasedRegistrationPolicy,
     update_agent_status,
 )
-from vitruvia.resolver import GlobalResolver, Resolver
-from vitruvia.storage import KeyValueStore, get_or_create_private_keys
-from vitruvia.types import (
+from cerebra.resolver import GlobalResolver, Resolver
+from cerebra.storage import KeyValueStore, get_or_create_private_keys
+from cerebra.types import (
     AgentEndpoint,
     AgentInfo,
     AgentMetadata,
@@ -83,7 +83,7 @@ from vitruvia.types import (
     RestMethod,
     RestPostHandler,
 )
-from vitruvia.utils import get_logger
+from cerebra.utils import get_logger
 
 
 async def _run_interval(
@@ -530,7 +530,7 @@ class Agent(Sink):
                 wallet_chain_id = enable_wallet_messaging["chain_id"]
 
             try:
-                from vitruvia.wallet_messaging import WalletMessagingClient
+                from cerebra.wallet_messaging import WalletMessagingClient
 
                 self._wallet_messaging_client = WalletMessagingClient(
                     self._identity,

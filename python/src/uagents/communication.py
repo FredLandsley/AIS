@@ -9,14 +9,14 @@ from typing import List, Optional, Tuple, Type, Union
 import aiohttp
 from pydantic import UUID4, ValidationError
 
-from vitruvia.config import DEFAULT_ENVELOPE_TIMEOUT_SECONDS
-from vitruvia.crypto import Identity, is_user_address
-from vitruvia.dispatch import dispatcher
-from vitruvia.envelope import Envelope, EnvelopeHistory, EnvelopeHistoryEntry
-from vitruvia.models import Model
-from vitruvia.resolver import GlobalResolver, Resolver
-from vitruvia.types import DeliveryStatus, JsonStr, MsgStatus
-from vitruvia.utils import get_logger
+from cerebra.config import DEFAULT_ENVELOPE_TIMEOUT_SECONDS
+from cerebra.crypto import Identity, is_user_address
+from cerebra.dispatch import dispatcher
+from cerebra.envelope import Envelope, EnvelopeHistory, EnvelopeHistoryEntry
+from cerebra.models import Model
+from cerebra.resolver import GlobalResolver, Resolver
+from cerebra.types import DeliveryStatus, JsonStr, MsgStatus
+from cerebra.utils import get_logger
 
 LOGGER = get_logger("dispenser", logging.DEBUG)
 
@@ -114,7 +114,7 @@ async def send_exchange_envelope(
     """
     headers = {"content-type": "application/json"}
     if sync:
-        headers["x-vitruvia-connection"] = "sync"
+        headers["x-cerebra-connection"] = "sync"
     errors = []
     for endpoint in endpoints:
         try:

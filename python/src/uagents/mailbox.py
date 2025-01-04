@@ -7,13 +7,13 @@ import aiohttp
 from aiohttp.client_exceptions import ClientConnectorError
 from pydantic import UUID4, BaseModel, StringConstraints, ValidationError
 
-from vitruvia.config import MAILBOX_POLL_INTERVAL_SECONDS, AgentverseConfig
-from vitruvia.crypto import Identity, is_user_address
-from vitruvia.dispatch import dispatcher
-from vitruvia.envelope import Envelope
-from vitruvia.models import Model
-from vitruvia.types import AgentEndpoint
-from vitruvia.utils import get_logger
+from cerebra.config import MAILBOX_POLL_INTERVAL_SECONDS, AgentverseConfig
+from cerebra.crypto import Identity, is_user_address
+from cerebra.dispatch import dispatcher
+from cerebra.envelope import Envelope
+from cerebra.models import Model
+from cerebra.types import AgentEndpoint
+from cerebra.utils import get_logger
 
 logger = get_logger("mailbox")
 

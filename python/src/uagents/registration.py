@@ -12,7 +12,7 @@ from cosmpy.aerial.wallet import LocalWallet
 from cosmpy.crypto.address import Address
 from pydantic import AliasChoices, BaseModel, Field
 
-from vitruvia.config import (
+from cerebra.config import (
     ALMANAC_API_MAX_RETRIES,
     ALMANAC_API_TIMEOUT_SECONDS,
     ALMANAC_API_URL,
@@ -21,15 +21,15 @@ from vitruvia.config import (
     REGISTRATION_FEE,
     REGISTRATION_UPDATE_INTERVAL_SECONDS,
 )
-from vitruvia.crypto import Identity
-from vitruvia.network import (
+from cerebra.crypto import Identity
+from cerebra.network import (
     AlmanacContract,
     AlmanacContractRecord,
     InsufficientFundsError,
     add_testnet_funds,
 )
-from vitruvia.resolver import parse_identifier
-from vitruvia.types import AgentEndpoint, AgentInfo
+from cerebra.resolver import parse_identifier
+from cerebra.types import AgentEndpoint, AgentInfo
 
 
 class VerifiableModel(BaseModel):
@@ -257,7 +257,7 @@ class LedgerBasedRegistrationPolicy(AgentRegistrationPolicy):
         if deployed_version != ALMANAC_CONTRACT_VERSION:
             self._logger.warning(
                 "Mismatch in almanac contract versions: supported (%s), deployed (%s). "
-                "Update vitruvia to the latest version for compatibility.",
+                "Update cerebra to the latest version for compatibility.",
                 ALMANAC_CONTRACT_VERSION,
                 deployed_version,
             )

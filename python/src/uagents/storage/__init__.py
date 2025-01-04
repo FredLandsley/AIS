@@ -5,7 +5,7 @@ from typing import Any, Optional, Tuple
 
 from cosmpy.aerial.wallet import PrivateKey
 
-from vitruvia.crypto import Identity
+from cerebra.crypto import Identity
 
 
 class StorageAPI(ABC):

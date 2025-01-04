@@ -9,7 +9,7 @@ import bech32
 import ecdsa
 from ecdsa.util import sigencode_string_canonize
 
-from vitruvia.config import USER_PREFIX
+from cerebra.config import USER_PREFIX
 
 SHA_LENGTH = 256
 

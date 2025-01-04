@@ -2,11 +2,11 @@
 
 from typing import Optional, Union
 
-from vitruvia.communication import MsgStatus, send_sync_message
-from vitruvia.crypto import generate_user_address
-from vitruvia.envelope import Envelope
-from vitruvia.models import Model
-from vitruvia.resolver import Resolver
+from cerebra.communication import MsgStatus, send_sync_message
+from cerebra.crypto import generate_user_address
+from cerebra.envelope import Envelope
+from cerebra.models import Model
+from cerebra.resolver import Resolver
 
 
 async def query(

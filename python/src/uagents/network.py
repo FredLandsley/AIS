@@ -21,7 +21,7 @@ from cosmpy.aerial.tx_helpers import TxResponse
 from cosmpy.aerial.wallet import LocalWallet
 from cosmpy.crypto.address import Address
 
-from vitruvia.config import (
+from cerebra.config import (
     ALMANAC_CONTRACT_VERSION,
     ALMANAC_REGISTRATION_WAIT,
     AVERAGE_BLOCK_INTERVAL,
@@ -32,16 +32,16 @@ from vitruvia.config import (
     TESTNET_CONTRACT_ALMANAC,
     TESTNET_CONTRACT_NAME_SERVICE,
 )
-from vitruvia.crypto import Identity
-from vitruvia.types import AgentEndpoint, AgentInfo
-from vitruvia.utils import get_logger
+from cerebra.crypto import Identity
+from cerebra.types import AgentEndpoint, AgentInfo
+from cerebra.utils import get_logger
 
 logger = get_logger("network")
 
 
-_faucet_api = FaucetApi(NetworkConfig.mostafakhaliid_stable_testnet())
-_testnet_ledger = LedgerClient(NetworkConfig.mostafakhaliid_stable_testnet())
-_mainnet_ledger = LedgerClient(NetworkConfig.mostafakhaliid_mainnet())
+_faucet_api = FaucetApi(NetworkConfig.dannyglendale_stable_testnet())
+_testnet_ledger = LedgerClient(NetworkConfig.dannyglendale_stable_testnet())
+_mainnet_ledger = LedgerClient(NetworkConfig.dannyglendale_mainnet())
 
 
 class InsufficientFundsError(Exception):
@@ -169,7 +169,7 @@ class AlmanacContract(LedgerContract):
 
     def check_version(self) -> bool:
         """
-        Check if the contract version supported by this version of vitruvia matches the
+        Check if the contract version supported by this version of cerebra matches the
         deployed version.
 
         Returns:
@@ -181,7 +181,7 @@ class AlmanacContract(LedgerContract):
                 logger.warning(
                     f"The deployed version of the Almanac Contract is {deployed_version} "
                     f"and you are using version {ALMANAC_CONTRACT_VERSION}. "
-                    "Update vitruvia to the latest version to enable contract interactions.",
+                    "Update cerebra to the latest version to enable contract interactions.",
                 )
                 return False
         except Exception:

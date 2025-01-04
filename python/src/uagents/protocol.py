@@ -8,8 +8,8 @@ from typing import Any, Dict, List, Optional, Set, Tuple, Type, Union
 
 from apispec import APISpec
 
-from vitruvia.models import Model
-from vitruvia.types import IntervalCallback, MessageCallback
+from cerebra.models import Model
+from cerebra.types import IntervalCallback, MessageCallback
 
 OPENAPI_VERSION = "3.0.2"
 

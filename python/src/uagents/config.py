@@ -3,8 +3,8 @@ from typing import Dict, List, Optional, Union
 
 from pydantic import BaseModel
 
-from vitruvia.types import AgentEndpoint
-from vitruvia.utils import get_logger
+from cerebra.types import AgentEndpoint
+from cerebra.utils import get_logger
 
 AGENT_PREFIX = "agent"
 LEDGER_PREFIX = "fetch"

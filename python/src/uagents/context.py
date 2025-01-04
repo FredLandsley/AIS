@@ -24,27 +24,27 @@ import requests
 from cosmpy.aerial.client import LedgerClient
 from typing_extensions import deprecated
 
-from vitruvia.communication import (
+from cerebra.communication import (
     Dispenser,
     dispatch_local_message,
     dispatch_sync_response_envelope,
 )
-from vitruvia.config import (
+from cerebra.config import (
     ALMANAC_API_URL,
     DEFAULT_ENVELOPE_TIMEOUT_SECONDS,
     DEFAULT_SEARCH_LIMIT,
 )
-from vitruvia.dispatch import dispatcher
-from vitruvia.envelope import Envelope
-from vitruvia.models import ErrorMessage, Model
-from vitruvia.resolver import Resolver, parse_identifier
-from vitruvia.storage import KeyValueStore
-from vitruvia.types import DeliveryStatus, JsonStr, MsgDigest, MsgStatus
-from vitruvia.utils import log
+from cerebra.dispatch import dispatcher
+from cerebra.envelope import Envelope
+from cerebra.models import ErrorMessage, Model
+from cerebra.resolver import Resolver, parse_identifier
+from cerebra.storage import KeyValueStore
+from cerebra.types import DeliveryStatus, JsonStr, MsgDigest, MsgStatus
+from cerebra.utils import log
 
 if TYPE_CHECKING:
-    from vitruvia.agent import AgentRepresentation
-    from vitruvia.protocol import Protocol
+    from cerebra.agent import AgentRepresentation
+    from cerebra.protocol import Protocol
 
 
 ERROR_MESSAGE_DIGEST = Model.build_schema_digest(ErrorMessage)

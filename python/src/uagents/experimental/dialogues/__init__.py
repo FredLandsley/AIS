@@ -6,11 +6,11 @@ from datetime import datetime, timedelta
 from typing import Any, Awaitable, Callable, Dict, List, Optional, Type
 from uuid import UUID
 
-from vitruvia import Context, Model, Protocol
-from vitruvia.context import DeliveryStatus, MsgStatus
-from vitruvia.dispatch import JsonStr
-from vitruvia.models import ErrorMessage
-from vitruvia.storage import KeyValueStore, StorageAPI
+from cerebra import Context, Model, Protocol
+from cerebra.context import DeliveryStatus, MsgStatus
+from cerebra.dispatch import JsonStr
+from cerebra.models import ErrorMessage
+from cerebra.storage import KeyValueStore, StorageAPI
 
 DEFAULT_SESSION_TIMEOUT_IN_SECONDS = 60
 TARGET_UUID_VERSION = 4

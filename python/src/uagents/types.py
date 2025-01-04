@@ -18,10 +18,10 @@ from typing import (
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from vitruvia.models import Model
+from cerebra.models import Model
 
 if TYPE_CHECKING:
-    from vitruvia.context import Context
+    from cerebra.context import Context
 
 JsonStr = str
 

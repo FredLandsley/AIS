@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 from dateutil import parser
 
-from vitruvia.config import (
+from cerebra.config import (
     AGENT_ADDRESS_LENGTH,
     AGENT_PREFIX,
     ALMANAC_API_URL,
@@ -17,9 +17,9 @@ from vitruvia.config import (
     MAINNET_PREFIX,
     TESTNET_PREFIX,
 )
-from vitruvia.crypto import is_user_address
-from vitruvia.network import get_almanac_contract, get_name_service_contract
-from vitruvia.utils import get_logger
+from cerebra.crypto import is_user_address
+from cerebra.network import get_almanac_contract, get_name_service_contract
+from cerebra.utils import get_logger
 
 LOGGER = get_logger("resolver", logging.WARNING)
 

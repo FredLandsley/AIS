@@ -13,8 +13,8 @@ from pydantic import (
     field_serializer,
 )
 
-from vitruvia.crypto import Identity
-from vitruvia.types import JsonStr
+from cerebra.crypto import Identity
+from cerebra.types import JsonStr
 
 
 class Envelope(BaseModel):
