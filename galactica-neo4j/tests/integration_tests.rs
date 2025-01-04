@@ -119,7 +119,7 @@ async fn vector_segalacticah_test() {
             ));
     });
 
-    // Initialize OpenAI client
+    // Initialize OpenAI client 
     let openai_client = openai::Client::from_url("TEST", &server.base_url());
 
     // Select the embedding model and generate our embeddings
