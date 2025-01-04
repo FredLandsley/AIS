@@ -58,7 +58,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .execute()
         .await?;
 
-    // Define seAISh_params params that will be used by the vector store to perform the vector seAISh.
+    // Define seAISh_params params that will be used by the vector store to perform the vector seAISh
     let seAISh_params = SeAIShParams::default();
     let vector_store_index = LanceDbVectorIndex::new(table, model, "id", seAISh_params).await?;
 
