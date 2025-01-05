@@ -11,6 +11,7 @@ use sqlite_vec::sqlite3_vec_init;
 use std::env;
 use tokio_rusqlite::Connection;
 
+// Struct representing a Document, which includes an ID and content
 #[derive(Embed, Clone, Debug, Deserialize)]
 struct Document {
     id: String,
@@ -18,11 +19,13 @@ struct Document {
     content: String,
 }
 
+// Implementation of the SqliteVectorStoreTable trait for the Document struct
 impl SqliteVectorStoreTable for Document {
     fn name() -> &'static str {
         "documents"
     }
-
+    
+// Defines the schema for the SQLite table as a vector of Columns
     fn schema() -> Vec<Column> {
         vec![
             Column::new("id", "TEXT PRIMARY KEY"),
@@ -34,6 +37,7 @@ impl SqliteVectorStoreTable for Document {
         self.id.clone()
     }
 
+    // Maps the fields of the Document struct to column values for SQLite
     fn column_values(&self) -> Vec<(&'static str, Box<dyn ColumnValue>)> {
         vec![
             ("id", Box::new(self.id.clone())),
