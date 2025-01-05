@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-Contributions to this repository are welcome. As a contributor, here are the guidelines we would like you to follow: 
+Contributions to this repository are welcome. As a contributor, here are the guidelines we would like you to follow:  
 
 - [Code of Conduct](#coc)
 - [Question or Problem?](#question)
