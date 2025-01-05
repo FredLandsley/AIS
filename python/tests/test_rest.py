@@ -3,7 +3,7 @@ from unittest.mock import AsyncMock, call, patch
 
 import pytest
 
-from vitruvia import Agent, Bureau, Context, Model
+from cerebra import Agent, Bureau, Context, Model
 
 pytestmark = pytest.mark.asyncio
 
@@ -28,7 +28,7 @@ async def test_rest_get_success():
         return Response(text="Hi there!")
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b""
         await agent._server(
             scope={
@@ -66,7 +66,7 @@ async def test_rest_post_success():
         return Response(text=f"Received: {req.text}")
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b'{"text": "Hello"}'
         await agent._server(
             scope={
@@ -104,7 +104,7 @@ async def test_rest_post_fail_no_body():
         return Response(text=f"Received: {req.text}")
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b""
         await agent._server(
             scope={
@@ -142,7 +142,7 @@ async def test_rest_post_fail_invalid_body():
         return Response(text=f"Received: {req.text}")
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b'{"invalid": "body"}'
         await agent._server(
             scope={
@@ -187,7 +187,7 @@ async def test_rest_post_fail_invalid_response():
         return wrong_response_model
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b'{"text": "Hello"}'
         await agent._server(
             scope={
@@ -218,7 +218,7 @@ async def test_rest_post_fail_invalid_response():
     )
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b'{"text": "Hello"}'
         await agent._server(
             scope={
@@ -256,7 +256,7 @@ async def test_rest_wrong_client():
         return Response(text="Hi there!")
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b""
         await agent._server(
             scope={
@@ -292,7 +292,7 @@ async def test_rest_bureau():
     bureau.add(agent)
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b""
         await bureau._server(
             scope={
@@ -330,7 +330,7 @@ async def test_rest_bureau():
     bureau.add(bob)
 
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b""
         await bureau._server(
             scope={
@@ -354,7 +354,7 @@ async def test_rest_bureau():
             call(
                 {
                     "type": "http.response.body",
-                    "body": b'{"error": "missing header: x-vitruvia-address", "message": "Multiple handlers found for REST endpoint."}',  # noqa: E501
+                    "body": b'{"error": "missing header: x-cerebra-address", "message": "Multiple handlers found for REST endpoint."}',  # noqa: E501
                 }
             ),
         ]
@@ -362,7 +362,7 @@ async def test_rest_bureau():
 
     # adding header should route correctly
     mock_send = AsyncMock()
-    with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+    with patch("cerebra.asgi._read_asgi_body") as mock_receive:
         mock_receive.return_value = b""
         await bureau._server(
             scope={
@@ -370,7 +370,7 @@ async def test_rest_bureau():
                 "method": "GET",
                 "path": "/get-bureau",
                 "client": ("127.0.0.1",),
-                "headers": [(b"x-vitruvia-address", bob.address.encode())],
+                "headers": [(b"x-cerebra-address", bob.address.encode())],
             },
             receive=None,
             send=mock_send,

@@ -1,7 +1,7 @@
 import unittest
 
-from vitruvia import Agent
-from vitruvia.types import AgentEndpoint
+from cerebra import Agent
+from cerebra.types import AgentEndpoint
 
 MAILBOX_ENDPOINT = "https://agentverse.ai/v1/submit"
 PROXY_ENDPOINT = "https://agentverse.ai/v1/proxy/submit"

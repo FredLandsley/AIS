@@ -3,8 +3,8 @@ import unittest
 
 from cosmpy.aerial.wallet import LocalWallet
 
-from vitruvia import Agent, Bureau
-from vitruvia.registration import (
+from cerebra import Agent, Bureau
+from cerebra.registration import (
     AgentEndpoint,
     BatchLedgerRegistrationPolicy,
     DefaultBatchRegistrationPolicy,

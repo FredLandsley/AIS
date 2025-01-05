@@ -6,9 +6,9 @@ from typing import Any, Dict, List
 
 from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
-from vitruvia import Agent
-from vitruvia.crypto import Identity, encode_length_prefixed
-from vitruvia.network import get_name_service_contract
+from cerebra import Agent
+from cerebra.crypto import Identity, encode_length_prefixed
+from cerebra.network import get_name_service_contract
 
 EXPECTED_FUNDS = Coin(amount="8640000000000000", denom="atestfet")
 

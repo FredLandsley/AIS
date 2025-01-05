@@ -2,7 +2,7 @@ import json
 import os
 import unittest
 
-from vitruvia.storage import KeyValueStore
+from cerebra.storage import KeyValueStore
 
 
 class TestStorage(unittest.TestCase):

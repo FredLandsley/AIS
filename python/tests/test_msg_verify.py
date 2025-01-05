@@ -2,8 +2,8 @@ import asyncio
 import hashlib
 import unittest
 
-from vitruvia import Agent
-from vitruvia.crypto import Identity
+from cerebra import Agent
+from cerebra.crypto import Identity
 
 
 def encode(message: str) -> bytes:

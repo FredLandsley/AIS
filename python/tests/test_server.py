@@ -5,11 +5,11 @@ import unittest
 import uuid
 from unittest.mock import AsyncMock, call, patch
 
-from vitruvia import Agent, Model
-from vitruvia.communication import enclose_response
-from vitruvia.config import RESPONSE_TIME_HINT_SECONDS
-from vitruvia.crypto import Identity, generate_user_address
-from vitruvia.envelope import Envelope
+from cerebra import Agent, Model
+from cerebra.communication import enclose_response
+from cerebra.config import RESPONSE_TIME_HINT_SECONDS
+from cerebra.crypto import Identity, generate_user_address
+from cerebra.envelope import Envelope
 
 
 class Message(Model):
@@ -43,7 +43,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.sign(self.bob._identity.sign_digest)
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -81,7 +81,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.encode_payload(message.model_dump_json())
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -119,7 +119,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         )
         env.encode_payload(message.model_dump_json())
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await asyncio.gather(
                 asyncio.create_task(
@@ -130,7 +130,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                             "path": "/submit",
                             "headers": {
                                 b"content-type": b"application/json",
-                                b"x-vitruvia-connection": b"sync",
+                                b"x-cerebra-connection": b"sync",
                             },
                         },
                         receive=None,
@@ -173,7 +173,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.encode_payload(message.model_dump_json())
         env.sign(self.bob._identity.sign_digest)
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await asyncio.gather(
                 asyncio.create_task(
@@ -184,7 +184,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                             "path": "/submit",
                             "headers": {
                                 b"content-type": b"application/json",
-                                b"x-vitruvia-connection": b"sync",
+                                b"x-cerebra-connection": b"sync",
                             },
                         },
                         receive=None,
@@ -230,7 +230,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.sign(self.bob._identity.sign_digest)
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -273,7 +273,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.sign(self.bob._identity.sign_digest)
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -306,7 +306,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
     async def test_message_fail_bad_data(self):
         message = Message(message="hello")
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = message.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -348,7 +348,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.encode_payload(message.model_dump_json())
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -391,7 +391,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.sign(self.agent._identity.sign_digest)
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -434,7 +434,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
         env.sign(self.bob._identity.sign_digest)
 
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = env.model_dump_json().encode()
             await self.agent._server(
                 scope={
@@ -496,7 +496,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
 
     async def test_request_fail_no_contents(self):
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = None
             await self.agent._server(
                 scope={
@@ -528,7 +528,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
 
     async def test_request_fail_invalid_json(self):
         mock_send = AsyncMock()
-        with patch("vitruvia.asgi._read_asgi_body") as mock_receive:
+        with patch("cerebra.asgi._read_asgi_body") as mock_receive:
             mock_receive.return_value = '{"bad", "json"}'.encode()
             await self.agent._server(
                 scope={
@@ -607,7 +607,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                         "type": "http.response.start",
                         "status": 200,
                         "headers": [
-                            [b"x-vitruvia-status", b"indeterminate"],
+                            [b"x-cerebra-status", b"indeterminate"],
                         ],
                     }
                 ),
@@ -621,7 +621,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                 "type": "http",
                 "method": "HEAD",
                 "path": "/submit",
-                "headers": {b"x-vitruvia-address": self.agent.address.encode()},
+                "headers": {b"x-cerebra-address": self.agent.address.encode()},
             },
             receive=None,
             send=mock_send,
@@ -633,9 +633,9 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                         "type": "http.response.start",
                         "status": 200,
                         "headers": [
-                            [b"x-vitruvia-status", b"ready"],
+                            [b"x-cerebra-status", b"ready"],
                             [
-                                b"x-vitruvia-response-time-hint",
+                                b"x-cerebra-response-time-hint",
                                 str(RESPONSE_TIME_HINT_SECONDS).encode(),
                             ],
                         ],
@@ -651,7 +651,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                 "type": "http",
                 "method": "HEAD",
                 "path": "/submit",
-                "headers": {b"x-vitruvia-address": Identity.generate().address.encode()},
+                "headers": {b"x-cerebra-address": Identity.generate().address.encode()},
             },
             receive=None,
             send=mock_send,
@@ -663,7 +663,7 @@ class TestServer(unittest.IsolatedAsyncioTestCase):
                         "type": "http.response.start",
                         "status": 200,
                         "headers": [
-                            [b"x-vitruvia-status", b"not-ready"],
+                            [b"x-cerebra-status", b"not-ready"],
                         ],
                     }
                 ),

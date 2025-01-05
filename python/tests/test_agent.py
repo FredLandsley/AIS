@@ -2,9 +2,9 @@
 import unittest
 from typing import Callable
 
-from vitruvia import Agent, Context, Model
-from vitruvia.resolver import GlobalResolver
-from vitruvia.types import RestHandlerDetails
+from cerebra import Agent, Context, Model
+from cerebra.resolver import GlobalResolver
+from cerebra.types import RestHandlerDetails
 
 
 class Message(Model):

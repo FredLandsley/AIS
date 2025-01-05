@@ -5,17 +5,17 @@ from typing import Dict, Optional
 
 from aioresponses import aioresponses
 
-from vitruvia import Agent
-from vitruvia.context import (
+from cerebra import Agent
+from cerebra.context import (
     DeliveryStatus,
     ExternalContext,
     Model,
     MsgDigest,
     MsgStatus,
 )
-from vitruvia.crypto import Identity
-from vitruvia.dispatch import dispatcher
-from vitruvia.resolver import RulesBasedResolver
+from cerebra.crypto import Identity
+from cerebra.dispatch import dispatcher
+from cerebra.resolver import RulesBasedResolver
 
 
 class Incoming(Model):

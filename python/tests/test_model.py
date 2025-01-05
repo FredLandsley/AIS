@@ -2,7 +2,7 @@ import unittest
 from enum import Enum
 from typing import List, Literal, Optional
 
-from vitruvia import Model
+from cerebra import Model
 
 
 class TestModelDigest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestModelDigest(unittest.TestCase):
         Test the digest calculation of nested models.
         """
 
-        class vitruviaResponseType(Enum):
+        class cerebraResponseType(Enum):
             FINAL = "final"
             ERROR = "error"
             VALIDATION_ERROR = "validation_error"
@@ -43,9 +43,9 @@ class TestModelDigest(unittest.TestCase):
             key: str
             value: str
 
-        class vitruviaResponse(Model):
+        class cerebraResponse(Model):
             version: Literal["v1"] = "v1"
-            type: vitruviaResponseType
+            type: cerebraResponseType
             request_id: Optional[str]
             agent_address: Optional[str]
             message: Optional[str]
@@ -57,7 +57,7 @@ class TestModelDigest(unittest.TestCase):
             "model:cf0d1367c5f9ed8a269de559b2fbca4b653693bb8315d47eda146946a168200e"
         )
 
-        result = Model.build_schema_digest(vitruviaResponse)
+        result = Model.build_schema_digest(cerebraResponse)
 
         self.assertEqual(result, target_digest, "Digest mismatch")
 

@@ -4,13 +4,13 @@ import pytest
 from aiohttp import ClientResponseError
 from aioresponses import aioresponses
 
-from vitruvia.crypto import Identity
-from vitruvia.registration import (
+from cerebra.crypto import Identity
+from cerebra.registration import (
     AgentRegistrationAttestation,
     AlmanacApiRegistrationPolicy,
     coerce_metadata_to_str,
 )
-from vitruvia.types import AgentEndpoint
+from cerebra.types import AgentEndpoint
 
 TEST_PROTOCOLS = ["foo", "bar", "baz"]
 TEST_ENDPOINTS = [

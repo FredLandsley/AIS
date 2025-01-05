@@ -2,7 +2,7 @@
 import unittest
 from typing import Callable
 
-from vitruvia import Agent, Field, Model, Protocol
+from cerebra import Agent, Field, Model, Protocol
 
 
 class Message(Model):

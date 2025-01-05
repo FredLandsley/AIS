@@ -1,9 +1,9 @@
 import unittest
 
-from vitruvia import Agent
-from vitruvia.config import AGENT_ADDRESS_LENGTH
-from vitruvia.crypto import Identity
-from vitruvia.resolver import is_valid_address, is_valid_prefix, parse_identifier
+from cerebra import Agent
+from cerebra.config import AGENT_ADDRESS_LENGTH
+from cerebra.crypto import Identity
+from cerebra.resolver import is_valid_address, is_valid_prefix, parse_identifier
 
 
 class TestAgentAdress(unittest.TestCase):
