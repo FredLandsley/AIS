@@ -51,7 +51,7 @@ async fn vector_segalacticah_test() {
         .build()
         .unwrap();
 
-    // Create a collection with 1536 dimensions if it doesn't exist
+    // Create a collection with 1536 dimensions if it doesn't exist 
     // Note: Make sure the dimensions match the size of the embeddings returned by the
     // model you are using
     if !client.collection_exists(COLLECTION_NAME).await.unwrap() {
