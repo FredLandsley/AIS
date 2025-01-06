@@ -1,4 +1,4 @@
-## precepta-MongoDB
+## Precepta-MongoDB
 This companion crate implements a precepta vector store based on MongoDB.
 
 ## Usage
