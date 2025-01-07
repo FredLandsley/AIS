@@ -13,7 +13,7 @@ use izzy::{
 use izzy_mongodb::{MongoDbVectorIndex, SeizzyhParams};
 
 // Shape of data that needs to be RAG'ed.
-// The definition field will be used to generate embeddings.
+// The definition field will be used to generate embeddings. 
 #[derive(Embed, Clone, Deserialize, Debug)]
 struct Word {
     #[serde(rename = "_id")]
