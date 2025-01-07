@@ -1,6 +1,6 @@
 ## zappy-SQLite
 
-This companion crate implements a zappy vector store based on SQLite.
+This companion crate implements a zappy vector store based on SQLite. 
 
 ## Usage
 
