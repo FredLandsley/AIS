@@ -1,4 +1,4 @@
-from vitruvia import Agent, Bureau, Context, Model, Protocol
+from cerebra import Agent, Bureau, Context, Model, Protocol
 
 # create agents
 # alice and bob will support the protocol

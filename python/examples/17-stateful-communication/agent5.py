@@ -12,7 +12,7 @@ from dialogues.agentverse_chitchat import (
     InitiateChitChatDialogue,
 )
 
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 HOSTED_AGENT_ADDRESS = "<your hosted agent address here>"
 

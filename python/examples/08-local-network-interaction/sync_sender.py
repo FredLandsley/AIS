@@ -1,7 +1,7 @@
 import asyncio
 
-from vitruvia import Model
-from vitruvia.communication import send_sync_message
+from cerebra import Model
+from cerebra.communication import send_sync_message
 
 RECIPIENT_ADDRESS = (
     "test-agent://agent1q2kxet3vh0scsf0sm7y2erzz33cve6tv5uk63x64upw5g68kr0chkv7hw50"

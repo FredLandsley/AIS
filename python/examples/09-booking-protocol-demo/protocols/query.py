@@ -1,6 +1,6 @@
 from typing import List
 
-from vitruvia import Context, Model, Protocol
+from cerebra import Context, Model, Protocol
 
 
 class TableStatus(Model):

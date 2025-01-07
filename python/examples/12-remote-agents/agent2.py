@@ -2,7 +2,7 @@
 Counterpart for the remote connection example in agent1.py.
 """
 
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 
 class Message(Model):

@@ -1,7 +1,7 @@
 from cosmpy.aerial.wallet import LocalWallet
 
-from vitruvia import Agent, Context, Model
-from vitruvia.network import get_faucet, get_name_service_contract, logger
+from cerebra import Agent, Context, Model
+from cerebra.network import get_faucet, get_name_service_contract, logger
 
 # NOTE: Run agent1.py before running agent2.py
 

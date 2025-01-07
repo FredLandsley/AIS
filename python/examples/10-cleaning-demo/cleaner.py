@@ -5,7 +5,7 @@ from protocols.cleaning.models import Availability, Provider, Service, ServiceTy
 from pytz import utc
 from tortoise import Tortoise
 
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 cleaner = Agent(
     name="cleaner",

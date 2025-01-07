@@ -9,10 +9,10 @@ the messages that are expected to be exchanged.
 from typing import Optional, Type
 from warnings import warn
 
-from vitruvia import Model
-from vitruvia.context import Context
-from vitruvia.experimental.dialogues import Dialogue, Edge, Node
-from vitruvia.storage import StorageAPI
+from cerebra import Model
+from cerebra.context import Context
+from cerebra.experimental.dialogues import Dialogue, Edge, Node
+from cerebra.storage import StorageAPI
 
 
 # define dialogue messages; each transition needs a separate message

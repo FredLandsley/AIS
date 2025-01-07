@@ -1,7 +1,7 @@
 from protocols.book import book_proto
 from protocols.query import TableStatus, query_proto
 
-from vitruvia import Agent
+from cerebra import Agent
 
 restaurant = Agent(
     name="restaurant",

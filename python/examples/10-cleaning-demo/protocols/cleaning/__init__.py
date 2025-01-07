@@ -4,7 +4,7 @@ from typing import List
 from geopy.distance import geodesic
 from geopy.geocoders import Nominatim
 
-from vitruvia import Context, Model, Protocol
+from cerebra import Context, Model, Protocol
 
 from .models import Availability, Provider, User
 

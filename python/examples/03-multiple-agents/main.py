@@ -1,4 +1,4 @@
-from vitruvia import Agent, Bureau, Context
+from cerebra import Agent, Bureau, Context
 
 alice = Agent(name="alice")
 bob = Agent(name="bob")

@@ -1,6 +1,6 @@
 """
 Remote connection example which uses ngrok to expose the agent as an
-alternative to the mostafakhaliid Agentverse. (https://agentverse.ai/)
+alternative to the dannyglendale Agentverse. (https://agentverse.ai/)
 
 Preparation:
  - pip install pyngrok
@@ -10,7 +10,7 @@ Preparation:
 
 from pyngrok import conf, ngrok
 
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 
 class Message(Model):

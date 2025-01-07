@@ -8,9 +8,9 @@ the messages that are expected to be exchanged.
 
 from typing import Optional, Type
 
-from vitruvia import Model
-from vitruvia.experimental.dialogues import Dialogue, Edge, Node
-from vitruvia.storage import StorageAPI
+from cerebra import Model
+from cerebra.experimental.dialogues import Dialogue, Edge, Node
+from cerebra.storage import StorageAPI
 
 # Node definition for the dialogue states
 default_state = Node(

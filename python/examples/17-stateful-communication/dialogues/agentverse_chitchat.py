@@ -6,8 +6,8 @@ See python/examples/17-stateful-communication/agent5.py for a usage example.
 
 from typing import Type
 
-from vitruvia import Model
-from vitruvia.experimental.dialogues import Dialogue, Edge, Node
+from cerebra import Model
+from cerebra.experimental.dialogues import Dialogue, Edge, Node
 
 
 # This is the definition of the dialogue messages that can be exchanged

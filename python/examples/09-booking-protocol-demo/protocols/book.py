@@ -1,4 +1,4 @@
-from vitruvia import Context, Model, Protocol
+from cerebra import Context, Model, Protocol
 
 from .query import TableStatus
 

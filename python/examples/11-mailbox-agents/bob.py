@@ -1,4 +1,4 @@
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 
 class Message(Model):

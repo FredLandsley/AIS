@@ -9,7 +9,7 @@ from protocols.cleaning import (
 from protocols.cleaning.models import ServiceType
 from pytz import utc
 
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 CLEANER_ADDRESS = (
     "test-agent://agent1qdfdx6952trs028fxyug7elgcktam9f896ays6u9art4uaf75hwy2j9m87w"

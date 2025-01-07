@@ -4,7 +4,7 @@ from protocols.query import (
     QueryTableResponse,
 )
 
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 RESTAURANT_ADDRESS = (
     "test-agent://agent1qfpqn9jhvp9cg33f27q6jvmuv52dgyg9rfuu37rmxrletlqe7lewwjed5gy"

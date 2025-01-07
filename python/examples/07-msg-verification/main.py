@@ -1,7 +1,7 @@
 import hashlib
 
-from vitruvia import Agent, Bureau, Context, Model
-from vitruvia.crypto import Identity
+from cerebra import Agent, Bureau, Context, Model
+from cerebra.crypto import Identity
 
 
 class Message(Model):

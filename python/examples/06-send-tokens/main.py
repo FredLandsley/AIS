@@ -1,6 +1,6 @@
-from vitruvia import Agent, Bureau, Context, Model
-from vitruvia.network import wait_for_tx_to_complete
-from vitruvia.setup import fund_agent_if_low
+from cerebra import Agent, Bureau, Context, Model
+from cerebra.network import wait_for_tx_to_complete
+from cerebra.setup import fund_agent_if_low
 
 
 class PaymentRequest(Model):

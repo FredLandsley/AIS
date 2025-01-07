@@ -1,12 +1,12 @@
 ## Example of how to add custom REST endpoints to your agent
 
 By using one of the two new decorators: `on_rest_get()` and `on_rest_post()` you are able to define custom endpoints that your agent can act upon.
-Please note that this feature is only available at the "agent-level" meaning that you cannot add rest endpoints to vitruvia `Protocols`.
+Please note that this feature is only available at the "agent-level" meaning that you cannot add rest endpoints to cerebra `Protocols`.
 
 The usage is similar to a message handler in that you define:
 
 - a custom endpoint in string format, e.g. `"/my_rest_endpoint"`,
-- a Request Model (inheriting from vitruvia.models) for `POST` endpoints, and
+- a Request Model (inheriting from cerebra.models) for `POST` endpoints, and
 - a Response Model for `GET` endpoints
 
 The difference to a message handler is that you actually have to invoke `return` for the value to be returned to the REST client. The format can either be `Dict[str, Any]` or the `Model` itself but either way the output will be validated against the predefined response model.

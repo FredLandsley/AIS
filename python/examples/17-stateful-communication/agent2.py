@@ -4,7 +4,7 @@ from asyncio import sleep
 
 from dialogues.chitchat import ChitChatDialogue
 
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 CHIT_AGENT_ADDRESS = "agent1qvhlqy2a4lk9gge8ug7l65a6k07wc92hh2d5jhwtat0zakrtg08njmfn00j"
 

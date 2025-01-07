@@ -1,6 +1,6 @@
 import asyncio
 
-from vitruvia import Agent, Bureau, Context
+from cerebra import Agent, Bureau, Context
 
 loop = asyncio.get_event_loop()
 

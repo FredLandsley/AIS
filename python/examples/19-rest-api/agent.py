@@ -1,7 +1,7 @@
 import time
 from typing import Any, Dict
 
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 
 class Request(Model):

@@ -1,4 +1,4 @@
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 agent = Agent(name="alice")
 

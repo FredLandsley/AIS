@@ -2,9 +2,9 @@ import json
 
 from fastapi import FastAPI, Request
 
-from vitruvia import Model
-from vitruvia.envelope import Envelope
-from vitruvia.query import query
+from cerebra import Model
+from cerebra.envelope import Envelope
+from cerebra.query import query
 
 AGENT_ADDRESS = "address_of_your_agent_to_be_queried_here"
 

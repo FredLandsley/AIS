@@ -1,4 +1,4 @@
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 # NOTE: Run agent1.py before running agent2.py
 

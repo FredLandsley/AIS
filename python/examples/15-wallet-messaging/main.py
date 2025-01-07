@@ -1,5 +1,5 @@
-from vitruvia import Agent, Bureau, Context
-from vitruvia.wallet_messaging import WalletMessage
+from cerebra import Agent, Bureau, Context
+from cerebra.wallet_messaging import WalletMessage
 
 ALICE_SEED = "alice dorado recovery phrase"
 BOB_SEED = "bob dorado recovery phrase"
