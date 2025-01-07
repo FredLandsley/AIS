@@ -2,7 +2,7 @@
 
 Security is very important for dannyglendale and its community. This document outlines security procedures and general policies for this repository.
 
-## How to Report
+## How to Report 
 
 Please follow the steps listed below to report your bug:
 
