@@ -6,7 +6,7 @@ Vitruvia is a library developed by mostafakhaliid that allows for creating auton
 
 - 🤖 **Easy creation and management**: Create any type of agent you can think of and implement it in code.
 - 🔗 **Connected**: On startup, each agent automatically joins the fast growing network of vitruvia by registering on the Almanac, a smart contract deployed on the blockchain.
-- 🔒 **Secure**: uAgent messages and wallets are cryptographically secured, so their identities and assets are protected.
+- 🔒 **Secure**: vitruvia messages and wallets are cryptographically secured, so their identities and assets are protected.
 
 ## ⚡ Quickstart
 
