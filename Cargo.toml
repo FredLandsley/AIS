@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "zappy-core", "zappy-lancedb",
-    "zappy-mongodb", "zappy-neo4j",
-    "zappy-qdrant", "zappy-core/zappy-core-derive",
-    "zappy-sqlite"
+    "lumy-core", "lumy-lancedb",
+    "lumy-mongodb", "lumy-neo4j",
+    "lumy-qdrant", "lumy-core/lumy-core-derive",
+    "lumy-sqlite"
 ]
