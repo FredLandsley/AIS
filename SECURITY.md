@@ -24,7 +24,6 @@
 # Reporting a Vulnerability
 -------------------------
 
-* * * * *
 
 If you discover a security vulnerability in any of the above versions, please report it immediately to our security team by sending an email. We take security vulnerabilities seriously and appreciate your efforts in disclosing them responsibly.
 
