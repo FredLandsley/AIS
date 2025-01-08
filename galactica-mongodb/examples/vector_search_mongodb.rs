@@ -100,6 +100,5 @@ async fn main() -> Result<(), anyhow::Error> {
         .collect::<Vec<_>>();
 
     println!("ID results: {:?}", id_results);
-
     Ok(())
 }
