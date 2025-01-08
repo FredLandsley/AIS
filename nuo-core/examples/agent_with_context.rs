@@ -5,7 +5,7 @@ use nuo::{agent::AgentBuilder, completion::Prompt, providers::cohere};
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
     // Create OpenAI and Cohere clients
-    // let openai_client = openai::Client::new(&env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not set"));
+    // let openai_client = openai::Client::new(&env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not set")); 
     let cohere_client =
         cohere::Client::new(&env::var("COHERE_API_KEY").expect("COHERE_API_KEY not set"));
 
