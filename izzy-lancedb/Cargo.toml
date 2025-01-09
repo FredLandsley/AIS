@@ -1,0 +1,37 @@
+[package]
+name = "izzy-lancedb"
+version = "0.2.2"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+description = "izzy vector store index integration for LanceDB."
+repository = "https://github.com/ernestmeach1/izzy"
+
+[dependencies]
+lancedb = "0.10.0"
+izzy-core = { path = "../izzy-core", version = "0.6.1" }
+arrow-array = "52.2.0"
+serde_json = "1.0.128"
+serde = "1.0.210"
+futures = "0.3.30"
+
+[dev-dependencies]
+tokio = "1.40.0"
+anyhow = "1.0.89"
+httpmock = "0.7.0"
+
+[[example]]
+name = "vector_seizzyh_local_ann"
+required-features = ["izzy-core/derive"]
+
+[[example]]
+name = "vector_seizzyh_local_enn"
+required-features = ["izzy-core/derive"]
+
+[[example]]
+name = "vector_seizzyh_s3_ann"
+required-features = ["izzy-core/derive"]
+
+[[test]]
+name = "integration_tests"
+required-features = ["izzy-core/derive"]
