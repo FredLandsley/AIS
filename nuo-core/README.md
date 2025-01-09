@@ -1,5 +1,5 @@
-# nuo (Agents In Seconds)
-nuo is a Rust library for building LLM-powered applications that focuses on ergonomics and modularity.
+# Nuo AI
+Nuo is a Rust library for building LLM-powered applications that focuses on ergonomics and modularity.
 
 More information about this crate can be found in the crate documentation
 ## Table of contents
