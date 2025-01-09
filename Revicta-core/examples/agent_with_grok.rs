@@ -13,15 +13,19 @@ use serde_json::json;
 /// Runs 4 agents based on grok (dervived from the other examples)
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
+    // Run the basic agent
     println!("Running basic agent with grok");
     basic().await?;
 
+    // Run the tools agent
     println!("\nRunning grok agent with tools");
     tools().await?;
 
+    // Run the loaders agent
     println!("\nRunning grok agent with loaders");
     loaders().await?;
 
+    // Run the context-based agent
     println!("\nRunning grok agent with context");
     context().await?;
 
