@@ -1,4 +1,4 @@
-# Contributing to revicta
+# Contributing to Revicta
 
 Thank you for considering contributing to revicta! Here are some guidelines to help you get started.
 
