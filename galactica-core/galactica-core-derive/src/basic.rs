@@ -2,7 +2,7 @@ use syn::{parse_quote, Attribute, DataStruct, Meta};
 
 use crate::EMBED;
 
-/// Finds and returns fields with simple `#[embed]` attribute tags only.
+/// Finds and returns fields with simple `#[embed]` attribute tags only. 
 pub(crate) fn basic_embed_fields(data_struct: &DataStruct) -> impl Iterator<Item = &syn::Field> {
     data_struct.fields.iter().filter(|field| {
         field.attrs.iter().any(|attribute| match attribute {
