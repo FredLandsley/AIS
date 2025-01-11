@@ -1,5 +1,5 @@
 import requests
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 
 # Define the PDF Summarization Request model
@@ -60,7 +60,7 @@ def delete_pdf(doc_id, ctx):
 
 # Handler for PDF Summarization requests
 @pdf_summarization_protocol.on_message(
-    model=PDFSummarizationRequest, replies=vitruviaResponse
+    model=PDFSummarizationRequest, replies=cerebraResponse
 )
 async def on_message(ctx: Context, sender: str, msg: PDFSummarizationRequest):
     ctx.logger.info(f"Received PDF summarization request from {sender}.")
@@ -91,9 +91,9 @@ async def on_message(ctx: Context, sender: str, msg: PDFSummarizationRequest):
         # Send the summary response
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=f"{summary.get('content')}",
-                type=vitruviaResponseType.FINAL,  # Assuming FINAL indicates a successful response
+                type=cerebraResponseType.FINAL,  # Assuming FINAL indicates a successful response
             ),
         )
 
@@ -101,9 +101,9 @@ async def on_message(ctx: Context, sender: str, msg: PDFSummarizationRequest):
         ctx.logger.error(f"Request failed: {req_exc}")
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=f"Request error: {req_exc}",
-                type=vitruviaResponseType.ERROR,  # Assuming ERROR indicates an error response
+                type=cerebraResponseType.ERROR,  # Assuming ERROR indicates an error response
             ),
         )
     except Exception as exc:
@@ -111,9 +111,9 @@ async def on_message(ctx: Context, sender: str, msg: PDFSummarizationRequest):
         ctx.logger.error(f"An error occurred: {exc}")
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=f"Error: {exc}",
-                type=vitruviaResponseType.ERROR,  # Assuming ERROR indicates an error response
+                type=cerebraResponseType.ERROR,  # Assuming ERROR indicates an error response
             ),
         )
 

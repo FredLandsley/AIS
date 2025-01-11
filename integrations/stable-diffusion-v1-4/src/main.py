@@ -1,4 +1,4 @@
-from vitruvia import Bureau
+from cerebra import Bureau
 
 from agents.stable_diffusion_agent import agent
 from agents.stable_diffusion_user import user

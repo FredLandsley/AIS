@@ -3,9 +3,9 @@ import requests
 import spotipy
 import os
 from spotipy.oauth2 import SpotifyClientCredentials
-from vitruvia import Agent, Model, Context, Protocol
-from ai_engine import vitruviaResponse, vitruviaResponseType
-from vitruvia.setup import fund_agent_if_low
+from cerebra import Agent, Model, Context, Protocol
+from ai_engine import cerebraResponse, cerebraResponseType
+from cerebra.setup import fund_agent_if_low
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -45,7 +45,7 @@ async def search_song(keyword):
 # Define the protocol
 song_search_protocol = Protocol('Song Search Protocol')
 
-@song_search_protocol.on_message(model=SongRequest, replies={vitruviaResponse})
+@song_search_protocol.on_message(model=SongRequest, replies={cerebraResponse})
 async def handle_song_request(ctx: Context, sender: str, msg: SongRequest):
     ctx.logger.info(f'User has requested to search songs for the keyword: {msg.keyword}')
     songs = await search_song(msg.keyword)
@@ -62,9 +62,9 @@ async def handle_song_request(ctx: Context, sender: str, msg: SongRequest):
                 f"   Spotify URL: <a href='{spotify_url}'>Listen on Spotify</a><br><br>\n"
             )
             response_message += song_info
-        await ctx.send(sender, vitruviaResponse(message=response_message, type=vitruviaResponseType.FINAL))
+        await ctx.send(sender, cerebraResponse(message=response_message, type=cerebraResponseType.FINAL))
     else:
-        await ctx.send(sender, vitruviaResponse(message="No songs found.", type=vitruviaResponseType.FINAL))
+        await ctx.send(sender, cerebraResponse(message="No songs found.", type=cerebraResponseType.FINAL))
 
 agent.include(song_search_protocol, publish_manifest=True)
 

@@ -1,6 +1,6 @@
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.t5_base import TranslationRequest, TranslationResponse, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os
 import requests
 import base64

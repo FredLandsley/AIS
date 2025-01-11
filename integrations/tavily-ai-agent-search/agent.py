@@ -1,5 +1,5 @@
 import requests
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 # Define the Search Request model
 class SearchRequest(Model):
@@ -40,7 +40,7 @@ def format_results(results):
         formatted_string += f"Title: {result['title']}\nURL: {result['url']}\nContent: {result['content']}\n\n"
     return formatted_string.strip()
 
-@tavily_search_protocol.on_message(model=SearchRequest, replies=vitruviaResponse)
+@tavily_search_protocol.on_message(model=SearchRequest, replies=cerebraResponse)
 async def on_search_request(ctx: Context, sender: str, msg: SearchRequest):
     ctx.logger.info(f"Received search request from {sender} with query: {msg.query}")
 
@@ -54,9 +54,9 @@ async def on_search_request(ctx: Context, sender: str, msg: SearchRequest):
         formatted_string = format_results(search_results)
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=f"{formatted_string}",  # You may format this as needed
-                type=vitruviaResponseType.FINAL  # Assuming FINAL indicates a successful response
+                type=cerebraResponseType.FINAL  # Assuming FINAL indicates a successful response
             )
         )
 
@@ -64,9 +64,9 @@ async def on_search_request(ctx: Context, sender: str, msg: SearchRequest):
         ctx.logger.error(f"An error occurred: {exc}")
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=f"Error: {exc}",
-                type=vitruviaResponseType.ERROR  # Assuming ERROR indicates an error response
+                type=cerebraResponseType.ERROR  # Assuming ERROR indicates an error response
             )
         )
 

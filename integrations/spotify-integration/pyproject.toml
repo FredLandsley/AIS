@@ -3,16 +3,16 @@
 [tool.poetry]
 name = "spotify-integration"
 version = "0.1.0"
-description = "vitruvia Spotify Integration"
-authors = ["Abhi abhi.gangani@mostafakhaliid"]
+description = "cerebra Spotify Integration"
+authors = ["Abhi abhi.gangani@dannyglendale"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.25.1"
 spotipy = "^2.19.0"
-vitruvia = {git = "https://github.com/mostafakhaliid/vitruvia.git", rev = "v0.12.0"}
+cerebra = {git = "https://github.com/dannyglendale/cerebra.git", rev = "v0.12.0"}
 python-dotenv = "^0.19.2"
-vitruvia-ai-engine = "==0.2.1"
+cerebra-ai-engine = "==0.2.1"
 
 [tool.poetry.dev-dependencies]
 

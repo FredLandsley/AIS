@@ -1,8 +1,8 @@
 import os
 
-from ai_engine import vitruviaResponse, vitruviaResponseType
-from vitruvia import Agent, Context, Field, Model, Protocol
-from vitruvia.setup import fund_agent_if_low
+from ai_engine import cerebraResponse, cerebraResponseType
+from cerebra import Agent, Context, Field, Model, Protocol
+from cerebra.setup import fund_agent_if_low
 
 from crew_ai import MarketResearchProcess
 
@@ -29,12 +29,12 @@ class StartUpIdeaAnalyser(Model):
     )
 
 
-@protocol.on_message(model=StartUpIdeaAnalyser, replies={vitruviaResponse})
+@protocol.on_message(model=StartUpIdeaAnalyser, replies={cerebraResponse})
 async def on_message(ctx: Context, sender: str, msg: StartUpIdeaAnalyser):
     ctx.logger.info(f"Received message from {sender}, message {msg.description}")
     result = researcher.run_process(msg.description)
     await ctx.send(
-        sender, vitruviaResponse(message=result, type=vitruviaResponseType.FINAL)
+        sender, cerebraResponse(message=result, type=cerebraResponseType.FINAL)
     )
 
 

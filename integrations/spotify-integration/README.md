@@ -1,7 +1,7 @@
-# vitruvia Spotify Integration
+# cerebra Spotify Integration
 
 ## Overview
-This integration allows users to search for songs on Spotify using keywords. It leverages the Spotify API to fetch song details. The integration is designed to run as an local vitruvia on the Agentverse platform and can be interacted using deltaV, providing seamless song search functionality through a conversational interface.
+This integration allows users to search for songs on Spotify using keywords. It leverages the Spotify API to fetch song details. The integration is designed to run as an local cerebra on the Agentverse platform and can be interacted using deltaV, providing seamless song search functionality through a conversational interface.
 
 ## Steps to Use This Integration on DeltaV
 
@@ -9,8 +9,8 @@ This integration allows users to search for songs on Spotify using keywords. It 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/mostafakhaliid/vitruvia.git
-   cd vitruvia/integrations/spotify-integration
+   git clone https://github.com/dannyglendale/cerebra.git
+   cd cerebra/integrations/spotify-integration
    ```
 
 2. **Create and activate a virtual environment:**
@@ -50,7 +50,7 @@ Execute the script to get the agent's address and create a mailbox:
     python3 song_agent.py
     ```
 
-Get the agent mailbox key from [Local Agent ↗️](https://agentverse.ai/agents/local) and for more reference please visit [Mailbox Guide ↗️](https://mostafakhaliid/docs/guides/agents/intermediate/mailbox#agent-mailboxes)
+Get the agent mailbox key from [Local Agent ↗️](https://agentverse.ai/agents/local) and for more reference please visit [Mailbox Guide ↗️](https://dannyglendale/docs/guides/agents/intermediate/mailbox#agent-mailboxes)
 
 ### 3. Set Up the Function in AgentVerse
 

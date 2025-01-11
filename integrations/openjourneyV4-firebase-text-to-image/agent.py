@@ -1,7 +1,7 @@
 
 import requests
 from pydantic import Field
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/prompthero/openjourney-v4"
 headers = {"Authorization": f"Bearer {HUGGING_FACE_TOKEN}"}
@@ -53,7 +53,7 @@ def query(payload):
 
 hugging_face_protocol = Protocol("Text to Image")
 
-@hugging_face_protocol.on_message(model=TextToImage, replies=vitruviaResponse)
+@hugging_face_protocol.on_message(model=TextToImage, replies=cerebraResponse)
 async def on_message(ctx: Context, sender: str, msg: TextToImage):
     """
     Handles incoming messages for converting text to an image.
@@ -72,7 +72,7 @@ async def on_message(ctx: Context, sender: str, msg: TextToImage):
     if image_data:
         url = upload_to_firebase_storage(image_data, "images")
         seg = f"Here's the image url\n <a href={url}>{url}</a>"
-        await ctx.send(sender, vitruviaResponse(message=seg, type=vitruviaResponseType.FINAL))
-    await ctx.send(sender, vitruviaResponse(message="No Image Found !", type=vitruviaResponseType.FINAL))
+        await ctx.send(sender, cerebraResponse(message=seg, type=cerebraResponseType.FINAL))
+    await ctx.send(sender, cerebraResponse(message="No Image Found !", type=cerebraResponseType.FINAL))
 
 agent.include(hugging_face_protocol)

@@ -1,11 +1,11 @@
 # Import necessary agent-related modules
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 
 # Import basic communication messages
 from messages.basic import SDResponse, SDRequest, Error
 
 # Import utility function for managing agent funds
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 
 # IMAGE_DESC will contain a brief description of the image that needs to be identified by AI
 IMAGE_DESC = "Cats playing soccer"

@@ -1,6 +1,6 @@
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.t5_base import TranslationRequest, TranslationResponse, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import base64
 import os
 
@@ -50,7 +50,7 @@ async def handle_data(ctx: Context, sender: str, response: TranslationResponse):
 
 @t5_base_user.on_message(model=Error)
 async def handle_error(ctx: Context, sender: str, error: Error):
-    ctx.logger.info(f"Got error from vitruvia: {error}")
+    ctx.logger.info(f"Got error from cerebra: {error}")
 
 # publish_manifest will make the protocol details available on agentverse.
 user.include(t5_base_user, publish_manifest=True)

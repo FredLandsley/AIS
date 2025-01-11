@@ -1,4 +1,4 @@
-from vitruvia import Bureau
+from cerebra import Bureau
 
 from agents.t5_base_agent import agent
 

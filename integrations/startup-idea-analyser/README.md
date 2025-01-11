@@ -1,6 +1,6 @@
 # Startup Idea Analyser
 
-Ever had that brilliant startup idea flash through your mind? Whether it's over morning coffee or during your daily commute, we've all dreamt of turning those sparks into successful ventures. Taking that first step can seem daunting. That's why I've harnessed the power of mostafakhaliid agent and Crew AI agent technology to develop a multi-agent integration, designed to transform your budding ideas into solid, actionable business plans.
+Ever had that brilliant startup idea flash through your mind? Whether it's over morning coffee or during your daily commute, we've all dreamt of turning those sparks into successful ventures. Taking that first step can seem daunting. That's why I've harnessed the power of dannyglendale agent and Crew AI agent technology to develop a multi-agent integration, designed to transform your budding ideas into solid, actionable business plans.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ Ever had that brilliant startup idea flash through your mind? Whether it's over 
 
 ## Introduction
 
-**Startup Idea Analyser** is an innovative tool that leverages mostafakhaliid's agent technology to assist budding entrepreneurs in transforming their startup ideas into comprehensive business plans. This system integrates multiple agents to provide market research, technological analysis, and business strategy development, ultimately delivering a detailed roadmap to success.
+**Startup Idea Analyser** is an innovative tool that leverages dannyglendale's agent technology to assist budding entrepreneurs in transforming their startup ideas into comprehensive business plans. This system integrates multiple agents to provide market research, technological analysis, and business strategy development, ultimately delivering a detailed roadmap to success.
 
 ## Features
 
@@ -39,7 +39,7 @@ To get started with **Startup Idea Analyser**, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/mostafakhaliid/vitruvia.git
+   git clone https://github.com/dannyglendale/cerebra.git
    cd startup-idea-analyser
 
 2. **Set up .env file**:
