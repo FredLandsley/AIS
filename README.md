@@ -1,4 +1,4 @@
-<h1>yani AI</h1> 
+<h1>Yani AI</h1> 
 
 ✨ If you would like to help spread the word about yani, please consider starring the repo!
 
@@ -79,5 +79,3 @@ Vector stores are available as separate companion-crates:
 <br>
 <br>
 </p>
-
-
