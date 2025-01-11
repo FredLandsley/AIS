@@ -1,4 +1,4 @@
-## zelly-MongoDB
+## Zelly-MongoDB
 This companion crate implements a zelly vector store based on MongoDB.
 
 ## Usage
