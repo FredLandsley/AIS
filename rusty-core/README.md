@@ -1,7 +1,7 @@
 # rusty
 rusty is a Rust library for building LLM-powered applications that focuses on ergonomics and modularity.
 
-More information about this crate can be found in the [crate documentation](https://docs.rs/rusty-core/latest/rusty/).
+More information about this crate can be found in the crate documentation
 ## Table of contents
 
 - [rusty](#rusty)
