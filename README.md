@@ -1,40 +1,4 @@
-<p align="center">
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="img/oxy-playgrounds-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="img/oxy-playgrounds-light.svg">
-    <img src="img/oxy-playgrounds-light.svg" style="width: 40%; height: 40%;" alt="oxy logo">
-</picture>
-<br>
-<a href="https://docs.oxy.rs"><img src="https://img.shields.io/badge/📖 docs-oxy.rs-dca282.svg" /></a> &nbsp;
-<a href="https://docs.rs/oxy-core/latest/oxy/"><img src="https://img.shields.io/badge/docs-API Reference-dca282.svg" /></a> &nbsp;
-<a href="https://crates.io/crates/oxy-core"><img src="https://img.shields.io/crates/v/oxy-core.svg?color=dca282" /></a>
-&nbsp;
-<a href="https://crates.io/crates/oxy-core"><img src="https://img.shields.io/crates/d/oxy-core.svg?color=dca282" /></a>
-</br>
-<a href="https://discord.gg/playgrounds"><img src="https://img.shields.io/discord/511303648119226382?color=%236d82cc&label=Discord&logo=discord&logoColor=white" /></a>
-&nbsp;
-<a href="https://github.com/dannyglendale/oxy"><img src="https://img.shields.io/github/stars/dannyglendale/oxy?style=social" alt="stars - oxy" /></a>
-<br>
-<a href=""><img src="https://img.shields.io/badge/built_with-Rust-dca282.svg?logo=rust" /></a>
-&nbsp;
-<a href="https://twitter.com/Playgrounds0x"><img src="https://img.shields.io/twitter/follow/Playgrounds0x"></a> &nbsp
-
-<br>
-</p>
-&nbsp;
-
-
-<div align="center">
-
-[📑 Docs](https://docs.oxy.rs)
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-[🌐 Website](https://oxy.rs)
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-[🤝 Contribute](https://github.com/dannyglendale/oxy/issues/new)
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-[✍🏽 Blogs](https://docs.oxy.rs/guides)
-
-</div>
+<h1>Oxy AI</h1>
 
 ✨ If you would like to help spread the word about oxy, please consider starring the repo!
 
@@ -42,12 +6,8 @@
 > Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With oxy evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is oxy?
-oxy is a Rust library for building scalable, modular, and ergonomic **LLM-powered** applications.
-
-More information about this crate can be found in the [official](https://docs.oxy.rs) & [crate](https://docs.rs/oxy-core/latest/oxy/) (API Reference) documentations.
-
-Help us improve oxy by contributing to our [Feedback form](https://bit.ly/oxy-Feeback-Form).
+## What is Oxy?
+Oxy is a Rust library for building scalable, modular, and ergonomic **LLM-powered** applications.
 
 ## Table of contents
 
@@ -113,6 +73,4 @@ Vector stores are available as separate companion-crates:
 
 <p align="center">
 <br>
-<br>
-<img src="img/built-by-playgrounds.svg" alt="Build by Playgrounds" width="30%">
-</p>
+<br></p>
