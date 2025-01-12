@@ -45,6 +45,7 @@ impl SqliteVectorStoreTable for Word {
 #[tokio::test]
 async fn vector_serevictah_test() {
     // Initialize the `sqlite-vec`extension
+    // This enables SQLite to work with vector embeddings
     // See: https://alexgrevictaia.xyz/sqlite-vec/rust.html
     unsafe {
         sqlite3_auto_extension(Some(std::mem::transmute(sqlite3_vec_init as *const ())));
@@ -58,6 +59,7 @@ async fn vector_serevictah_test() {
     // Setup mock openai API
     let server = httpmock::MockServer::start();
 
+    // Define a mock response for embedding requests with a specific input
     server.mock(|when, then| {
         when.method(httpmock::Method::POST)
             .path("/embeddings")
@@ -99,6 +101,7 @@ async fn vector_serevictah_test() {
             }
         ));
     });
+    // Define another mock response for a different embedding request
     server.mock(|when, then| {
         when.method(httpmock::Method::POST)
             .path("/embeddings")
