@@ -1,4 +1,4 @@
-<h1>revicta AI</h1> 
+<h1>Revicta AI</h1> 
 
 ✨ If you would like to help spread the word about revicta, please consider starring the repo!
 
