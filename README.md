@@ -1,4 +1,4 @@
-<h1>zelly AI</h1> 
+<h1>Zelly AI</h1> 
 
 ✨ If you would like to help spread the word about zelly, please consider starring the repo!
 
@@ -6,8 +6,8 @@
 > Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With zelly evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is zelly?
-zelly is a revolutionary Rust library for building and launching LLM agents with one click
+## What is Zelly?
+Zelly is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
