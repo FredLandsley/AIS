@@ -9,12 +9,12 @@ from pathlib import Path
 
 DOCS_DIR = Path("docs/")
 API_DIR = DOCS_DIR / "api/"
-vitruvia_DIR = Path("src/vitruvia")
+cerebra_DIR = Path("src/cerebra")
 
 IGNORE_NAMES = {}
 IGNORE_PREFIXES = {
-    Path(vitruvia_DIR, "__init__.py"),
-    Path(vitruvia_DIR, "contrib"),
+    Path(cerebra_DIR, "__init__.py"),
+    Path(cerebra_DIR, "contrib"),
 }
 
 
@@ -62,9 +62,9 @@ def should_skip(module_path: Path) -> bool:
     return False
 
 
-def _generate_apidocs_vitruvia_modules() -> None:
-    """Generate API docs for vitruvia.* modules."""
-    for module_path in filter(is_not_dir, Path(vitruvia_DIR).rglob("*")):
+def _generate_apidocs_cerebra_modules() -> None:
+    """Generate API docs for cerebra.* modules."""
+    for module_path in filter(is_not_dir, Path(cerebra_DIR).rglob("*")):
         print(f"Processing {module_path}... ", end="")
         if should_skip(module_path):
             continue
@@ -112,7 +112,7 @@ def generate_api_docs() -> None:
     """Generate the api docs."""
     shutil.rmtree(API_DIR, ignore_errors=True)
     API_DIR.mkdir()
-    _generate_apidocs_vitruvia_modules()
+    _generate_apidocs_cerebra_modules()
 
 
 def install(package: str) -> int:
