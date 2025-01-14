@@ -1,13 +1,11 @@
-# vitruvia: AI Agent Framework
+# Vitruvia: AI Agent Framework
 
-[![Official Website](https://img.shields.io/badge/Official%20Website-mostafakhaliid-blue?style=flat&logo=world&logoColor=white)](https://mostafakhaliid) [![Unit Tests](https://img.shields.io/github/actions/workflow/status/mostafakhaliid/vitruvia/ci-tests.yml?label=unit%20tests)](https://github.com/mostafakhaliid/vitruvia/actions/workflows/ci-tests.yml) [![GitHub Repo stars](https://img.shields.io/github/stars/mostafakhaliid/vitruvia?style=social)](https://github.com/mostafakhaliid/vitruvia/stargazers) [![Twitter Follow](https://img.shields.io/twitter/follow/fetch_ai?style=social)](https://twitter.com/fetch_ai)
-
-vitruvia is a library developed by mostafakhaliid that allows for creating autonomous AI agents in Python. With simple and expressive decorators, you can have an agent that performs various tasks on a schedule or takes action on various events.
+Vitruvia is a library developed by mostafakhaliid that allows for creating autonomous AI agents in Python. With simple and expressive decorators, you can have an agent that performs various tasks on a schedule or takes action on various events.
 
 ## 🚀 Features
 
 - 🤖 **Easy creation and management**: Create any type of agent you can think of and implement it in code.
-- 🔗 **Connected**: On startup, each agent automatically joins the fast growing network of vitruvia by registering on the Almanac, a smart contract deployed on the mostafakhaliid blockchain.
+- 🔗 **Connected**: On startup, each agent automatically joins the fast growing network of vitruvia by registering on the Almanac, a smart contract deployed on the blockchain.
 - 🔒 **Secure**: uAgent messages and wallets are cryptographically secured, so their identities and assets are protected.
 
 ## ⚡ Quickstart
@@ -71,20 +69,7 @@ You should see the results in your terminal.
 
 ## 📖 Documentation
 
-Please see the [official documentation](https://mostafakhaliid/docs) for full setup instructions and advanced features.
-
-- [👋 Introduction](https://mostafakhaliid/docs/concepts/agents/agents)
-- [💻 Installation](https://mostafakhaliid/docs/guides/agents/installing-uagent)
-- Tutorials
-  - [🤖 Create an agent](https://mostafakhaliid/docs/guides/agents/create-a-uagent)
-  - [🛣️ Agent Communication](https://mostafakhaliid/docs/guides/agents/communicating-with-other-agents)
-  - [🍽️ Restaurant Booking Demo](https://mostafakhaliid/docs/guides/agents/booking-demo)
-- Key Concepts:
-  - [📍Addresses](https://mostafakhaliid/docs/guides/agents/getting-uagent-address)
-  - [💾 Storage](https://mostafakhaliid/docs/guides/agents/storage-function)
-  - [📝 Interval Tasks](https://mostafakhaliid/docs/guides/agents/interval-task)
-  - [🌐 Agent Broadcast](https://mostafakhaliid/docs/guides/agents/broadcast)
-  - [⚙️ Almanac Contracts](https://mostafakhaliid/docs/guides/agents/register-in-almanac)
+Please see the official documentation for full setup instructions and advanced features.
 
 ## 🌱 Examples
 
