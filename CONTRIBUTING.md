@@ -13,7 +13,7 @@ Contributions to this repository are welcome. As a contributor, here are the gui
 
 ## <a name="coc"></a> Code of Conduct
 
-<!-- markdown-link-check-disable -->
+<!-- markdown-link-check-disable --> 
 
 Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
