@@ -301,3 +301,5 @@ async fn create_embeddings(model: openai::EmbeddingModel) -> Vec<bson::Document>
         })
         .collect()
 }
+
+
