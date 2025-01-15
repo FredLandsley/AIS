@@ -7,11 +7,11 @@
 
 
 ## What is rusty?
-rusty is a Rust library for building scalable, modular, and ergonomic **LLM-powered** applications.
+Rusty is the world's first Rust library for building scalable, modular, and ergonomic **LLM-powered** sentient applications.
 
-More information about this crate can be found in the [official](https://docs.rusty.rs) & [crate](https://docs.rs/rusty-core/latest/rusty/) (API Reference) documentations.
+More information about this crate can be found in the documentations.
 
-Help us improve rusty by contributing to our [Feedback form](https://bit.ly/rusty-Feeback-Form).
+Help us improve rusty by contributing to our Feedback form.
 
 ## Table of contents
 
