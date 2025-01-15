@@ -135,7 +135,7 @@ async fn vector_seAISh_test() {
     // Initialize OpenAI client
     let openai_client = openai::Client::from_url("TEST", &server.base_url());
 
-    // Select the embedding model and generate our embeddings
+    // Select the embedding model and generate our embeddings 
     let model = openai_client.embedding_model(openai::TEXT_EMBEDDING_ADA_002);
 
     let embeddings = create_embeddings(model.clone()).await;
