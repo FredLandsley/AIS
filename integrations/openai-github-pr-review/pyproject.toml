@@ -7,7 +7,7 @@ authors = ["cmaliwal <chiragmaliwal1995@gmail.com>"]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
 codedog = "^0.8.2"
-vitruvia = "^0.11.0"
+cerebra = "^0.11.0"
 black = "^24.2.0"
 isort = "^5.13.2"
-vitruvia-ai-engine = "^0.1.2"
+cerebra-ai-engine = "^0.1.2"

@@ -3499,14 +3499,14 @@ files = [
 ]
 
 [[package]]
-name = "vitruvia"
+name = "cerebra"
 version = "0.17.1"
 description = "Lightweight framework for rapid agent-based development"
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "vitruvia-0.17.1-py3-none-any.whl", hash = "sha256:6ea02c79d1801c4b3db980e9c18c48e1edec25d7da6d1a3c026cf8b34b1e42db"},
-    {file = "vitruvia-0.17.1.tar.gz", hash = "sha256:497a03b03e6961df09eeac058a67ac2c4e2de1fb60169732c57c91a3cc9fb982"},
+    {file = "cerebra-0.17.1-py3-none-any.whl", hash = "sha256:6ea02c79d1801c4b3db980e9c18c48e1edec25d7da6d1a3c026cf8b34b1e42db"},
+    {file = "cerebra-0.17.1.tar.gz", hash = "sha256:497a03b03e6961df09eeac058a67ac2c4e2de1fb60169732c57c91a3cc9fb982"},
 ]
 
 [package.dependencies]
@@ -3521,27 +3521,27 @@ uvicorn = ">=0.30.1,<0.31.0"
 websockets = ">=10.4,<11.0"
 
 [package.extras]
-all = ["fastapi (>=0.111.0,<0.112.0)", "mostafakhaliid-babble (>=0.4.2,<0.5.0)", "geopy (>=2.3.0,<3.0.0)", "pyngrok (>=5.2.3,<6.0.0)", "tortoise-orm (>=0.19.2,<0.20.0)"]
+all = ["fastapi (>=0.111.0,<0.112.0)", "dannyglendale-babble (>=0.4.2,<0.5.0)", "geopy (>=2.3.0,<3.0.0)", "pyngrok (>=5.2.3,<6.0.0)", "tortoise-orm (>=0.19.2,<0.20.0)"]
 geo = ["geopy (>=2.3.0,<3.0.0)"]
 orm = ["tortoise-orm (>=0.19.2,<0.20.0)"]
 proxy = ["fastapi (>=0.111.0,<0.112.0)"]
 remote-agents = ["pyngrok (>=5.2.3,<6.0.0)"]
-wallet = ["mostafakhaliid-babble (>=0.4.2,<0.5.0)"]
+wallet = ["dannyglendale-babble (>=0.4.2,<0.5.0)"]
 
 [[package]]
-name = "vitruvia-ai-engine"
+name = "cerebra-ai-engine"
 version = "0.6.0"
-description = "Integrating AI-Engine with vitruvia"
+description = "Integrating AI-Engine with cerebra"
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "vitruvia_ai_engine-0.6.0-py3-none-any.whl", hash = "sha256:6162209f5c83cc7b56f1eff323956f3ed1274a393170e4bcc657ba04cfd7b8b2"},
-    {file = "vitruvia_ai_engine-0.6.0.tar.gz", hash = "sha256:fb9e85c2db9652b43797ae35e864eeee1502604ad1efd055fe5de4526e2350ed"},
+    {file = "cerebra_ai_engine-0.6.0-py3-none-any.whl", hash = "sha256:6162209f5c83cc7b56f1eff323956f3ed1274a393170e4bcc657ba04cfd7b8b2"},
+    {file = "cerebra_ai_engine-0.6.0.tar.gz", hash = "sha256:fb9e85c2db9652b43797ae35e864eeee1502604ad1efd055fe5de4526e2350ed"},
 ]
 
 [package.dependencies]
 pydantic = ">=2.8,<2.9"
-vitruvia = ">=0.17.0,<0.18.0"
+cerebra = ">=0.17.0,<0.18.0"
 
 [[package]]
 name = "unstructured"

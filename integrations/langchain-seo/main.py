@@ -5,10 +5,10 @@ from asyncio.tasks import concurrent
 from pydantic import Field
 
 from dotenv import load_dotenv
-from vitruvia import Agent, Context, Protocol, Model
+from cerebra import Agent, Context, Protocol, Model
 from wrapper import startProcess
 
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 load_dotenv()
 
@@ -39,20 +39,20 @@ async def asyncCall(url: str):
         return await asyncio.get_event_loop().run_in_executor(exec, startProcess, url)
 
 
-@seo_deltav_protocol.on_message(SeoRequest, replies={vitruviaResponse})
+@seo_deltav_protocol.on_message(SeoRequest, replies={cerebraResponse})
 async def handle_agent_message(ctx: Context, sender: str, msg: SeoRequest):
     ctx.logger.info(f"Received message from DeltaV: {msg.url}")
     try:
         result = await asyncCall(msg.url)
         ctx.logger.info(f"Sending result to DV: {result}")
         await ctx.send(
-            sender, vitruviaResponse(message=result, type=vitruviaResponseType.FINAL)
+            sender, cerebraResponse(message=result, type=cerebraResponseType.FINAL)
         )
     except Exception as e:
         print(e.__traceback__)
         await ctx.send(
             sender,
-            vitruviaResponse(message="Unexpected Error", type=vitruviaResponseType.ERROR),
+            cerebraResponse(message="Unexpected Error", type=cerebraResponseType.ERROR),
         )
 
 

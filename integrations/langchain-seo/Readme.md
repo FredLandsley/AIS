@@ -2,7 +2,7 @@
 
 The Han Solo team presents an agent designed to
 perform SEO analysis by comparing the content of a given webpage with that of
-the top-ranking pages for similar keywords. It utilizes various vitruvia coupled with components from
+the top-ranking pages for similar keywords. It utilizes various cerebra coupled with components from
 the langchain and langchain_community libraries,
 along with the requests library for making HTTP requests, and
 integrates OpenAI's GPT models for natural language processing tasks. The
@@ -41,7 +41,7 @@ Start the agent
 poetry run python main.py
 ```
 
-Trigger the seo process directly (without routing through deltav and a vitruvia)
+Trigger the seo process directly (without routing through deltav and a cerebra)
 ```
 poetry run python wrapper.py <url to analyze>
 ```

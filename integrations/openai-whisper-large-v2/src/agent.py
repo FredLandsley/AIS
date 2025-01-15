@@ -1,4 +1,4 @@
-from vitruvia import Bureau
+from cerebra import Bureau
 
 from agents.whisper_agent import agent
 

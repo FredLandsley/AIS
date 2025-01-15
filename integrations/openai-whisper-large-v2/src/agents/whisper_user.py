@@ -1,6 +1,6 @@
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.whisper_basic import AudioTranscriptRequest, AudioTranscriptResponse, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import base64
 import os
 
@@ -35,7 +35,7 @@ whisper_user = Protocol(name="WhisperModelUser", version="0.1.0")
 
 # This is an asynchronous function that is set to run at intervals of 30 sec.
 # It opens the specified RECORDING_FILE, reads it and encodes in base64 format.
-# Afterwards, it sends a request with the encoded data to the AI vitruvia's address.
+# Afterwards, it sends a request with the encoded data to the AI cerebra's address.
 @whisper_user.on_interval(period=30, messages=AudioTranscriptRequest)
 async def transcript(ctx: Context):
     AudioTranscriptSuccessful = ctx.storage.get("AudioTranscriptSuccessful")
@@ -57,7 +57,7 @@ async def handle_data(ctx: Context, sender: str, audioTranscript: AudioTranscrip
 
 @whisper_user.on_message(model=Error)
 async def handle_error(ctx: Context, sender: str, error: Error):
-    ctx.logger.info(f"Got error from vitruvia: {error}")
+    ctx.logger.info(f"Got error from cerebra: {error}")
 
 # Include the protocol with the agent, publish_manifest will make the protocol details available on Agentverse.
 user.include(whisper_user, publish_manifest=True)

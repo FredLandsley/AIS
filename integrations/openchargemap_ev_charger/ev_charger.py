@@ -5,7 +5,7 @@
 # third party modules used in this example
 import uuid
 import requests
-from ai_engine import KeyValue, vitruviaResponse, vitruviaResponseType
+from ai_engine import KeyValue, cerebraResponse, cerebraResponseType
 from pydantic import Field
 
 # modules from booking_protocol.py
@@ -57,7 +57,7 @@ def get_data(latitude, longitude, miles_radius) -> list or None:
     return []
 
 
-@ev_charger_protocol.on_message(model=EvRequest, replies=vitruviaResponse)
+@ev_charger_protocol.on_message(model=EvRequest, replies=cerebraResponse)
 async def on_message(ctx: Context, sender: str, msg: EvRequest):
     ctx.logger.info(f"Received message from {sender}.")
     try:
@@ -73,18 +73,18 @@ async def on_message(ctx: Context, sender: str, msg: EvRequest):
         if options:
             await ctx.send(
                 sender,
-                vitruviaResponse(
+                cerebraResponse(
                     options=options,
-                    type=vitruviaResponseType.SELECT_FROM_OPTIONS,
+                    type=cerebraResponseType.SELECT_FROM_OPTIONS,
                     request_id=request_id
                 ),
             )
         else:
             await ctx.send(
                 sender,
-                vitruviaResponse(
+                cerebraResponse(
                     message="No ev chargers are available for this context",
-                    type=vitruviaResponseType.FINAL,
+                    type=cerebraResponseType.FINAL,
                     request_id=request_id
                 ),
             )
@@ -92,9 +92,9 @@ async def on_message(ctx: Context, sender: str, msg: EvRequest):
         ctx.logger.error(exc)
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=str(exc),
-                type=vitruviaResponseType.ERROR
+                type=cerebraResponseType.ERROR
             )
         )
 

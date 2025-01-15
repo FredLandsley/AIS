@@ -1,9 +1,9 @@
 # Import Required Libraries
 import openai
-from vitruvia.setup import fund_agent_if_low
-from vitruvia import Agent, Context, Protocol, Model
+from cerebra.setup import fund_agent_if_low
+from cerebra import Agent, Context, Protocol, Model
 from pydantic import Field
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 
 # Define a model for the translation request, specifying the source and target languages, and the sentence to translate
@@ -57,7 +57,7 @@ async def get_chat_completion(prompt, model="gpt-3.5-turbo"):
 
 
 # Define the behavior of the translator agent when it receives a translation request
-@translator_protocol.on_message(model=TrnRequest, replies={vitruviaResponse})
+@translator_protocol.on_message(model=TrnRequest, replies={cerebraResponse})
 async def translate(ctx: Context, sender: str, msg: TrnRequest):
     # Use the OpenAI API to translate the requested sentence
     response = await get_chat_completion(
@@ -67,7 +67,7 @@ async def translate(ctx: Context, sender: str, msg: TrnRequest):
     ctx.logger.info(f"From: {msg.lang1} \nTo: {msg.lang2} \nSentence: {msg.sentence}")
     # Send the translation back to the requester
     await ctx.send(
-        sender, vitruviaResponse(message=response, type=vitruviaResponseType.FINAL)
+        sender, cerebraResponse(message=response, type=cerebraResponseType.FINAL)
     )
 
 

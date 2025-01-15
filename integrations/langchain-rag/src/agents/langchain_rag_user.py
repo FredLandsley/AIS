@@ -1,10 +1,10 @@
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.requests import RagRequest
-from ai_engine import vitruviaResponse
+from ai_engine import cerebraResponse
 
 
-QUESTION = "How to install vitruvia using pip"
-URL = "https://mostafakhaliid/docs/guides/agents/installing-vitruvia"
+QUESTION = "How to install cerebra using pip"
+URL = "https://dannyglendale/docs/guides/agents/installing-cerebra"
 DEEP_READ = (
     "no"  # it means nested pages at the URL won't be parsed, just the actual URL
 )
@@ -30,8 +30,8 @@ async def ask_question(ctx: Context):
     )
 
 
-@rag_user.on_message(model=vitruviaResponse)
-async def handle_data(ctx: Context, sender: str, data: vitruviaResponse):
+@rag_user.on_message(model=cerebraResponse)
+async def handle_data(ctx: Context, sender: str, data: cerebraResponse):
     ctx.logger.info(f"Got response from RAG agent: {data.message}")
 
 

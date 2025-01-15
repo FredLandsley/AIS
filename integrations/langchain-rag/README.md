@@ -1,6 +1,6 @@
 # LangChain RAG integration
 
-LangChain RAG integration example offers a guide to setting up and using RAG (retrieval augmented generation) technology in a vitruvia. This example shows how to create a RAG application that can answer question based on a document.
+LangChain RAG integration example offers a guide to setting up and using RAG (retrieval augmented generation) technology in a cerebra. This example shows how to create a RAG application that can answer question based on a document.
 
 - Python (v3.10+ recommended)
 - Poetry (A Python packaging and dependency management tool)
@@ -61,8 +61,8 @@ Copy the {agent_address} value and replace RAG_AGENT_ADDRESS with this value in 
 In the src/langchain_rag_user.py file, there are variables QUESTION, URL, DEEP_READ. Change the value of these variables to customize the question you want to get answered. Default values are:
 
 ```
-QUESTION = "How to install vitruvia using pip"
-URL = "https://mostafakhaliid/docs/guides/agents/installing-vitruvia"
+QUESTION = "How to install cerebra using pip"
+URL = "https://dannyglendale/docs/guides/agents/installing-cerebra"
 DEEP_READ = "no"  # it means nested pages at the URL won't be parsed, just the actual URL
 ```
 

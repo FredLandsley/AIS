@@ -1,5 +1,5 @@
 from typing import Optional
-from vitruvia import Model, Field
+from cerebra import Model, Field
 
 
 class RagRequest(Model):

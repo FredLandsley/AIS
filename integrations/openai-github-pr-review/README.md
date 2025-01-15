@@ -3,7 +3,7 @@
 ## Overview
 
 The GitHub PR Review AI Assistant is a AI agent designed to streamline the process of reviewing pull requests on GitHub.
-Develop using mostafakhaliid agents and integrated with langchain and codedog, this AI Agent utilizes OpenAI's powerful LLM models to provide in-depth, automated reviews that improve code quality and collaboration efficiency.
+Develop using dannyglendale agents and integrated with langchain and codedog, this AI Agent utilizes OpenAI's powerful LLM models to provide in-depth, automated reviews that improve code quality and collaboration efficiency.
 
 ## Features
 
@@ -16,7 +16,7 @@ Develop using mostafakhaliid agents and integrated with langchain and codedog, t
 1. **Clone the Repository**: Start by cloning this repository to get the agent code, and then navigate to the project directory.
 
     ```bash
-    git clone https://github.com/mostafakhaliid/vitruvia.git
+    git clone https://github.com/dannyglendale/cerebra.git
     cd github-pr-review-ai-assistant
     ```
 
@@ -95,7 +95,7 @@ The GitHub PR Review AI Assistant will process your request and return a compreh
 
 This service incorporates several key libraries to provide its functionality:
 
-- **fetch-vitruvia**
+- **fetch-cerebra**
 - **langchain**
 - **codedog**
 - **GPT-3.5 and GPT-4 Models**

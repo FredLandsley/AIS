@@ -2,15 +2,15 @@ import os
 from typing import Tuple
 from urllib.parse import urlparse
 
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 from codedog.actors.reporters.pull_request import PullRequestReporter
 from codedog.chains import CodeReviewChain, PRSummaryChain
 from codedog.retrievers import GithubRetriever
 from github import Github
 from github.GithubException import UnknownObjectException
 from langchain.chat_models import ChatOpenAI
-from vitruvia import Agent, Context, Model, Protocol
-from vitruvia.setup import fund_agent_if_low
+from cerebra import Agent, Context, Model, Protocol
+from cerebra.setup import fund_agent_if_low
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 AGENT_MAILBOX_KEY = os.getenv("AGENT_MAILBOX_KEY")
@@ -101,18 +101,18 @@ def fetch_and_review_pull_request(pull_request_url, context: Context):
         return msg
 
 
-@github_pr_review_protocol.on_message(model=CodeReviewRequest, replies=vitruviaResponse)
+@github_pr_review_protocol.on_message(model=CodeReviewRequest, replies=cerebraResponse)
 async def on_message(ctx: Context, sender: str, msg: CodeReviewRequest):
     """Processes code review requests and returns a formatted report or an error message."""
     report = fetch_and_review_pull_request(msg.pull_request_url, ctx)
     if "🚫" in report:
         response_message = report
-        response_type = vitruviaResponseType.ERROR
+        response_type = cerebraResponseType.ERROR
     else:
         response_message = f"✅ Code Review Completed Successfully:\n\n{report}"
-        response_type = vitruviaResponseType.FINAL
+        response_type = cerebraResponseType.FINAL
 
-    await ctx.send(sender, vitruviaResponse(message=response_message, type=response_type))
+    await ctx.send(sender, cerebraResponse(message=response_message, type=response_type))
 
 
 agent.include(github_pr_review_protocol, publish_manifest=True)

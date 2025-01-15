@@ -1,5 +1,5 @@
 import traceback
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 import validators
 from messages.requests import RagRequest
 import os
@@ -13,7 +13,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.retrievers import ContextualCompressionRetriever
 from langchain_cohere import CohereRerank
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 import nltk
 
 nltk.download("punkt")
@@ -95,7 +95,7 @@ def create_retriever(
         traceback.format_exception(exc)
 
 
-@docs_bot_protocol.on_message(model=RagRequest, replies={vitruviaResponse})
+@docs_bot_protocol.on_message(model=RagRequest, replies={cerebraResponse})
 async def answer_question(ctx: Context, sender: str, msg: RagRequest):
     ctx.logger.info(f"Received message from {sender}, session: {ctx.session}")
     ctx.logger.info(
@@ -107,9 +107,9 @@ async def answer_question(ctx: Context, sender: str, msg: RagRequest):
         ctx.logger.error("invalid input url")
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message="Input url is not valid",
-                type=vitruviaResponseType.FINAL,
+                type=cerebraResponseType.FINAL,
             ),
         )
         return
@@ -127,7 +127,7 @@ async def answer_question(ctx: Context, sender: str, msg: RagRequest):
     response = model.predict(prompt)
     ctx.logger.info(f"Response: {response}")
     await ctx.send(
-        sender, vitruviaResponse(message=response, type=vitruviaResponseType.FINAL)
+        sender, cerebraResponse(message=response, type=cerebraResponseType.FINAL)
     )
 
 

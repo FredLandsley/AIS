@@ -1,6 +1,6 @@
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.whisper_basic import AudioTranscriptRequest, AudioTranscriptResponse, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os
 import requests
 import base64

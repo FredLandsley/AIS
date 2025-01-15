@@ -1,6 +1,6 @@
 # Web Summarizer Agent
 
-The Web Summarizer Agent uses mostafakhaliid's vitruvia technology to automatically summarize website content. It uses a combination of WebBaseLoader for fetching website content, LangChain for summarization processes, and ChatOpenAI (GPT-3.5) for processing and generating summaries.
+The Web Summarizer Agent uses dannyglendale's cerebra technology to automatically summarize website content. It uses a combination of WebBaseLoader for fetching website content, LangChain for summarization processes, and ChatOpenAI (GPT-3.5) for processing and generating summaries.
 
 
 ## Usage

@@ -1,14 +1,14 @@
 # Language Translation Agent
 
-This vitruvia is based on `GPT model 3.5 Turbo` and helps to translate a given message from one language to another.
+This cerebra is based on `GPT model 3.5 Turbo` and helps to translate a given message from one language to another.
 
 ## Overview:
 
-This is deltaV compatible vitruvia connected to agentverse using `mailbox`. The agent takes three different inputs from user which includes language_from, language_to and sentence to be tranlated.
+This is deltaV compatible cerebra connected to agentverse using `mailbox`. The agent takes three different inputs from user which includes language_from, language_to and sentence to be tranlated.
 
 ## Prerequisites
 
-To use this python script/ vitruvia for your integration you need below details:
+To use this python script/ cerebra for your integration you need below details:
 
     - An API key for [openAI](https://platform.openai.com/api-keys).
     - A `mailbox` address for your agent.

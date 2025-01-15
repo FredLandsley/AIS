@@ -1,10 +1,10 @@
-# Necessary imports: vitruvia for agent creation and message handling,
+# Necessary imports: cerebra for agent creation and message handling,
 # os and requests for managing API calls
-from vitruvia import Agent, Context, Protocol, Model
+from cerebra import Agent, Context, Protocol, Model
 from pydantic import Field
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 from messages.basic import UAResponse, UARequest, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os
 import requests
 from utils.functions import get_video_script, summarize_transcript
@@ -70,9 +70,9 @@ async def handle_request(ctx: Context, sender: str, msg: SummarizationRequest):
     except Exception as e:
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=f"No transcript found for video! Error: {e}",
-                type=vitruviaResponseType.ERROR,
+                type=cerebraResponseType.ERROR,
             ),
         )
         return
@@ -82,9 +82,9 @@ async def handle_request(ctx: Context, sender: str, msg: SummarizationRequest):
     print("Sending short article")
     await ctx.send(
         sender,
-        vitruviaResponse(
+        cerebraResponse(
             message=f"Summary:\n{summary}",
-            type=vitruviaResponseType.FINAL,
+            type=cerebraResponseType.FINAL,
         ),
     )
     return

@@ -1,4 +1,4 @@
-from vitruvia import Model
+from cerebra import Model
 
 
 class UARequest(Model):

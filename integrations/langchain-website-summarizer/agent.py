@@ -1,9 +1,9 @@
 from langchain.chains.summarize import load_summarize_chain
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_openai import ChatOpenAI
-from vitruvia import Agent, Context, Protocol, Model
+from cerebra import Agent, Context, Protocol, Model
 from pydantic import Field
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 
 class WebsiteLink(Model):
@@ -26,7 +26,7 @@ summary_protocol = Protocol("Website Link Summarizer")
 print(summaryAgent.address)
 
 
-@summary_protocol.on_message(model=WebsiteLink, replies={vitruviaResponse})
+@summary_protocol.on_message(model=WebsiteLink, replies={cerebraResponse})
 async def summarize_news(ctx: Context, sender: str, msg: WebsiteLink):
     loader = WebBaseLoader(msg.link)
     docs = loader.load()
@@ -39,7 +39,7 @@ async def summarize_news(ctx: Context, sender: str, msg: WebsiteLink):
 
     await ctx.send(
         sender,
-        vitruviaResponse(message=(result["output_text"]), type=vitruviaResponseType.FINAL),
+        cerebraResponse(message=(result["output_text"]), type=cerebraResponseType.FINAL),
     )
 
 

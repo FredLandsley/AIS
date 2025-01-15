@@ -1,4 +1,4 @@
-from vitruvia import Bureau
+from cerebra import Bureau
 from agents.langchain_rag_agent import agent
 from agents.langchain_rag_user import user
 

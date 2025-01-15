@@ -7,8 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
-vitruvia = "*"
-vitruvia-ai-engine = "^0.1.2"
+cerebra = "*"
+cerebra-ai-engine = "^0.1.2"
 langchain = "^0.1.12"
 langchain-openai = "^0.0.8"
 black = "^24.3.0"

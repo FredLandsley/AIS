@@ -1006,14 +1006,14 @@ files = [
 ]
 
 [[package]]
-name = "vitruvia"
+name = "cerebra"
 version = "0.6.1"
 description = "Lightweight framework for rapid agent-based development"
 optional = false
 python-versions = ">=3.8,<3.12"
 files = [
-    {file = "vitruvia-0.6.1-py3-none-any.whl", hash = "sha256:952d2c89f2e90f4e86e95d7b26477724e7e4482d2189ee09e72256c8e5113e23"},
-    {file = "vitruvia-0.6.1.tar.gz", hash = "sha256:6dbe970028792da61e6cbf6ff8fa961d37427f37925c136b385c7a2d0316b78e"},
+    {file = "cerebra-0.6.1-py3-none-any.whl", hash = "sha256:952d2c89f2e90f4e86e95d7b26477724e7e4482d2189ee09e72256c8e5113e23"},
+    {file = "cerebra-0.6.1.tar.gz", hash = "sha256:6dbe970028792da61e6cbf6ff8fa961d37427f37925c136b385c7a2d0316b78e"},
 ]
 
 [package.dependencies]
