@@ -1,4 +1,4 @@
-<h1>AIS AI</h1> 
+<h1>AIS (Agents In Seconds)</h1> 
 
 ✨ If you would like to help spread the word about AIS, please consider starring the repo!
 
