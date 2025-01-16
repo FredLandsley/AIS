@@ -20,7 +20,7 @@ Get started with vitruvia by installing it for Python 3.9 to 3.12:
 
 #### Creating an Agent
 
-Build your first uAgent using the following script:
+Build your first vitruvia using the following script:
 
 ```python3
 from vitruvia import Agent, Context
