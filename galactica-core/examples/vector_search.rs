@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     embeddings::EmbeddingsBuilder,
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
     vector_store::{in_memory_store::InMemoryVectorStore, VectorStoreIndex},
@@ -33,7 +33,7 @@ async fn main() -> Result<(), anyhow::Error> {
                 word: "flurbo".to_string(),
                 definitions: vec![
                     "A green alien that lives on cold planets.".to_string(),
-                    "A fictional digital currency that oAISinated in the animated series Rick and Morty.".to_string()
+                    "A fictional digital currency that ogalacticainated in the animated series Rick and Morty.".to_string()
                 ]
             },
             WordDefinition {

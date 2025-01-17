@@ -1,8 +1,8 @@
-//! Cohere API client and AIS integration
+//! Cohere API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::cohere;
+//! use galactica::providers::cohere;
 //!
 //! let client = cohere::Client::new("YOUR_API_KEY");
 //!
@@ -181,7 +181,7 @@ pub struct BilledUnits {
     #[serde(default)]
     pub output_tokens: u32,
     #[serde(default)]
-    pub seAISh_units: u32,
+    pub segalacticah_units: u32,
     #[serde(default)]
     pub classifications: u32,
 }
@@ -190,8 +190,8 @@ impl std::fmt::Display for BilledUnits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "Input tokens: {}\nOutput tokens: {}\nSeAISh units: {}\nClassifications: {}",
-            self.input_tokens, self.output_tokens, self.seAISh_units, self.classifications
+            "Input tokens: {}\nOutput tokens: {}\nSegalacticah units: {}\nClassifications: {}",
+            self.input_tokens, self.output_tokens, self.segalacticah_units, self.classifications
         )
     }
 }
@@ -233,11 +233,11 @@ impl embeddings::EmbeddingModel for EmbeddingModel {
             match response.json::<ApiResponse<EmbeddingResponse>>().await? {
                 ApiResponse::Ok(response) => {
                     match response.meta {
-                        Some(meta) => tracing::info!(target: "AIS",
+                        Some(meta) => tracing::info!(target: "galactica",
                             "Cohere embeddings billed units: {}",
                             meta.billed_units,
                         ),
-                        None => tracing::info!(target: "AIS",
+                        None => tracing::info!(target: "galactica",
                             "Cohere embeddings billed units: n/a",
                         ),
                     };
@@ -307,11 +307,11 @@ pub struct CompletionResponse {
     #[serde(default)]
     pub documents: Vec<Document>,
     #[serde(default)]
-    pub is_seAISh_required: Option<bool>,
+    pub is_segalacticah_required: Option<bool>,
     #[serde(default)]
-    pub seAISh_queries: Vec<SeAIShQuery>,
+    pub segalacticah_queries: Vec<SegalacticahQuery>,
     #[serde(default)]
-    pub seAISh_results: Vec<SeAIShResult>,
+    pub segalacticah_results: Vec<SegalacticahResult>,
     pub finish_reason: String,
     #[serde(default)]
     pub tool_calls: Vec<ToolCall>,
@@ -357,14 +357,14 @@ pub struct Document {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct SeAIShQuery {
+pub struct SegalacticahQuery {
     pub text: String,
     pub generation_id: String,
 }
 
 #[derive(Debug, Deserialize)]
-pub struct SeAIShResult {
-    pub seAISh_query: SeAIShQuery,
+pub struct SegalacticahResult {
+    pub segalacticah_query: SegalacticahQuery,
     pub connector: Connector,
     pub document_ids: Vec<String>,
     #[serde(default)]

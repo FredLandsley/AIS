@@ -52,7 +52,7 @@ where
 
 /// Create a new lookup operation.
 ///
-/// The op will perform semantic seAISh on the provided index and return the top `n`
+/// The op will perform semantic segalacticah on the provided index and return the top `n`
 /// results closest results to the input.
 pub fn lookup<I, In, T>(index: I, n: usize) -> Lookup<I, In, T>
 where

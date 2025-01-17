@@ -1,7 +1,7 @@
 use std::env;
 
 use anyhow::Result;
-use AIS::{
+use galactica::{
     agent::Agent,
     completion::{Chat, Message},
     providers::{cohere, openai},

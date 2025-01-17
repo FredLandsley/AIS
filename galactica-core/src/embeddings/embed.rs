@@ -29,7 +29,7 @@ impl EmbedError {
 /// use std::env;
 ///
 /// use serde::{Deserialize, Serialize};
-/// use AIS::{Embed, embeddings::{TextEmbedder, EmbedError}};
+/// use galactica::{Embed, embeddings::{TextEmbedder, EmbedError}};
 ///
 /// struct WordDefinition {
 ///     id: String,

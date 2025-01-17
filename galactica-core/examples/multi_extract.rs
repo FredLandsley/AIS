@@ -1,4 +1,4 @@
-use AIS::{
+use galactica::{
     pipeline::{self, agent_ops, TryOp},
     providers::openai,
     try_parallel,

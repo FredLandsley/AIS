@@ -1,4 +1,4 @@
-use AIS::providers::openai;
+use galactica::providers::openai;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 

@@ -63,7 +63,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::gemini::{Client, self};
+    /// use galactica::providers::gemini::{Client, self};
     ///
     /// // Initialize the Google Gemini client
     /// let gemini = Client::new("your-google-gemini-api-key");
@@ -78,12 +78,12 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::gemini::{Client, self};
+    /// use galactica::providers::gemini::{Client, self};
     ///
     /// // Initialize the Google Gemini client
     /// let gemini = Client::new("your-google-gemini-api-key");
     ///
-    /// let embedding_model = gemini.embedding_model_with_ndims("model-unknown-to-AIS", 1024);
+    /// let embedding_model = gemini.embedding_model_with_ndims("model-unknown-to-galactica", 1024);
     /// ```
     pub fn embedding_model_with_ndims(&self, model: &str, ndims: usize) -> EmbeddingModel {
         EmbeddingModel::new(self.clone(), model, Some(ndims))
@@ -93,7 +93,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::gemini::{Client, self};
+    /// use galactica::providers::gemini::{Client, self};
     ///
     /// // Initialize the Google Gemini client
     /// let gemini = Client::new("your-google-gemini-api-key");
@@ -124,7 +124,7 @@ impl Client {
     /// [Gemini API Reference](https://ai.google.dev/api/generate-content#generationconfig)
     /// # Example
     /// ```
-    /// use AIS::providers::gemini::{Client, self};
+    /// use galactica::providers::gemini::{Client, self};
     ///
     /// // Initialize the Google Gemini client
     /// let gemini = Client::new("your-google-gemini-api-key");

@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{agent::AgentBuilder, completion::Prompt, providers::cohere};
+use galactica::{agent::AgentBuilder, completion::Prompt, providers::cohere};
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {

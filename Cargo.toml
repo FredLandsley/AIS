@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 members = [
-    "AIS-core", "AIS-lancedb",
-    "AIS-mongodb", "AIS-neo4j",
-    "AIS-qdrant", "AIS-core/AIS-core-derive",
-    "AIS-sqlite"
+    "galactica-core", "galactica-lancedb",
+    "galactica-mongodb", "galactica-neo4j",
+    "galactica-qdrant", "galactica-core/galactica-core-derive",
+    "galactica-sqlite"
 ]
 

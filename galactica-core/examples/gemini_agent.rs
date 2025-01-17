@@ -1,4 +1,4 @@
-use AIS::{
+use galactica::{
     completion::Prompt,
     providers::gemini::{self, completion::gemini_api_types::GenerationConfig},
 };

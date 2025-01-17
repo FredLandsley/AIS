@@ -178,9 +178,9 @@ mod gemini_api_types {
     pub enum TaskType {
         /// Unset value, which will default to one of the other enum values.
         Unspecified,
-        /// Specifies the given text is a query in a seAISh/retrieval setting.
+        /// Specifies the given text is a query in a segalacticah/retrieval setting.
         RetrievalQuery,
-        /// Specifies the given text is a document from the corpus being seAIShed.
+        /// Specifies the given text is a document from the corpus being segalacticahed.
         RetrievalDocument,
         /// Specifies the given text will be used for STS.
         SemanticSimilarity,

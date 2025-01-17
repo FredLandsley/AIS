@@ -24,7 +24,7 @@ pub struct ClientBuilder<'a> {
 ///
 /// # Example
 /// ```
-/// use AIS::providers::anthropic::{ClientBuilder, self};
+/// use galactica::providers::anthropic::{ClientBuilder, self};
 ///
 /// // Initialize the Anthropic client
 /// let anthropic_client = ClientBuilder::new("your-claude-api-key")
@@ -133,7 +133,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::anthropic::{ClientBuilder, self};
+    /// use galactica::providers::anthropic::{ClientBuilder, self};
     ///
     /// // Initialize the Anthropic client
     /// let anthropic = ClientBuilder::new("your-claude-api-key").build();

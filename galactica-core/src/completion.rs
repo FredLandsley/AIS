@@ -25,8 +25,8 @@
 //!
 //! Example Usage:
 //! ```rust
-//! use AIS::providers::openai::{Client, self};
-//! use AIS::completion::*;
+//! use galactica::providers::openai::{Client, self};
+//! use galactica::completion::*;
 //!
 //! // Initialize the OpenAI client and a completion model
 //! let openai = Client::new("your-openai-api-key");
@@ -287,7 +287,7 @@ impl CompletionRequest {
 ///
 /// Example usage:
 /// ```rust
-/// use AIS::{
+/// use galactica::{
 ///     providers::openai::{Client, self},
 ///     completion::CompletionRequestBuilder,
 /// };
@@ -308,7 +308,7 @@ impl CompletionRequest {
 ///
 /// Alternatively, you can execute the completion request directly from the builder:
 /// ```rust
-/// use AIS::{
+/// use galactica::{
 ///     providers::openai::{Client, self},
 ///     completion::CompletionRequestBuilder,
 /// };

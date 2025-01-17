@@ -1,5 +1,5 @@
-use AIS::providers::xai; // Import xAI provider
-use AIS::Embed; // Import embedding functionality
+use galactica::providers::xai; // Import xAI provider
+use galactica::Embed; // Import embedding functionality
 
 #[derive(Embed, Debug)]
 struct Greetings {

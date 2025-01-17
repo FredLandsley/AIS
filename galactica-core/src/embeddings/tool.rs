@@ -28,7 +28,7 @@ impl ToolSchema {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::{
+    /// use galactica::{
     ///     completion::ToolDefinition,
     ///     embeddings::ToolSchema,
     ///     tool::{Tool, ToolEmbedding, ToolEmbeddingDyn},

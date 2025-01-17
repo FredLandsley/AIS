@@ -1,4 +1,4 @@
-use AIS::{completion::Prompt, providers::openai};
+use galactica::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {

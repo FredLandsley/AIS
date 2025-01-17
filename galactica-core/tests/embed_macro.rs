@@ -1,4 +1,4 @@
-use AIS::{
+use galactica::{
     embeddings::{self, embed::EmbedError, TextEmbedder},
     Embed,
 };

@@ -27,7 +27,7 @@ pub trait TryOp: Send + Sync {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, TryOp};
+    /// use galactica::pipeline::{self, TryOp};
     ///
     /// let op = pipeline::new()
     ///    .map(|x: i32| if x % 2 == 0 { Ok(x + 1) } else { Err("x is odd") });
@@ -62,7 +62,7 @@ pub trait TryOp: Send + Sync {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, TryOp};
+    /// use galactica::pipeline::{self, TryOp};
     ///
     /// let op = pipeline::new()
     ///     .map(|x: i32| if x % 2 == 0 { Ok(x) } else { Err("x is odd") })
@@ -85,7 +85,7 @@ pub trait TryOp: Send + Sync {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, TryOp};
+    /// use galactica::pipeline::{self, TryOp};
     ///
     /// let op = pipeline::new()
     ///     .map(|x: i32| if x % 2 == 0 { Ok(x) } else { Err("x is odd") })
@@ -109,7 +109,7 @@ pub trait TryOp: Send + Sync {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, TryOp};
+    /// use galactica::pipeline::{self, TryOp};
     ///
     /// let op = pipeline::new()
     ///     .map(|x: i32| if x % 2 == 0 { Ok(x) } else { Err("x is odd") })
@@ -134,7 +134,7 @@ pub trait TryOp: Send + Sync {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, TryOp};
+    /// use galactica::pipeline::{self, TryOp};
     ///
     /// let op = pipeline::new()
     ///     .map(|x: i32| if x % 2 == 0 { Ok(x) } else { Err("x is odd") })
@@ -159,7 +159,7 @@ pub trait TryOp: Send + Sync {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, TryOp};
+    /// use galactica::pipeline::{self, TryOp};
     ///
     /// struct AddOne;
     ///

@@ -1,6 +1,6 @@
-# Contributing to AIS 
+# Contributing to galactica 
 
-Thank you for considering contributing to AIS! Here are some guidelines to help you get started.
+Thank you for considering contributing to galactica! Here are some guidelines to help you get started.
 
 General guidelines and requested contributions can be found in the How to Contribute section of the documentation. 
 
@@ -18,9 +18,9 @@ PRs should be small and focused and should avoid interacting with multiple facet
 
 ## Project Structure
 
-AIS is split up into multiple crates in a monorepo structure. The main crate `AIS-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `AIS-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
+galactica is split up into multiple crates in a monorepo structure. The main crate `galactica-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `galactica-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
 
-If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the AIS team.
+If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the galactica team.
 
 
 ## Developing
@@ -30,8 +30,8 @@ If you are unsure whether a side-crate should live in the main repo, you can spi
 This should be similar to most rust projects.
 
 ```bash
-git clone https://github.com/FredLandsley/AIS
-cd AIS
+git clone https://github.com/OFFICIALDBLR/galactica
+cd galactica
 cargo test
 ```
 

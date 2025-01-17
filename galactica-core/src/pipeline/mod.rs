@@ -1,5 +1,5 @@
 //! This module defines a flexible pipeline API for defining a sequence of operations that
-//! may or may not use AI components (e.g.: semantic seAISh, LLMs prompting, etc).
+//! may or may not use AI components (e.g.: semantic segalacticah, LLMs prompting, etc).
 //!
 //! The pipeline API was inspired by general orchestration pipelines such as Airflow, Dagster and Prefect,
 //! but implemented with idiomatic Rust patterns and providing some AI-specific ops out-of-the-box along
@@ -21,7 +21,7 @@
 //! the result as a string using the [map](Op::map) combinator method, which applies a simple function
 //! op to the output of the previous op:
 //! ```rust
-//! use AIS::pipeline::{self, Op};
+//! use galactica::pipeline::{self, Op};
 //!
 //! let pipeline = pipeline::new()
 //!     // op1: add two numbers
@@ -47,7 +47,7 @@
 //!
 //! For example, the pipeline below runs two operations concurrently:
 //! ```rust
-//! use AIS::{pipeline::{self, Op, map}, parallel};
+//! use galactica::{pipeline::{self, Op, map}, parallel};
 //!
 //! let pipeline = pipeline::new()
 //!     .chain(parallel!(
@@ -109,7 +109,7 @@ impl<E> PipelineBuilder<E> {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, Op};
+    /// use galactica::pipeline::{self, Op};
     ///
     /// let pipeline = pipeline::new()
     ///    .map(|(x, y)| x + y)
@@ -132,7 +132,7 @@ impl<E> PipelineBuilder<E> {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, Op};
+    /// use galactica::pipeline::{self, Op};
     ///
     /// let pipeline = pipeline::new()
     ///     .then(|email: String| async move {
@@ -160,7 +160,7 @@ impl<E> PipelineBuilder<E> {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, Op};
+    /// use galactica::pipeline::{self, Op};
     ///
     /// struct MyOp;
     ///
@@ -193,7 +193,7 @@ impl<E> PipelineBuilder<E> {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, Op};
+    /// use galactica::pipeline::{self, Op};
     ///
     /// let pipeline = pipeline::new()
     ///     .lookup(index, 2)
@@ -221,7 +221,7 @@ impl<E> PipelineBuilder<E> {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, Op};
+    /// use galactica::pipeline::{self, Op};
     ///
     /// let agent = &openai_client.agent("gpt-4").build();
     ///
@@ -247,7 +247,7 @@ impl<E> PipelineBuilder<E> {
     ///
     /// # Example
     /// ```rust
-    /// use AIS::pipeline::{self, Op};
+    /// use galactica::pipeline::{self, Op};
     ///
     /// #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
     /// struct Sentiment {

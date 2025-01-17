@@ -1,5 +1,5 @@
 use anyhow::Result;
-use AIS::{
+use galactica::{
     cli_chatbot::cli_chatbot,
     completion::ToolDefinition,
     embeddings::EmbeddingsBuilder,

@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{completion::Prompt, providers};
+use galactica::{completion::Prompt, providers};
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {

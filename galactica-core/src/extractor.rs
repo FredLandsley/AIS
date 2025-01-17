@@ -5,7 +5,7 @@
 //!
 //! # Example
 //! ```
-//! use AIS::providers::openai;
+//! use galactica::providers::openai;
 //!
 //! // Initialize the OpenAI client
 //! let openai = openai::Client::new("your-open-ai-api-key");

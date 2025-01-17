@@ -18,7 +18,7 @@
 //!
 //! # Example
 //! ```rust
-//! use AIS::{
+//! use galactica::{
 //!     completion::{Chat, Completion, Prompt},
 //!     providers::openai,
 //! };
@@ -63,7 +63,7 @@
 //!
 //! RAG Agent example
 //! ```rust
-//! use AIS::{
+//! use galactica::{
 //!     completion::Prompt,
 //!     embeddings::EmbeddingsBuilder,
 //!     providers::openai,
@@ -125,7 +125,7 @@ use crate::{
 ///
 /// # Example
 /// ```
-/// use AIS::{completion::Prompt, providers::openai};
+/// use galactica::{completion::Prompt, providers::openai};
 ///
 /// let openai = openai::Client::from_env();
 ///
@@ -276,7 +276,7 @@ impl<M: CompletionModel> Chat for Agent<M> {
 ///
 /// # Example
 /// ```
-/// use AIS::{providers::openai, agent::AgentBuilder};
+/// use galactica::{providers::openai, agent::AgentBuilder};
 ///
 /// let openai = openai::Client::from_env();
 ///

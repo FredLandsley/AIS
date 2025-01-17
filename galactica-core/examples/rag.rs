@@ -1,6 +1,6 @@
 use std::{env, vec};
 
-use AIS::{
+use galactica::{
     completion::Prompt,
     embeddings::EmbeddingsBuilder,
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
@@ -10,7 +10,7 @@ use AIS::{
 use serde::Serialize;
 
 // Data to be RAGged.
-// A vector seAISh needs to be performed on the `definitions` field, so we derive the `Embed` trait for `WordDefinition`
+// A vector segalacticah needs to be performed on the `definitions` field, so we derive the `Embed` trait for `WordDefinition`
 // and tag that field with `#[embed]`.
 #[derive(Embed, Serialize, Clone, Debug, Eq, PartialEq, Default)]
 struct WordDefinition {
@@ -42,7 +42,7 @@ async fn main() -> Result<(), anyhow::Error> {
                 word: "flurbo".to_string(),
                 definitions: vec![
                     "1. *flurbo* (name): A flurbo is a green alien that lives on cold planets.".to_string(),
-                    "2. *flurbo* (name): A fictional digital currency that oAISinated in the animated series Rick and Morty.".to_string()
+                    "2. *flurbo* (name): A fictional digital currency that ogalacticainated in the animated series Rick and Morty.".to_string()
                 ]
             },
             WordDefinition {

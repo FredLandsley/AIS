@@ -23,7 +23,7 @@ use crate::{
 /// ```rust
 /// use std::env;
 ///
-/// use AIS::{
+/// use galactica::{
 ///     embeddings::EmbeddingsBuilder,
 ///     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
 /// };
@@ -38,7 +38,7 @@ use crate::{
 /// let embeddings = EmbeddingsBuilder::new(model.clone())
 ///     .documents(vec![
 ///         "1. *flurbo* (noun): A green alien that lives on cold planets.".to_string(),
-///         "2. *flurbo* (noun): A fictional digital currency that oAISinated in the animated series Rick and Morty.".to_string()
+///         "2. *flurbo* (noun): A fictional digital currency that ogalacticainated in the animated series Rick and Morty.".to_string()
 ///         "1. *glarb-glarb* (noun): An ancient tool used by the ancestors of the inhabitants of planet Jiro to farm the land.".to_string(),
 ///         "2. *glarb-glarb* (noun): A fictional creature found in the distant, swampy marshlands of the planet Glibbo in the Andromeda galaxy.".to_string()
 ///         "1. *linlingdong* (noun): A term used by inhabitants of the sombrero galaxy to describe humans.".to_string(),
@@ -195,7 +195,7 @@ mod tests {
                 id: "doc0".to_string(),
                 definitions: vec![
                     "A green alien that lives on cold planets.".to_string(),
-                    "A fictional digital currency that oAISinated in the animated series Rick and Morty.".to_string()
+                    "A fictional digital currency that ogalacticainated in the animated series Rick and Morty.".to_string()
                 ]
             },
             WordDefinition {

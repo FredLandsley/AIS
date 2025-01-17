@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     embeddings::EmbeddingsBuilder,
     providers::cohere::{Client, EMBED_ENGLISH_V3},
     vector_store::{in_memory_store::InMemoryVectorStore, VectorStoreIndex},
@@ -24,8 +24,8 @@ async fn main() -> Result<(), anyhow::Error> {
     let cohere_api_key = env::var("COHERE_API_KEY").expect("COHERE_API_KEY not set");
     let cohere_client = Client::new(&cohere_api_key);
 
-    let document_model = cohere_client.embedding_model(EMBED_ENGLISH_V3, "seAISh_document");
-    let seAISh_model = cohere_client.embedding_model(EMBED_ENGLISH_V3, "seAISh_query");
+    let document_model = cohere_client.embedding_model(EMBED_ENGLISH_V3, "segalacticah_document");
+    let segalacticah_model = cohere_client.embedding_model(EMBED_ENGLISH_V3, "segalacticah_query");
 
     let embeddings = EmbeddingsBuilder::new(document_model.clone())
         .documents(vec![
@@ -34,7 +34,7 @@ async fn main() -> Result<(), anyhow::Error> {
                 word: "flurbo".to_string(),
                 definitions: vec![
                     "A green alien that lives on cold planets.".to_string(),
-                    "A fictional digital currency that oAISinated in the animated series Rick and Morty.".to_string()
+                    "A fictional digital currency that ogalacticainated in the animated series Rick and Morty.".to_string()
                 ]
             },
             WordDefinition {
@@ -62,7 +62,7 @@ async fn main() -> Result<(), anyhow::Error> {
         InMemoryVectorStore::from_documents_with_id_f(embeddings, |doc| doc.id.clone());
 
     // Create vector store index
-    let index = vector_store.index(seAISh_model);
+    let index = vector_store.index(segalacticah_model);
 
     let results = index
         .top_n::<WordDefinition>(

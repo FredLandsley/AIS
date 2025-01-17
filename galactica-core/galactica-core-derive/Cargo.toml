@@ -1,10 +1,10 @@
 [package]
-name = "AIS-derive"
+name = "galactica-derive"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "Internal crate that implements AIS derive macros."
-repository = "https://github.com/FredLandsley/AIS"
+description = "Internal crate that implements galactica derive macros."
+repository = "https://github.com/OFFICIALDBLR/galactica"
 
 [dependencies]
 indoc = "2.0.5"

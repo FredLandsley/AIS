@@ -61,7 +61,7 @@ impl<T: Loadable> Loadable for Result<T, PdfLoaderError> {
 /// # Example Usage
 ///
 /// ```rust
-/// use AIS:loaders::PdfileLoader;
+/// use galactica:loaders::PdfileLoader;
 ///
 /// fn main() -> Result<(), Box<dyn std::error::Error>> {
 ///     // Create a FileLoader using a glob pattern

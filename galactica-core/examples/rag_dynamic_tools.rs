@@ -1,5 +1,5 @@
 use anyhow::Result;
-use AIS::{
+use galactica::{
     completion::{Prompt, ToolDefinition},
     embeddings::EmbeddingsBuilder,
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},

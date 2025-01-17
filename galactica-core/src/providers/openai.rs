@@ -1,8 +1,8 @@
-//! OpenAI API client and AIS integration
+//! OpenAI API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::openai;
+//! use galactica::providers::openai;
 //!
 //! let client = openai::Client::new("YOUR_API_KEY");
 //!
@@ -74,7 +74,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::openai::{Client, self};
+    /// use galactica::providers::openai::{Client, self};
     ///
     /// // Initialize the OpenAI client
     /// let openai = Client::new("your-open-ai-api-key");
@@ -94,12 +94,12 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::openai::{Client, self};
+    /// use galactica::providers::openai::{Client, self};
     ///
     /// // Initialize the OpenAI client
     /// let openai = Client::new("your-open-ai-api-key");
     ///
-    /// let embedding_model = openai.embedding_model("model-unknown-to-AIS", 3072);
+    /// let embedding_model = openai.embedding_model("model-unknown-to-galactica", 3072);
     /// ```
     pub fn embedding_model_with_ndims(&self, model: &str, ndims: usize) -> EmbeddingModel {
         EmbeddingModel::new(self.clone(), model, ndims)
@@ -109,7 +109,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::openai::{Client, self};
+    /// use galactica::providers::openai::{Client, self};
     ///
     /// // Initialize the OpenAI client
     /// let openai = Client::new("your-open-ai-api-key");
@@ -129,7 +129,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::openai::{Client, self};
+    /// use galactica::providers::openai::{Client, self};
     ///
     /// // Initialize the OpenAI client
     /// let openai = Client::new("your-open-ai-api-key");
@@ -144,7 +144,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::openai::{Client, self};
+    /// use galactica::providers::openai::{Client, self};
     ///
     /// // Initialize the OpenAI client
     /// let openai = Client::new("your-open-ai-api-key");
@@ -269,7 +269,7 @@ impl embeddings::EmbeddingModel for EmbeddingModel {
         if response.status().is_success() {
             match response.json::<ApiResponse<EmbeddingResponse>>().await? {
                 ApiResponse::Ok(response) => {
-                    tracing::info!(target: "AIS",
+                    tracing::info!(target: "galactica",
                         "OpenAI embedding token usage: {}",
                         response.usage
                     );
@@ -537,7 +537,7 @@ impl completion::CompletionModel for CompletionModel {
         if response.status().is_success() {
             match response.json::<ApiResponse<CompletionResponse>>().await? {
                 ApiResponse::Ok(response) => {
-                    tracing::info!(target: "AIS",
+                    tracing::info!(target: "galactica",
                         "OpenAI completion token usage: {:?}",
                         response.usage.clone().map(|usage| format!("{usage}")).unwrap_or("N/A".to_string())
                     );

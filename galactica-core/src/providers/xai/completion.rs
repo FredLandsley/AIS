@@ -17,7 +17,7 @@ use super::client::{xai_api_types::ApiResponse, Client};
 pub const GROK_BETA: &str = "grok-beta";
 
 // =================================================================
-// AIS Implementation Types
+// galactica Implementation Types
 // =================================================================
 
 #[derive(Clone)]

@@ -1,6 +1,6 @@
-use AIS::agent::AgentBuilder;
-use AIS::providers::eternalai::{CompletionModel, NOUS_RESEAISH_HERMES_3_LLAMA_3_1_70B_FP8};
-use AIS::{completion::Prompt, providers};
+use galactica::agent::AgentBuilder;
+use galactica::providers::eternalai::{CompletionModel, NOUS_RESEgalacticaH_HERMES_3_LLAMA_3_1_70B_FP8};
+use galactica::{completion::Prompt, providers};
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
@@ -21,7 +21,7 @@ fn client() -> providers::eternalai::Client {
 fn partial_agent_eternalai() -> AgentBuilder<CompletionModel> {
     let client = client();
     client.agent(
-        NOUS_RESEAISH_HERMES_3_LLAMA_3_1_70B_FP8,
+        NOUS_RESEgalacticaH_HERMES_3_LLAMA_3_1_70B_FP8,
         // Option::from("45762"),
         None,
     )
@@ -41,7 +41,7 @@ async fn basic_eternalai() -> Result<(), anyhow::Error> {
 
 async fn context_eternalai() -> Result<(), anyhow::Error> {
     let model = client().completion_model(
-        providers::eternalai::NOUS_RESEAISH_HERMES_3_LLAMA_3_1_70B_FP8,
+        providers::eternalai::NOUS_RESEgalacticaH_HERMES_3_LLAMA_3_1_70B_FP8,
         Option::from("45762"),
         // None,
     );

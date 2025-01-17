@@ -1,8 +1,8 @@
-//! xAi API client and AIS integration
+//! xAi API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::xai;
+//! use galactica::providers::xai;
 //!
 //! let client = xai::Client::new("YOUR_API_KEY");
 //!

@@ -1,4 +1,4 @@
-//! This module contains clients for the different LLM providers that AIS supports.
+//! This module contains clients for the different LLM providers that galactica supports.
 //!
 //! Currently, the following providers are supported:
 //! - Cohere
@@ -17,7 +17,7 @@
 //!
 //! # Example
 //! ```
-//! use AIS::{providers::openai, agent::AgentBuilder};
+//! use galactica::{providers::openai, agent::AgentBuilder};
 //!
 //! // Initialize the OpenAI client
 //! let openai = openai::Client::new("your-openai-api-key");

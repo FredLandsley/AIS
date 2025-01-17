@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     completion::Prompt,
     providers::anthropic::{self, CLAUDE_3_5_SONNET},
 };

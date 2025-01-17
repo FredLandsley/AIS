@@ -1,10 +1,10 @@
-# AIS (Agents In Seconds)
-AIS is a Rust library for building LLM-powered applications that focuses on ergonomics and modularity.
+# galactica (Agents In Seconds)
+galactica is a Rust library for building LLM-powered applications that focuses on ergonomics and modularity.
 
 More information about this crate can be found in the crate documentation
 ## Table of contents
 
-- [AIS](#AIS)
+- [galactica](#galactica)
   - [Table of contents](#table-of-contents)
   - [High-level features](#high-level-features)
   - [Installation](#installation)
@@ -18,12 +18,12 @@ More information about this crate can be found in the crate documentation
 
 ## Installation
 ```bash
-cargo add AIS-core
+cargo add galactica-core
 ```
 
 ## Simple example:
 ```rust
-use AIS::{completion::Prompt, providers::openai};
+use galactica::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -46,11 +46,11 @@ Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-t
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
 ## Integrations
-AIS supports the following LLM providers natively:
+galactica supports the following LLM providers natively:
 - OpenAI
 - Cohere
 - Google Gemini
 - xAI
 
-Additionally, AIS currently has the following integration sub-libraries:
-- MongoDB vector store: `AIS-mongodb`
+Additionally, galactica currently has the following integration sub-libraries:
+- MongoDB vector store: `galactica-mongodb`

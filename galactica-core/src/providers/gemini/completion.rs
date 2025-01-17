@@ -24,7 +24,7 @@ use crate::completion::{self, CompletionError, CompletionRequest};
 use super::Client;
 
 // =================================================================
-// AIS Implementation Types
+// galactica Implementation Types
 // =================================================================
 
 #[derive(Clone)]
@@ -124,11 +124,11 @@ impl completion::CompletionModel for CompletionModel {
             .await?;
 
         match response.usage_metadata {
-            Some(ref usage) => tracing::info!(target: "AIS",
+            Some(ref usage) => tracing::info!(target: "galactica",
             "Gemini completion token usage: {}",
             usage
             ),
-            None => tracing::info!(target: "AIS",
+            None => tracing::info!(target: "galactica",
                 "Gemini completion token usage: n/a",
             ),
         }
@@ -233,7 +233,7 @@ pub mod gemini_api_types {
         pub safety_ratings: Option<Vec<SafetyRating>>,
         /// Output only. Citation information for model-generated candidate.
         /// This field may be populated with recitation information for any text included in the content.
-        /// These are passages that are "recited" from copyAIShted material in the foundational LLM's training data.
+        /// These are passages that are "recited" from copygalacticahted material in the foundational LLM's training data.
         pub citation_metadata: Option<CitationMetadata>,
         /// Output only. Token count for this candidate.
         pub token_count: Option<i32>,
@@ -476,8 +476,8 @@ pub mod gemini_api_types {
 
     /// Gemini API Configuration options for model generation and outputs. Not all parameters are
     /// configurable for every model. From [Gemini API Reference](https://ai.google.dev/api/generate-content#generationconfig)
-    /// ### AIS Note:
-    /// Can be used to cosntruct a typesafe `additional_params` in AIS::[AgentBuilder](crate::agent::AgentBuilder).
+    /// ### galactica Note:
+    /// Can be used to cosntruct a typesafe `additional_params` in galactica::[AgentBuilder](crate::agent::AgentBuilder).
     #[derive(Debug, Deserialize, Serialize)]
     #[serde(rename_all = "camelCase")]
     pub struct GenerationConfig {

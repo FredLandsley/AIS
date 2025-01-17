@@ -1,4 +1,4 @@
-use AIS::loaders::FileLoader;
+use galactica::loaders::FileLoader;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {

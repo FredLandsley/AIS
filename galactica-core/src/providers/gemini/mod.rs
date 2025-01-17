@@ -1,8 +1,8 @@
-//! Google Gemini API client and AIS integration
+//! Google Gemini API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::google;
+//! use galactica::providers::google;
 //!
 //! let client = google::Client::new("YOUR_API_KEY");
 //!

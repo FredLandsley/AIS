@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     embeddings::EmbeddingsBuilder,
     parallel,
     pipeline::{self, agent_ops::lookup, passthrough, Op},

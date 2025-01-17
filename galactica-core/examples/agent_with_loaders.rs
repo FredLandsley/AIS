@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     agent::AgentBuilder,
     completion::Prompt,
     loaders::FileLoader,
@@ -15,7 +15,7 @@ async fn main() -> Result<(), anyhow::Error> {
     let model = openai_client.completion_model(GPT_4O);
 
     // Load in all the rust examples
-    let examples = FileLoader::with_glob("AIS-core/examples/*.rs")?
+    let examples = FileLoader::with_glob("galactica-core/examples/*.rs")?
         .read_with_path()
         .ignore_errors()
         .into_iter();

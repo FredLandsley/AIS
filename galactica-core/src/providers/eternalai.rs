@@ -1,12 +1,12 @@
-//! EternalAI API client and AIS integration
+//! EternalAI API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::eternalai;
+//! use galactica::providers::eternalai;
 //!
 //! let client = eternalai::Client::new("YOUR_API_KEY");
 //!
-//! let gpt4o = client.completion_model(eternalai::NOUS_RESEAISH_HERMES_3_LLAMA_3_1_70B_FP8);
+//! let gpt4o = client.completion_model(eternalai::NOUS_RESEgalacticaH_HERMES_3_LLAMA_3_1_70B_FP8);
 //! ```
 
 use crate::{
@@ -77,7 +77,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::eternalai::{Client, self};
+    /// use galactica::providers::eternalai::{Client, self};
     ///
     /// // Initialize the EternalAI client
     /// let eternalai = Client::new("your-open-ai-api-key");
@@ -97,12 +97,12 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::eternalai::{Client, self};
+    /// use galactica::providers::eternalai::{Client, self};
     ///
     /// // Initialize the EternalAI client
     /// let eternalai = Client::new("your-open-ai-api-key");
     ///
-    /// let embedding_model = eternalai.embedding_model("model-unknown-to-AIS", 3072);
+    /// let embedding_model = eternalai.embedding_model("model-unknown-to-galactica", 3072);
     /// ```
     pub fn embedding_model_with_ndims(&self, model: &str, ndims: usize) -> EmbeddingModel {
         EmbeddingModel::new(self.clone(), model, ndims)
@@ -112,7 +112,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::eternalai::{Client, self};
+    /// use galactica::providers::eternalai::{Client, self};
     ///
     /// // Initialize the EternalAI client
     /// let eternalai = Client::new("your-open-ai-api-key");
@@ -132,7 +132,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::eternalai::{Client, self};
+    /// use galactica::providers::eternalai::{Client, self};
     ///
     /// // Initialize the EternalAI client
     /// let eternalai = Client::new("your-open-ai-api-key");
@@ -147,7 +147,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::eternalai::{Client, self};
+    /// use galactica::providers::eternalai::{Client, self};
     ///
     /// // Initialize the Eternal client
     /// let eternalai = Client::new("your-open-ai-api-key");
@@ -271,7 +271,7 @@ impl embeddings::EmbeddingModel for EmbeddingModel {
         if response.status().is_success() {
             match response.json::<ApiResponse<EmbeddingResponse>>().await? {
                 ApiResponse::Ok(response) => {
-                    tracing::info!(target: "AIS",
+                    tracing::info!(target: "galactica",
                         "EternalAI embedding token usage: {}",
                         response.usage
                     );
@@ -313,12 +313,12 @@ impl EmbeddingModel {
 // ================================================================
 // EternalAI Completion API
 // ================================================================
-pub const NOUS_RESEAISH_HERMES_3_LLAMA_3_1_70B_FP8: &str =
-    "NousReseAISh/Hermes-3-Llama-3.1-70B-FP8";
+pub const NOUS_RESEgalacticaH_HERMES_3_LLAMA_3_1_70B_FP8: &str =
+    "NousResegalacticah/Hermes-3-Llama-3.1-70B-FP8";
 pub const UNSLOTH_LLAMA_3_3_70B_INSTRUCT_BNB_4BIT: &str = "unsloth/Llama-3.3-70B-Instruct-bnb-4bit";
 
 pub const MAPPING_CHAINID: [(&str, &str); 2] = [
-    (NOUS_RESEAISH_HERMES_3_LLAMA_3_1_70B_FP8, "45762"),
+    (NOUS_RESEgalacticaH_HERMES_3_LLAMA_3_1_70B_FP8, "45762"),
     (UNSLOTH_LLAMA_3_3_70B_INSTRUCT_BNB_4BIT, "45762"),
 ];
 
@@ -521,7 +521,7 @@ impl completion::CompletionModel for CompletionModel {
         if response.status().is_success() {
             match response.json::<ApiResponse<CompletionResponse>>().await? {
                 ApiResponse::Ok(response) => {
-                    tracing::info!(target: "AIS",
+                    tracing::info!(target: "galactica",
                         "EternalAI completion token usage: {:?}",
                         response.usage.clone().map(|usage| format!("{usage}")).unwrap_or("N/A".to_string())
                     );

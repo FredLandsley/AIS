@@ -67,7 +67,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::xai::{Client, self};
+    /// use galactica::providers::xai::{Client, self};
     ///
     /// // Initialize the xAI client
     /// let xai = Client::new("your-xai-api-key");
@@ -87,12 +87,12 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::xai::{Client, self};
+    /// use galactica::providers::xai::{Client, self};
     ///
     /// // Initialize the xAI client
     /// let xai = Client::new("your-xai-api-key");
     ///
-    /// let embedding_model = xai.embedding_model_with_ndims("model-unknown-to-AIS", 1024);
+    /// let embedding_model = xai.embedding_model_with_ndims("model-unknown-to-galactica", 1024);
     /// ```
     pub fn embedding_model_with_ndims(&self, model: &str, ndims: usize) -> EmbeddingModel {
         EmbeddingModel::new(self.clone(), model, ndims)
@@ -102,7 +102,7 @@ impl Client {
     ///
     /// # Example
     /// ```
-    /// use AIS::providers::xai::{Client, self};
+    /// use galactica::providers::xai::{Client, self};
     ///
     /// // Initialize the xAI client
     /// let xai = Client::new("your-xai-api-key");
@@ -129,7 +129,7 @@ impl Client {
     /// Create an agent builder with the given completion model.
     /// # Example
     /// ```
-    /// use AIS::providers::xai::{Client, self};
+    /// use galactica::providers::xai::{Client, self};
     ///
     /// // Initialize the xAI client
     /// let xai = Client::new("your-xai-api-key");

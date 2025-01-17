@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     agent::{Agent, AgentBuilder},
     cli_chatbot::cli_chatbot,
     completion::{Chat, CompletionModel, Message, PromptError},
@@ -23,7 +23,7 @@ impl<M: CompletionModel> EnglishTranslator<M> {
             translator_agent: AgentBuilder::new(model.clone())
                 .preamble("\
                     You are a translator assistant that will translate any input text into english. \
-                    If the text is already in english, simply respond with the oAISinal text but fix any mistakes (grammar, syntax, etc.). \
+                    If the text is already in english, simply respond with the ogalacticainal text but fix any mistakes (grammar, syntax, etc.). \
                 ")
                 .build(),
 

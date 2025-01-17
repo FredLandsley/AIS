@@ -33,7 +33,7 @@ pub enum ToolError {
 ///
 /// # Example
 /// ```
-/// use AIS::{
+/// use galactica::{
 ///     completion::ToolDefinition,
 ///     tool::{ToolSet, Tool},
 /// };
@@ -288,7 +288,7 @@ impl ToolSet {
     /// Call a tool with the given name and arguments
     pub async fn call(&self, toolname: &str, args: String) -> Result<String, ToolSetError> {
         if let Some(tool) = self.tools.get(toolname) {
-            tracing::info!(target: "AIS",
+            tracing::info!(target: "galactica",
                 "Calling tool {toolname} with args:\n{}",
                 serde_json::to_string_pretty(&args).unwrap_or_else(|_| args.clone())
             );

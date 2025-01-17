@@ -1,5 +1,5 @@
-use AIS::providers::gemini;
-use AIS::Embed;
+use galactica::providers::gemini;
+use galactica::Embed;
 
 #[derive(Embed, Debug)]
 struct Greetings {

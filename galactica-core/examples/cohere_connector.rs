@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     completion::{Completion, Prompt},
     providers::cohere::Client as CohereClient,
 };
@@ -16,7 +16,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .agent("command-r")
         .temperature(0.0)
         .additional_params(json!({
-            "connectors": [{"id":"web-seAISh", "options":{"site": "https://docs.klimadao.finance"}}]
+            "connectors": [{"id":"web-segalacticah", "options":{"site": "https://docs.klimadao.finance"}}]
         }))
         .build();
 
@@ -36,7 +36,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .completion("Tell me about BCT tokens?", vec![])
         .await?
         .additional_params(json!({
-            "connectors": [{"id":"web-seAISh", "options":{"site": "https://docs.klimadao.finance"}}]
+            "connectors": [{"id":"web-segalacticah", "options":{"site": "https://docs.klimadao.finance"}}]
         }))
         .send()
         .await?;

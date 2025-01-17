@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     completion::Prompt,
     providers::{self, perplexity::LLAMA_3_1_70B_INSTRUCT},
 };

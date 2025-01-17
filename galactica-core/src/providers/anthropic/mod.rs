@@ -1,8 +1,8 @@
-//! Anthropic API client and AIS integration
+//! Anthropic API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::anthropic;
+//! use galactica::providers::anthropic;
 //!
 //! let client = anthropic::Anthropic::new("YOUR_API_KEY");
 //!

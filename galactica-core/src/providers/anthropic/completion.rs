@@ -262,7 +262,7 @@ impl completion::CompletionModel for CompletionModel {
         if response.status().is_success() {
             match response.json::<ApiResponse<CompletionResponse>>().await? {
                 ApiResponse::Message(completion) => {
-                    tracing::info!(target: "AIS",
+                    tracing::info!(target: "galactica",
                         "Anthropic completion token usage: {}",
                         completion.usage
                     );

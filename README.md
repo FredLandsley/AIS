@@ -1,21 +1,21 @@
-<h1>AIS (Agents In Seconds)</h1> 
+<h1>galactica (Agents In Seconds)</h1> 
 
-✨ If you would like to help spread the word about AIS, please consider starring the repo!
+✨ If you would like to help spread the word about galactica, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With AIS evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With galactica evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is AIS?
+## What is galactica?
 Agents In Seconds is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
-Help us improve AIS by contributing to our Feedback form.
+Help us improve galactica by contributing to our Feedback form.
 
 ## Table of contents
 
-- [What is AIS?](#what-is-AIS)
+- [What is galactica?](#what-is-galactica)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -31,12 +31,12 @@ Help us improve AIS by contributing to our Feedback form.
 
 ## Get Started
 ```bash
-cargo add AIS-core
+cargo add galactica-core
 ```
 
 ### Simple example:
 ```rust
-use AIS::{completion::Prompt, providers::openai};
+use galactica::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -58,7 +58,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`AIS-core/examples`](./AIS-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to AIS's official documentation.
+You can find more examples each crate's `examples` (ie. [`galactica-core/examples`](./galactica-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to galactica's official documentation.
 
 ## Supported Integrations
 
@@ -68,11 +68,11 @@ You can find more examples each crate's `examples` (ie. [`AIS-core/examples`](./
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`AIS-mongodb`](https://github.com/FredLandsley/AIS/tree/main/AIS-mongodb)
-- LanceDB vector store: [`AIS-lancedb`](https://github.com/FredLandsley/AIS/tree/main/AIS-lancedb)
-- Neo4j vector store: [`AIS-neo4j`](https://github.com/FredLandsley/AIS/tree/main/AIS-neo4j)
-- Qdrant vector store: [`AIS-qdrant`](https://github.com/FredLandsley/AIS/tree/main/AIS-qdrant)
-- SQLite vector store: [`AIS-sqlite`](https://github.com/FredLandsley/AIS/tree/main/AIS-sqlite)
+- MongoDB vector store: [`galactica-mongodb`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-mongodb)
+- LanceDB vector store: [`galactica-lancedb`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-lancedb)
+- Neo4j vector store: [`galactica-neo4j`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-neo4j)
+- Qdrant vector store: [`galactica-qdrant`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-qdrant)
+- SQLite vector store: [`galactica-sqlite`](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-sqlite)
 
 
 <p align="center">

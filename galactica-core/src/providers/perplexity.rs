@@ -1,8 +1,8 @@
-//! Perplexity API client and AIS integration
+//! Perplexity API client and galactica integration
 //!
 //! # Example
 //! ```
-//! use AIS::providers::perplexity;
+//! use galactica::providers::perplexity;
 //!
 //! let client = perplexity::Client::new("YOUR_API_KEY");
 //!
@@ -247,7 +247,7 @@ impl completion::CompletionModel for CompletionModel {
         if response.status().is_success() {
             match response.json::<ApiResponse<CompletionResponse>>().await? {
                 ApiResponse::Ok(completion) => {
-                    tracing::info!(target: "AIS",
+                    tracing::info!(target: "galactica",
                         "Perplexity completion token usage: {}",
                         completion.usage
                     );

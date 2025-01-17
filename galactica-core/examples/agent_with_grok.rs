@@ -1,6 +1,6 @@
 use std::env;
 
-use AIS::{
+use galactica::{
     agent::AgentBuilder,
     completion::{Prompt, ToolDefinition},
     loaders::FileLoader,
@@ -85,13 +85,13 @@ async fn tools() -> Result<(), anyhow::Error> {
 /// Create an xAI agent (grok) with loaders
 /// Based upon the `loaders` example
 ///
-/// This example loads in all the rust examples from the AIS-core crate and uses them as\\
+/// This example loads in all the rust examples from the galactica-core crate and uses them as\\
 ///  context for the agent
 async fn loaders() -> Result<(), anyhow::Error> {
     let model = client().completion_model(providers::xai::GROK_BETA);
 
     // Load in all the rust examples
-    let examples = FileLoader::with_glob("AIS-core/examples/*.rs")?
+    let examples = FileLoader::with_glob("galactica-core/examples/*.rs")?
         .read_with_path()
         .ignore_errors()
         .into_iter();

@@ -1,5 +1,5 @@
 use anyhow::Result;
-use AIS::{
+use galactica::{
     completion::{Prompt, ToolDefinition},
     providers,
     tool::Tool,

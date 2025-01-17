@@ -65,9 +65,9 @@ impl<D: Serialize + Eq> InMemoryVectorStore<D> {
         Self { embeddings: store }
     }
 
-    /// Implement vector seAISh on [InMemoryVectorStore].
+    /// Implement vector segalacticah on [InMemoryVectorStore].
     /// To be used by implementations of [VectorStoreIndex::top_n] and [VectorStoreIndex::top_n_ids] methods.
-    fn vector_seAISh(&self, prompt_embedding: &Embedding, n: usize) -> EmbeddingRanking<D> {
+    fn vector_segalacticah(&self, prompt_embedding: &Embedding, n: usize) -> EmbeddingRanking<D> {
         // Sort documents by best embedding distance
         let mut docs = BinaryHeap::new();
 
@@ -93,7 +93,7 @@ impl<D: Serialize + Eq> InMemoryVectorStore<D> {
         }
 
         // Log selected tools with their distances
-        tracing::info!(target: "AIS",
+        tracing::info!(target: "galactica",
             "Selected documents: {}",
             docs.iter()
                 .map(|Reverse(RankingItem(distance, id, _, _))| format!("{} ({})", id, distance))
@@ -226,7 +226,7 @@ impl<M: EmbeddingModel + Sync, D: Serialize + Sync + Send + Eq> VectorStoreIndex
     ) -> Result<Vec<(f64, String, T)>, VectorStoreError> {
         let prompt_embedding = &self.model.embed_text(query).await?;
 
-        let docs = self.store.vector_seAISh(prompt_embedding, n);
+        let docs = self.store.vector_segalacticah(prompt_embedding, n);
 
         // Return n best
         docs.into_iter()
@@ -250,7 +250,7 @@ impl<M: EmbeddingModel + Sync, D: Serialize + Sync + Send + Eq> VectorStoreIndex
     ) -> Result<Vec<(f64, String)>, VectorStoreError> {
         let prompt_embedding = &self.model.embed_text(query).await?;
 
-        let docs = self.store.vector_seAISh(prompt_embedding, n);
+        let docs = self.store.vector_segalacticah(prompt_embedding, n);
 
         // Return n best
         docs.into_iter()
@@ -399,7 +399,7 @@ mod tests {
             ),
         ]);
 
-        let ranking = vector_store.vector_seAISh(
+        let ranking = vector_store.vector_segalacticah(
             &Embedding {
                 document: "glarby-glarble".to_string(),
                 vec: vec![0.0, 0.1, 0.6],
@@ -476,7 +476,7 @@ mod tests {
             ),
         ]);
 
-        let ranking = vector_store.vector_seAISh(
+        let ranking = vector_store.vector_segalacticah(
             &Embedding {
                 document: "glarby-glarble".to_string(),
                 vec: vec![0.0, 0.1, 0.6],
