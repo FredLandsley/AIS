@@ -1,11 +1,7 @@
 
 
 <div style="display: flex; align-items: center; justify-content: center;">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="../img/oxy_logo_dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="../img/oxy_logo.svg">
-        <img src="../img/oxy_logo.svg" width="200" alt="oxy logo">
-    </picture>
+
     <span style="font-size: 48px; margin: 0 20px; font-weight: regular; font-family: Open Sans, sans-serif;"> + </span>
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://cdn.prod.website-files.com/653986a9412d138f23c5b8cb/65c3ee6c93dc929503742ff6_1_E5u7PfGGOQ32_H5dUVGerQ%402x.png">
