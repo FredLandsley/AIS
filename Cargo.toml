@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 members = [
-    "yani-core", "yani-lancedb",
-    "yani-mongodb", "yani-neo4j",
-    "yani-qdrant", "yani-core/yani-core-derive",
-    "yani-sqlite"
+    "izzy-core", "izzy-lancedb",
+    "izzy-mongodb", "izzy-neo4j",
+    "izzy-qdrant", "izzy-core/izzy-core-derive",
+    "izzy-sqlite"
 ]
 
 
