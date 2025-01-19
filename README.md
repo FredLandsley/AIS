@@ -1,17 +1,57 @@
-<h1>Oxy AI</h1>
+<p align="center">
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="img/rusty-playgrounds-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="img/rusty-playgrounds-light.svg">
+    <img src="img/rusty-playgrounds-light.svg" style="width: 40%; height: 40%;" alt="rusty logo">
+</picture>
+<br>
+<a href="https://docs.rusty.rs"><img src="https://img.shields.io/badge/📖 docs-rusty.rs-dca282.svg" /></a> &nbsp;
+<a href="https://docs.rs/rusty-core/latest/rusty/"><img src="https://img.shields.io/badge/docs-API Reference-dca282.svg" /></a> &nbsp;
+<a href="https://crates.io/crates/rusty-core"><img src="https://img.shields.io/crates/v/rusty-core.svg?color=dca282" /></a>
+&nbsp;
+<a href="https://crates.io/crates/rusty-core"><img src="https://img.shields.io/crates/d/rusty-core.svg?color=dca282" /></a>
+</br>
+<a href="https://discord.gg/playgrounds"><img src="https://img.shields.io/discord/511303648119226382?color=%236d82cc&label=Discord&logo=discord&logoColor=white" /></a>
+&nbsp;
+<a href="https://github.com/DMister01/rusty"><img src="https://img.shields.io/github/stars/DMister01/rusty?style=social" alt="stars - rusty" /></a>
+<br>
+<a href=""><img src="https://img.shields.io/badge/built_with-Rust-dca282.svg?logo=rust" /></a>
+&nbsp;
+<a href="https://twitter.com/Playgrounds0x"><img src="https://img.shields.io/twitter/follow/Playgrounds0x"></a> &nbsp
 
-✨ If you would like to help spread the word about oxy, please consider starring the repo!
+<br>
+</p>
+&nbsp;
+
+
+<div align="center">
+
+[📑 Docs](https://docs.rusty.rs)
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+[🌐 Website](https://rusty.rs)
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+[🤝 Contribute](https://github.com/DMister01/rusty/issues/new)
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+[✍🏽 Blogs](https://docs.rusty.rs/guides)
+
+</div>
+
+✨ If you would like to help spread the word about rusty, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With oxy evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With rusty evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is Oxy?
-Oxy is a Rust library for building scalable, modular, and ergonomic **LLM-powered** applications.
+## What is rusty?
+rusty is a Rust library for building scalable, modular, and ergonomic **LLM-powered** applications.
+
+More information about this crate can be found in the [official](https://docs.rusty.rs) & [crate](https://docs.rs/rusty-core/latest/rusty/) (API Reference) documentations.
+
+Help us improve rusty by contributing to our [Feedback form](https://bit.ly/rusty-Feeback-Form).
 
 ## Table of contents
 
-- [What is oxy?](#what-is-oxy)
+- [What is rusty?](#what-is-rusty)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -27,12 +67,12 @@ Oxy is a Rust library for building scalable, modular, and ergonomic **LLM-powere
 
 ## Get Started
 ```bash
-cargo add oxy-core
+cargo add rusty-core
 ```
 
 ### Simple example:
 ```rust
-use oxy::{completion::Prompt, providers::openai};
+use rusty::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -54,7 +94,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`oxy-core/examples`](./oxy-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our blog and added to oxy's official documentation.
+You can find more examples each crate's `examples` (ie. [`rusty-core/examples`](./rusty-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our [Dev.to Blog](https://dev.to/0thtachi) and added to rusty's official documentation [(docs.rusty.rs)](http://docs.rusty.rs).
 
 ## Supported Integrations
 
@@ -64,13 +104,15 @@ You can find more examples each crate's `examples` (ie. [`oxy-core/examples`](./
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`oxy-mongodb`](https://github.com/dannyglendale/oxy/tree/main/oxy-mongodb)
-- LanceDB vector store: [`oxy-lancedb`](https://github.com/dannyglendale/oxy/tree/main/oxy-lancedb)
-- Neo4j vector store: [`oxy-neo4j`](https://github.com/dannyglendale/oxy/tree/main/oxy-neo4j)
-- Qdrant vector store: [`oxy-qdrant`](https://github.com/dannyglendale/oxy/tree/main/oxy-qdrant)
-- SQLite vector store: [`oxy-sqlite`](https://github.com/dannyglendale/oxy/tree/main/oxy-sqlite)
+- MongoDB vector store: [`rusty-mongodb`](https://github.com/DMister01/rusty/tree/main/rusty-mongodb)
+- LanceDB vector store: [`rusty-lancedb`](https://github.com/DMister01/rusty/tree/main/rusty-lancedb)
+- Neo4j vector store: [`rusty-neo4j`](https://github.com/DMister01/rusty/tree/main/rusty-neo4j)
+- Qdrant vector store: [`rusty-qdrant`](https://github.com/DMister01/rusty/tree/main/rusty-qdrant)
+- SQLite vector store: [`rusty-sqlite`](https://github.com/DMister01/rusty/tree/main/rusty-sqlite)
 
 
 <p align="center">
 <br>
-<br></p>
+<br>
+<img src="img/built-by-playgrounds.svg" alt="Build by Playgrounds" width="30%">
+</p>

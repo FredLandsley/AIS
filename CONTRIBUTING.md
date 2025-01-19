@@ -1,8 +1,8 @@
-# Contributing to oxy
+# Contributing to rusty
 
-Thank you for considering contributing to oxy! Here are some guidelines to help you get started.
+Thank you for considering contributing to rusty! Here are some guidelines to help you get started.
 
-General guidelines and requested contributions can be found in the [How to Contribute](https://docs.oxy.rs/docs/7_how-to-contribute) section of the documentation.
+General guidelines and requested contributions can be found in the [How to Contribute](https://docs.rusty.rs/docs/7_how-to-contribute) section of the documentation.
 
 ## Issues
 
@@ -12,15 +12,15 @@ Before reporting an issue, please check existing or similar issues that are curr
 
 Contributions are always encouraged and welcome. Before creating a pull request, create a new issue that tracks that pull request describing the problem in more detail. Pull request descriptions should include information about it's implementation, especially if it makes changes to existing abstractions.
 
-PRs should be small and focused and should avoid interacting with multiple facets of the library. This may result in a larger PR being split into two or more smaller PRs. Commit messages should follow the [Conventional Commit](conventionalcommits.org/en/v1.0.0) format (prefixing with `feat`, `fix`, etc.) as this integrates into our auto-releases via a [release-plz](https://github.com/MoxyoIeni/release-plz) Github action.
+PRs should be small and focused and should avoid interacting with multiple facets of the library. This may result in a larger PR being split into two or more smaller PRs. Commit messages should follow the [Conventional Commit](conventionalcommits.org/en/v1.0.0) format (prefixing with `feat`, `fix`, etc.) as this integrates into our auto-releases via a [release-plz](https://github.com/MrustyoIeni/release-plz) Github action.
 
 **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://kcd.im/pull-request) 
 
 ## Project Structure
 
-oxy is split up into multiple crates in a monorepo structure. The main crate `oxy-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `oxy-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
+rusty is split up into multiple crates in a monorepo structure. The main crate `rusty-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `rusty-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
 
-If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the oxy team.
+If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the rusty team.
 
 
 ## Developing
@@ -30,8 +30,8 @@ If you are unsure whether a side-crate should live in the main repo, you can spi
 This should be similar to most rust projects.
 
 ```bash
-git clone https://github.com/dannyglendale/oxy
-cd oxy
+git clone https://github.com/DMister01/rusty
+cd rusty
 cargo test
 ```
 
