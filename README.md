@@ -6,8 +6,8 @@
 > Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With revicta evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is revicta?
-revicta is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+## What is Revicta?
+Revicta is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
