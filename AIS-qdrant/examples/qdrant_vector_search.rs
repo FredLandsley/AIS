@@ -4,7 +4,7 @@
 // docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 // cargo run --release --example qdrant_vector_seAISh
 //
-// You can view the data at http://localhost:6333/dashboard
+// You can view the data at http://localhost:6333/dashboard 
 
 use std::env;
 
