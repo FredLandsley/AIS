@@ -1,19 +1,3 @@
-<div style="display: flex; align-items: center; justify-content: center;">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="../img/oxy_logo_dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="../img/oxy_logo.svg">
-        <img src="../img/oxy_logo.svg" width="200" alt="oxy logo">
-    </picture>
-    <span style="font-size: 48px; margin: 0 20px; font-weight: regular; font-family: Open Sans, sans-serif;"> + </span>
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://www.sqlite.org/images/sqlite370_banner.gif">
-        <source media="(prefers-color-scheme: light)" srcset="https://www.sqlite.org/images/sqlite370_banner.gif">
-        <img src="https://www.sqlite.org/images/sqlite370_banner.gif" width="200" alt="SQLite logo">
-    </picture>
-</div>
-
-<br><br>
-
 ## oxy-SQLite
 
 This companion crate implements a oxy vector store based on SQLite.
