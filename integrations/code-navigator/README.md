@@ -23,7 +23,7 @@ Example AI-Engine prompt:
     - Enter the virtual environment with `poetry shell`
 
 2. Add OpenAI API key:
-    - Visit the [OpenAI website](https://openai.com/).
+    - Visit the [OpenAI website](https://openai.com/). 
     - Sign up or log in.
     - Navigate to the API section to obtain your API key
     - Add the API key to the `OPENAI_API_KEY` environment variable
