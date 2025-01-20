@@ -1,40 +1,4 @@
-<p align="center">
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="img/rusty-playgrounds-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="img/rusty-playgrounds-light.svg">
-    <img src="img/rusty-playgrounds-light.svg" style="width: 40%; height: 40%;" alt="rusty logo">
-</picture>
-<br>
-<a href="https://docs.rusty.rs"><img src="https://img.shields.io/badge/📖 docs-rusty.rs-dca282.svg" /></a> &nbsp;
-<a href="https://docs.rs/rusty-core/latest/rusty/"><img src="https://img.shields.io/badge/docs-API Reference-dca282.svg" /></a> &nbsp;
-<a href="https://crates.io/crates/rusty-core"><img src="https://img.shields.io/crates/v/rusty-core.svg?color=dca282" /></a>
-&nbsp;
-<a href="https://crates.io/crates/rusty-core"><img src="https://img.shields.io/crates/d/rusty-core.svg?color=dca282" /></a>
-</br>
-<a href="https://discord.gg/playgrounds"><img src="https://img.shields.io/discord/511303648119226382?color=%236d82cc&label=Discord&logo=discord&logoColor=white" /></a>
-&nbsp;
-<a href="https://github.com/DMister01/rusty"><img src="https://img.shields.io/github/stars/DMister01/rusty?style=social" alt="stars - rusty" /></a>
-<br>
-<a href=""><img src="https://img.shields.io/badge/built_with-Rust-dca282.svg?logo=rust" /></a>
-&nbsp;
-<a href="https://twitter.com/Playgrounds0x"><img src="https://img.shields.io/twitter/follow/Playgrounds0x"></a> &nbsp
-
-<br>
-</p>
-&nbsp;
-
-
-<div align="center">
-
-[📑 Docs](https://docs.rusty.rs)
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-[🌐 Website](https://rusty.rs)
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-[🤝 Contribute](https://github.com/DMister01/rusty/issues/new)
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-[✍🏽 Blogs](https://docs.rusty.rs/guides)
-
-</div>
+<h1>Rusty AI</h1>
 
 ✨ If you would like to help spread the word about rusty, please consider starring the repo!
 
