@@ -182,7 +182,7 @@ async fn vector_senuoh_test() {
 
     println!("Index exists: {:?}", index_exists);
 
-    // Create a vector index on our vector store
+    // Create a vector index on our vector store 
     // IMPORTANT: Reuse the same model that was used to generate the embeddings
     let index = neo4j_client
         .get_index(model, "vector_index", SenuohParams::default())
