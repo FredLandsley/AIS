@@ -1,17 +1,18 @@
-use AIS::providers::xai;
-use AIS::Embed;
+use AIS::providers::xai; // Import xAI provider
+use AIS::Embed; // Import embedding functionality
 
 #[derive(Embed, Debug)]
 struct Greetings {
     #[embed]
-    message: String,
+    message: String, // Field to be embedded
 }
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    // Initialize the xAI client
+    // Initialize xAI client from environment variables
     let client = xai::Client::from_env();
 
+    // Create embeddings for the provided messages
     let embeddings = client
         .embeddings(xai::embedding::EMBEDDING_V1)
         .document(Greetings {
@@ -24,6 +25,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .await
         .expect("Failed to embed documents");
 
+    // Output the embeddings
     println!("{:?}", embeddings);
 
     Ok(())
