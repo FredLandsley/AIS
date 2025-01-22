@@ -23,7 +23,7 @@ Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 <!-- markdown-link-check-disable -->
 
-Please use [GitHub Discussions](https://github.com/mostafakhaliid/vitruvia/discussions) for support related questions and general discussions. Do NOT open issues as they are for bug reports and feature requests. This is because:
+Please use [GitHub Discussions](https://github.com/dannyglendale/cerebra/discussions) for support related questions and general discussions. Do NOT open issues as they are for bug reports and feature requests. This is because:
 
 <!-- markdown-link-check-enable -->
 
@@ -49,11 +49,11 @@ If you would like to _implement_ a new feature:
 
 <!-- markdown-link-check-disable -->
 
-Before you submit an issue, please search the [issue tracker](https://github.com/mostafakhaliid/vitruvia/issues). An issue for your problem might already exist and the discussion might inform you of workarounds readily available.
+Before you submit an issue, please search the [issue tracker](https://github.com/dannyglendale/cerebra/issues). An issue for your problem might already exist and the discussion might inform you of workarounds readily available.
 
 For bug reports, it is important that we can reproduce and confirm it. For this, we need you to provide a minimal reproduction instruction (this is part of the bug report issue template).
 
-You can file new issues by selecting from our [new issue templates](https://github.com/mostafakhaliid/vitruvia/issues/new/choose) and filling out the issue template.
+You can file new issues by selecting from our [new issue templates](https://github.com/dannyglendale/cerebra/issues/new/choose) and filling out the issue template.
 
 <!-- markdown-link-check-enable -->
 
@@ -65,7 +65,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 <!-- markdown-link-check-disable -->
 
-2. Search [Existing PRs](https://github.com/mostafakhaliid/vitruvia/pulls) for an open or closed PR that relates to your submission.
+2. Search [Existing PRs](https://github.com/dannyglendale/cerebra/pulls) for an open or closed PR that relates to your submission.
    You don't want to duplicate existing efforts.
     <!-- markdown-link-check-enable -->
 
@@ -73,7 +73,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 <!-- markdown-link-check-disable -->
 
-4. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the [repository](https://github.com/mostafakhaliid/vitruvia).
+4. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the [repository](https://github.com/dannyglendale/cerebra).
 <!-- markdown-link-check-enable -->
 
 5. In your forked repository, make your changes in a new git branch created off of the `main` branch.
@@ -91,7 +91,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 10. Push your branch to GitHub.
 
-11. In GitHub, send a pull request to `mostafakhaliid:main`.
+11. In GitHub, send a pull request to `dannyglendale:main`.
 
 #### Reviewing a Pull Request
 

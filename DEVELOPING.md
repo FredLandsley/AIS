@@ -10,18 +10,18 @@
 
 <!-- markdown-link-check-disable -->
 
-1. Fork the [repository](https://github.com/mostafakhaliid/vitruvia.git).
+1. Fork the [repository](https://github.com/dannyglendale/cerebra.git).
 2. Clone your fork of the repository:
     <!-- markdown-link-check-enable -->
 
    ```shell
-   git clone https://github.com/mostafakhaliid/vitruvia.git
+   git clone https://github.com/dannyglendale/cerebra.git
    ```
 
-3. Define an `upstream` remote pointing back to the main vitruvia repository:
+3. Define an `upstream` remote pointing back to the main cerebra repository:
 
    ```shell
-   git remote add upstream https://github.com/mostafakhaliid/vitruvia.git
+   git remote add upstream https://github.com/dannyglendale/cerebra.git
    ```
 
 ## <a name="setup"></a> Setting up a New Development Environment
@@ -37,7 +37,7 @@ The easiest way to get set up for development is to install Python (`3.9` to `3.
 
 ## <a name="dev"></a>Development
 
-When developing for `vitruvia` make sure to have the poetry shell active. This ensures that linting and formatting will automatically be checked during `git commit`.
+When developing for `cerebra` make sure to have the poetry shell active. This ensures that linting and formatting will automatically be checked during `git commit`.
 
 We are using [Ruff](https://github.com/astral-sh/ruff) with added rules for formatting and linting.
 Please consider adding `ruff` to your IDE to speed up the development process and ensure you only commit clean code.
