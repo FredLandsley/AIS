@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "yara-core", "yara-lancedb",
-    "yara-mongodb", "yara-neo4j",
-    "yara-qdrant", "yara-core/yara-core-derive",
-    "yara-sqlite"
+    "precepta-core", "precepta-lancedb",
+    "precepta-mongodb", "precepta-neo4j",
+    "precepta-qdrant", "precepta-core/precepta-core-derive",
+    "precepta-sqlite"
 ]
