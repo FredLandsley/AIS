@@ -13,10 +13,10 @@ The code is structured as follows:
 Note: All communication between the user agent and AI model agent is asynchronous.
 """
 
-from vitruvia import Agent, Context, Protocol  # Import necessary modules
+from cerebra import Agent, Context, Protocol  # Import necessary modules
 from messages.basic import Data, Request, Error  # Import Basic messages
 # Import the fund_agent_if_low function
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os  # Import os for environment variables if any needed
 
 # The text to be completed by AI model

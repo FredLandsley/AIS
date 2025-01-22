@@ -1,11 +1,11 @@
 from pydantic import BaseModel
 from typing import Literal
 
-from vitruvia.experimental.dialogues import Edge, Node
+from cerebra.experimental.dialogues import Edge, Node
 
 
 # Extending dialogues with metadata for AI Engine support.
-# This will move to the vitruvia.experimental.dialogues module in the future.
+# This will move to the cerebra.experimental.dialogues module in the future.
 
 
 class EdgeMetadata(BaseModel):

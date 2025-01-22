@@ -9,11 +9,11 @@ class CodeLinesRequest(Model):
     prompt: str
 ```
 with a description of relevant code along with links in the form:
-https://github.com/mostafakhaliid/vitruvia/blob/main/python/src/vitruvia/agent.py#L253-L268
+https://github.com/dannyglendale/cerebra/blob/main/python/src/cerebra/agent.py#L253-L268
 
 
 Example AI-Engine prompt:
-"I would like to refactor some logic from `_process_message_queue` to the `Dialogue` class in 'github.com/mostafakhaliid/vitruvia/python/src/vitruvia'. What code is relevant for this?"
+"I would like to refactor some logic from `_process_message_queue` to the `Dialogue` class in 'github.com/dannyglendale/cerebra/python/src/cerebra'. What code is relevant for this?"
 
 
 ## Setup
@@ -32,5 +32,5 @@ Example AI-Engine prompt:
     - Set your agent's secure seed phrase in `SEED_PHRASE` environment variable
 
 4. Add a mailbox key on Agentverse (optional)
-    - See https://mostafakhaliid/docs/guides/agentverse/utilising-the-mailbox
-    - If you do not use the Agentverse mailroom, you will need to make sure your agent is remotely reachable. For example: https://github.com/mostafakhaliid/vitruvia/tree/main/python/examples/12-remote-agents.
+    - See https://dannyglendale/docs/guides/agentverse/utilising-the-mailbox
+    - If you do not use the Agentverse mailroom, you will need to make sure your agent is remotely reachable. For example: https://github.com/dannyglendale/cerebra/tree/main/python/examples/12-remote-agents.

@@ -1,15 +1,15 @@
-# vitruvia AI-Engine Integration
+# cerebra AI-Engine Integration
 
 ## 📌 Overview
 
-This package provides the necessary types for integrating AI-Engine with vitruvia, enabling structured responses and request handling within the vitruvia framework. It includes models for handling various response types, key-value pairs, and booking requests.
+This package provides the necessary types for integrating AI-Engine with cerebra, enabling structured responses and request handling within the cerebra framework. It includes models for handling various response types, key-value pairs, and booking requests.
 
 ## Installation
 
 To install the package, use the following command:
 
 ```bash
-pip install vitruvia-ai-engine
+pip install cerebra-ai-engine
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ from ai_engine.dialogue import EdgeMetadata, EdgeDescription
 The `chitchat`, `messages`, and `dialogue` modules provide essential classes, types, and functions to facilitate structured and dynamic interactions with the agent. These modules support an open-ended communication model, allowing users to engage in an ongoing dialogue with the agent. After each user message, the agent responds, enabling a continuous and interactive conversation that can proceed as long as needed.
 
 ```python
-from ai_engine.types import vitruviaResponseType, KeyValue, vitruviaResponse, BookingRequest
+from ai_engine.types import cerebraResponseType, KeyValue, cerebraResponse, BookingRequest
 ```
 
 The `types` module offers a comprehensive set of models for handling responses, key-value pairs, and booking requests. This module is designed for scenarios where a single exchange is sufficient. The user sends a message, receives a well-structured response from the agent, and the interaction concludes efficiently. This approach is ideal for straightforward queries and tasks.
@@ -38,12 +38,12 @@ The `types` module offers a comprehensive set of models for handling responses, 
 
 The following classes are used for non-dialogue agent communication.
 
-#### vitruviaResponseType
+#### cerebraResponseType
 
 An enumeration defining the types of responses that an agent can provide:
 
 ```python
-class vitruviaResponseType(Enum):
+class cerebraResponseType(Enum):
     FINAL = "final"
     ERROR = "error"
     VALIDATION_ERROR = "validation_error"
@@ -61,14 +61,14 @@ class KeyValue(Model):
     value: str
 ```
 
-#### vitruviaResponse
+#### cerebraResponse
 
 A model for structuring the response from an agent:
 
 ```python
-class vitruviaResponse(Model):
+class cerebraResponse(Model):
     version: Literal["v1"] = "v1"
-    type: vitruviaResponseType
+    type: cerebraResponseType
     request_id: Optional[str]
     agent_address: Optional[str]
     message: Optional[str]
@@ -80,7 +80,7 @@ class vitruviaResponse(Model):
 **Attributes:**
 
 - `version`: The version of the response model (default is "v1").
-- `type`: The type of the response, based on `vitruviaResponseType`.
+- `type`: The type of the response, based on `cerebraResponseType`.
 - `request_id`: An optional identifier for the request.
 - `agent_address`: An optional address of the agent.
 - `message`: An optional message from the agent.
@@ -144,7 +144,7 @@ chitchat_dialogue = ChitChatDialogue(
 )
 ```
 
-For a more in depth example, see the [ChitChatDialogue](https://github.com/mostafakhaliid/vitruvia/blob/main/integrations/fetch-ai-engine/examples/simple_agent.py) example.
+For a more in depth example, see the [ChitChatDialogue](https://github.com/dannyglendale/cerebra/blob/main/integrations/fetch-ai-engine/examples/simple_agent.py) example.
 
 ### 3. Extending Dialogue with Metadata
 
@@ -233,11 +233,11 @@ Where `chitchat_dialogue` is defined above in the `ChitChatDialogue` section and
 
 ## AI-Engine Integration
 
-This integration adds the required types for AI-Engine to interact with vitruvia effectively. The `vitruviaResponse` model serves as the primary structure for agent responses, while `BookingRequest` handles user booking requests.
+This integration adds the required types for AI-Engine to interact with cerebra effectively. The `cerebraResponse` model serves as the primary structure for agent responses, while `BookingRequest` handles user booking requests.
 
 ### Digest
 
-`vitruviaResponse` digest:
+`cerebraResponse` digest:
 
 ```
 model:cf0d1367c5f9ed8a269de559b2fbca4b653693bb8315d47eda146946a168200e

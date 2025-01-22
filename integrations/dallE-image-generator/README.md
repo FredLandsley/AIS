@@ -2,13 +2,13 @@
 
 ## Overview
 
-The DALL-E Image Generation AI Agent is an advanced AI solution designed to streamline the process of generating images based on textual descriptions. Developed using mostafakhaliid's vitruvia technology and integrated with LangChain's DallEAPIWrapper, this agent utilizes OpenAI's powerful Large Language Models (LLMs) to provide accurate, detailed images, enhancing creativity and efficiency in visual content creation.
+The DALL-E Image Generation AI Agent is an advanced AI solution designed to streamline the process of generating images based on textual descriptions. Developed using dannyglendale's cerebra technology and integrated with LangChain's DallEAPIWrapper, this agent utilizes OpenAI's powerful Large Language Models (LLMs) to provide accurate, detailed images, enhancing creativity and efficiency in visual content creation.
 
 ## Features
 
 - **Automated Image Generation**: Automatically generate images based on detailed textual descriptions. 🚀
 - **AI-Powered Creativity**: Leverages the capabilities of OpenAI's DALL-E to translate text to unique images. 🔍
-- **Seamless Integration**: Built on mostafakhaliid's vitruvia framework for robust and scalable agent operations. 📖
+- **Seamless Integration**: Built on dannyglendale's cerebra framework for robust and scalable agent operations. 📖
 - **Asynchronous Processing**: Handles image generation requests asynchronously, ensuring efficient operation. ⚡
 - **Accessible Feedback**: Provides direct links to view generated images, enhancing user interaction. 🌐
 
@@ -17,7 +17,7 @@ The DALL-E Image Generation AI Agent is an advanced AI solution designed to stre
 To start using the DALL-E Image Generation AI Agent, follow these steps:
 
 1. **Environment Setup**:
-   - Ensure that the vitruvia environment is properly set up.
+   - Ensure that the cerebra environment is properly set up.
    - Set your `OPENAI_API_KEY` as an environment variable for secure access.
 
 2. **Agent Initialization**:
@@ -33,9 +33,9 @@ To start using the DALL-E Image Generation AI Agent, follow these steps:
 
 This service utilizes several key components:
 
-- **vitruvia**: For vitruvia framework and operations.
+- **cerebra**: For cerebra framework and operations.
 - **langachain DallEAPIWrapper**: For interfacing with OpenAI's DALL-E image generation model.
-- **Agentverse**: mostafakhaliid's agents, Mailroom and Services were used to make agent DeltaV accesible.
+- **Agentverse**: dannyglendale's agents, Mailroom and Services were used to make agent DeltaV accesible.
 - **DeltaV**: DeltaV is used to interact with agent and produce image for given description.
 
 Please view `service.json` to get details about service created to make agent DeltaV discoverable.

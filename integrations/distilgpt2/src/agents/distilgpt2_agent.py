@@ -1,7 +1,7 @@
 # Import all necessary modules and resources from various libraries
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.basic import Data, Request, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os
 import requests
 import json

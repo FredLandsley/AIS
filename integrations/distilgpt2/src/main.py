@@ -1,4 +1,4 @@
-from vitruvia import Bureau
+from cerebra import Bureau
 
 from agents.distilgpt2_agent import agent
 from agents.distilgpt2_user import user

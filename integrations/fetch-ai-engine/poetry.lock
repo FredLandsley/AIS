@@ -1276,14 +1276,14 @@ files = [
 ]
 
 [[package]]
-name = "vitruvia"
+name = "cerebra"
 version = "0.18.0"
 description = "Lightweight framework for rapid agent-based development"
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "vitruvia-0.18.0-py3-none-any.whl", hash = "sha256:f7c4fa12c9223bc1a9fa48118642a09c16f9d3bb9bb0ced92a328c98236c22b7"},
-    {file = "vitruvia-0.18.0.tar.gz", hash = "sha256:be795d1b42b41cae2249f52456cc501a3bca4ae5de5e8eeebd6ed6a6a502a90e"},
+    {file = "cerebra-0.18.0-py3-none-any.whl", hash = "sha256:f7c4fa12c9223bc1a9fa48118642a09c16f9d3bb9bb0ced92a328c98236c22b7"},
+    {file = "cerebra-0.18.0.tar.gz", hash = "sha256:be795d1b42b41cae2249f52456cc501a3bca4ae5de5e8eeebd6ed6a6a502a90e"},
 ]
 
 [package.dependencies]
@@ -1298,12 +1298,12 @@ uvicorn = ">=0.30.1,<0.31.0"
 websockets = ">=10.4,<11.0"
 
 [package.extras]
-all = ["fastapi (>=0.111.0,<0.112.0)", "mostafakhaliid-babble (>=0.4.2,<0.5.0)", "geopy (>=2.3.0,<3.0.0)", "pyngrok (>=5.2.3,<6.0.0)", "tortoise-orm (>=0.19.2,<0.20.0)"]
+all = ["fastapi (>=0.111.0,<0.112.0)", "dannyglendale-babble (>=0.4.2,<0.5.0)", "geopy (>=2.3.0,<3.0.0)", "pyngrok (>=5.2.3,<6.0.0)", "tortoise-orm (>=0.19.2,<0.20.0)"]
 geo = ["geopy (>=2.3.0,<3.0.0)"]
 orm = ["tortoise-orm (>=0.19.2,<0.20.0)"]
 proxy = ["fastapi (>=0.111.0,<0.112.0)"]
 remote-agents = ["pyngrok (>=5.2.3,<6.0.0)"]
-wallet = ["mostafakhaliid-babble (>=0.4.2,<0.5.0)"]
+wallet = ["dannyglendale-babble (>=0.4.2,<0.5.0)"]
 
 [[package]]
 name = "urllib3"

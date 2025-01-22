@@ -4,7 +4,7 @@ import json
 
 from ai_engine.chitchat import ChitChatDialogue
 from ai_engine.messages import DialogueMessage
-from vitruvia import Agent, Context, Model
+from cerebra import Agent, Context, Model
 
 
 agent = Agent(

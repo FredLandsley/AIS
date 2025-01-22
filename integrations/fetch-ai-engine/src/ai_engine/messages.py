@@ -1,5 +1,5 @@
 from pydantic.v1 import BaseModel, Field, Extra
-from vitruvia import Model
+from cerebra import Model
 from uuid import UUID, uuid4
 from datetime import datetime, timezone
 from typing import Optional, List, Literal, Union

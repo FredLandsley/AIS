@@ -1,9 +1,9 @@
-from vitruvia.models import Model
+from cerebra.models import Model
 from enum import Enum
 from typing import Optional, List, Literal
 
 
-class vitruviaResponseType(Enum):
+class cerebraResponseType(Enum):
     FINAL = "final"
     ERROR = "error"
     VALIDATION_ERROR = "validation_error"
@@ -16,9 +16,9 @@ class KeyValue(Model):
     value: str
 
 
-class vitruviaResponse(Model):
+class cerebraResponse(Model):
     version: Literal["v1"] = "v1"
-    type: vitruviaResponseType
+    type: cerebraResponseType
     request_id: Optional[str] = None
     agent_address: Optional[str] = None
     message: Optional[str] = None

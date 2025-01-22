@@ -1,7 +1,7 @@
 from langchain_community.utilities.dalle_image_generator import DallEAPIWrapper
-from vitruvia import Agent, Context, Protocol, Model
+from cerebra import Agent, Context, Protocol, Model
 from pydantic import Field
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 import os
 
 
@@ -32,7 +32,7 @@ OPENAI_API_KEY = "YOUR_OPEN_API_KEY"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 
-@dallE_protocol.on_message(model=DallERequest, replies={vitruviaResponse})
+@dallE_protocol.on_message(model=DallERequest, replies={cerebraResponse})
 async def load_dalle(ctx: Context, sender: str, msg: DallERequest):
     dalle_wrapper = DallEAPIWrapper()
     ctx.logger.info(msg.image_description)
@@ -46,7 +46,7 @@ async def load_dalle(ctx: Context, sender: str, msg: DallERequest):
         html_link = "Error generating image. Please try again later."
     # Send an error response back to the user
     await ctx.send(
-        sender, vitruviaResponse(message=html_link, type=vitruviaResponseType.FINAL)
+        sender, cerebraResponse(message=html_link, type=cerebraResponseType.FINAL)
     )
 
 

@@ -2,9 +2,9 @@
 
 from typing import Type, Optional
 
-from vitruvia import Model
-from vitruvia.storage import StorageAPI
-from vitruvia.experimental.dialogues import Dialogue, Node
+from cerebra import Model
+from cerebra.storage import StorageAPI
+from cerebra.experimental.dialogues import Dialogue, Node
 
 from ai_engine.dialogue import create_edge
 

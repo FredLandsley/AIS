@@ -190,7 +190,7 @@ def get_code_snippets(repository: str, prompt: str):
 
 if __name__ == "__main__":
     result = get_code_snippets(
-        "github.com/mostafakhaliid/vitruvia/python/src/vitruvia",
+        "github.com/dannyglendale/cerebra/python/src/cerebra",
         "Move some logic from `_process_message_queue` to `Dialogue` class",
     )
     print(result)

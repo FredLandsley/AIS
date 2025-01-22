@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "vitruvia-ai-engine"
+name = "cerebra-ai-engine"
 version = "0.7.0"
-description = "Integrating AI-Engine with vitruvia"
-authors = ["mostafakhaliid Limited"]
+description = "Integrating AI-Engine with cerebra"
+authors = ["dannyglendale Limited"]
 license = "Apache 2.0"
 readme = "README.md"
-keywords = ["vitruvia", "agents", "ai", "ai-engine", "mostafakhaliid"]
+keywords = ["cerebra", "agents", "ai", "ai-engine", "dannyglendale"]
 packages = [{include = "ai_engine", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
-vitruvia = "^0.18.0"
+cerebra = "^0.18.0"
 pydantic = "~2.8"

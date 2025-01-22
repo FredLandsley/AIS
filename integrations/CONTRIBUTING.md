@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions to integrations are welcome 😊 the integrations repo is the place where you can share how you've integrated vitruvia with other technology.
+Contributions to integrations are welcome 😊 the integrations repo is the place where you can share how you've integrated cerebra with other technology.
 
 ## A few simple rules
 
@@ -45,7 +45,7 @@ Please add your integrations to the community folder `integrations/community/`
 - **style**: Changes that only affect code formatting or style, without affecting functionality. This ensures consistency and readability of the codebase.
 - **perf**: Changes that improve the performance of the project.
 
-You will need to fork vitruvia and then clone the repo to make PRs to this project. Please be descriptive in your commits:
+You will need to fork cerebra and then clone the repo to make PRs to this project. Please be descriptive in your commits:
 
 ```bash
 git commit -m "feat: add new feature x"
@@ -58,4 +58,4 @@ Further details on `conventional commits` can be found here: <https://www.conven
 
 ## Support and help
 
-Support and extra information is available in our [documentation](https://mostafakhaliid/docs) and on [Discord](https://discord.com/invite/mostafakhaliid)
+Support and extra information is available in our [documentation](https://dannyglendale/docs) and on [Discord](https://discord.com/invite/dannyglendale)

@@ -1,1 +1,1 @@
-from ai_engine.types import KeyValue, vitruviaResponseType, vitruviaResponse, BookingRequest
+from ai_engine.types import KeyValue, cerebraResponseType, cerebraResponse, BookingRequest

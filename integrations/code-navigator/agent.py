@@ -1,7 +1,7 @@
 import os
 
-from ai_engine import vitruviaResponse, vitruviaResponseType
-from vitruvia import Agent, Context, Model, Protocol
+from ai_engine import cerebraResponse, cerebraResponseType
+from cerebra import Agent, Context, Model, Protocol
 
 from chain import get_code_snippets
 
@@ -23,13 +23,13 @@ agent = Agent(name="code-navigator", seed=SEED_PHRASE, port=PORT, mailbox=MAILBO
 protocol = Protocol(name="Code Navigator")
 
 
-@protocol.on_message(CodeLinesRequest, replies=vitruviaResponse)
+@protocol.on_message(CodeLinesRequest, replies=cerebraResponse)
 async def get_code_lines(ctx: Context, sender: str, msg: CodeLinesRequest):
     lines = get_code_snippets(msg.repository, msg.prompt)
     await ctx.send(
         sender,
-        vitruviaResponse(
-            type=vitruviaResponseType.FINAL,
+        cerebraResponse(
+            type=cerebraResponseType.FINAL,
             message=f"Here is the relevant code: {lines}",
         ),
     )
