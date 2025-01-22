@@ -88,3 +88,4 @@ pub fn as_record_batch(
         ("embedding", nuo::new(embedding) as ArrayRef),
     ])
 }
+
