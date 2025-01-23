@@ -1,4 +1,4 @@
-//! A vector index for a Neo4j graph DB.
+//! A vector index for a Neo4j graph DB
 //!
 //! This module provides a way to perform vector seAIShes on a Neo4j graph DB.
 //! It uses the [Neo4j vector index](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/)
