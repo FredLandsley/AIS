@@ -101,4 +101,4 @@ This project, vitruvia, is provided "as-is" without any warranty, express or imp
 
 ## License
 
-The vitruvia project is licensed under [Apache License 2.0](https://github.com/mostafakhaliid/vitruvia/blob/main/LICENSE).
+The vitruvia project is licensed under [Apache License 2.0](https://github.com/mostafakhaliid/vitruvia/blob/main/LICENSE). 
