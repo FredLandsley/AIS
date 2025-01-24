@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "precepta-core", "precepta-lancedb",
-    "precepta-mongodb", "precepta-neo4j",
-    "precepta-qdrant", "precepta-core/precepta-core-derive",
-    "precepta-sqlite"
+    "revicta-core", "revicta-lancedb",
+    "revicta-mongodb", "revicta-neo4j",
+    "revicta-qdrant", "revicta-core/revicta-core-derive",
+    "revicta-sqlite"
 ]

@@ -1,6 +1,6 @@
-# Contributing to precepta
+# Contributing to revicta
 
-Thank you for considering contributing to precepta! Here are some guidelines to help you get started.
+Thank you for considering contributing to revicta! Here are some guidelines to help you get started.
 
 General guidelines and requested contributions can be found in the How to Contribute section of the documentation. 
 
@@ -18,9 +18,9 @@ PRs should be small and focused and should avoid interacting with multiple facet
 
 ## Project Structure
 
-precepta is split up into multiple crates in a monorepo structure. The main crate `precepta-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `precepta-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
+revicta is split up into multiple crates in a monorepo structure. The main crate `revicta-core` contains all of the foundational abstractions for building with LLMs. This crate avoids adding many new dependencies to keep to lean and only really contains simple provider integrations on top of the base layer of abstractions. Side crates are leveraged to help add important first-party behavior without over burdening the main library with dependencies. For example, `revicta-mongodb` contains extra dependencies to be able to interact with `mongodb` as a vector store.
 
-If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the precepta team.
+If you are unsure whether a side-crate should live in the main repo, you can spin up a personal repo containing your crate and create an issue in our repo making the case on whether this side-crate should be integrated in the main repo and maintained by the revicta team.
 
 
 ## Developing
@@ -30,8 +30,8 @@ If you are unsure whether a side-crate should live in the main repo, you can spi
 This should be similar to most rust projects.
 
 ```bash
-git clone https://github.com/KogiEdwin/precepta
-cd precepta
+git clone https://github.com/FredLandsley/revicta
+cd revicta
 cargo test
 ```
 
