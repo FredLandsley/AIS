@@ -3,9 +3,9 @@ import io
 import aiohttp
 import numpy as np
 import pandas as pd
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 from pydantic import Field
-from vitruvia import Agent, Context, Model, Protocol
+from cerebra import Agent, Context, Model, Protocol
 
 # First generate a secure seed phrase (e.g. https://pypi.org/project/mnemonic/)
 # Important: CREATE NEW SEED PHRASE FOR THIS AGENT
@@ -51,7 +51,7 @@ async def download_blockchain_data(data_url: str) -> pd.DataFrame:
             return df
 
 
-@proto.on_message(model=BlockTimeAnalysisRequest, replies={vitruviaResponse})
+@proto.on_message(model=BlockTimeAnalysisRequest, replies={cerebraResponse})
 async def handle_message(ctx: Context, sender: str, msg: BlockTimeAnalysisRequest):
     ctx.logger.info(f"Received message from {sender}: {msg.data_url}")
 
@@ -62,9 +62,9 @@ async def handle_message(ctx: Context, sender: str, msg: BlockTimeAnalysisReques
 
     await ctx.send(
         sender,
-        vitruviaResponse(
+        cerebraResponse(
             message=f"The average block time is {average_block_time} seconds",
-            type=vitruviaResponseType.FINAL,
+            type=cerebraResponseType.FINAL,
         ),
     )
 

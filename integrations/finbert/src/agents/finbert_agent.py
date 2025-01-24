@@ -1,8 +1,8 @@
-# Necessary imports: vitruvia for agent creation and message handling,
+# Necessary imports: cerebra for agent creation and message handling,
 # os and requests for managing API calls
-from vitruvia import Agent, Context, Protocol
+from cerebra import Agent, Context, Protocol
 from messages.basic import UAResponse, UARequest, Error
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os
 import requests
 

@@ -1,7 +1,7 @@
-from vitruvia import Agent, Context, Protocol  # Import necessary modules
+from cerebra import Agent, Context, Protocol  # Import necessary modules
 from messages.basic import UAResponse, UARequest, Error  # Import Basic messages
 # Import the fund_agent_if_low function
-from vitruvia.setup import fund_agent_if_low
+from cerebra.setup import fund_agent_if_low
 import os  # Import os for environment variables if any needed
 
 INPUT_TEXT = "Stocks rallied and the British pound gained."

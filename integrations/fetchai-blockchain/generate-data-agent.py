@@ -1,8 +1,8 @@
 import aiohttp
 from uuid import uuid4
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 from pydantic import Field
-from vitruvia import Agent, Context, Model, Protocol
+from cerebra import Agent, Context, Model, Protocol
 from google.cloud import storage
 
 
@@ -39,7 +39,7 @@ async def collect_blockchain_data() -> str:
     csv_data = "timestamp,height,hash,block_size,num_tx,chain_id,proposer_address\n"
 
     async with aiohttp.ClientSession() as session:
-        async with session.get("https://rpc-fetchhub.mostafakhaliid/blockchain") as response:
+        async with session.get("https://rpc-fetchhub.dannyglendale/blockchain") as response:
             response.raise_for_status()
             resp = await response.json()
 
@@ -79,7 +79,7 @@ class DataSetRequest(Model):
 proto = Protocol("blockchain-data", "0.1.0")
 
 
-@proto.on_message(model=DataSetRequest, replies={vitruviaResponse})
+@proto.on_message(model=DataSetRequest, replies={cerebraResponse})
 async def handle_message(ctx: Context, sender: str, msg: DataSetRequest):
     ctx.logger.info(f"Received message from {sender}: {msg.timeframe}")
 
@@ -97,9 +97,9 @@ async def handle_message(ctx: Context, sender: str, msg: DataSetRequest):
 
     await ctx.send(
         sender,
-        vitruviaResponse(
+        cerebraResponse(
             message=f"The blockchain data has been generated and is available at {blob.public_url}",
-            type=vitruviaResponseType.FINAL,
+            type=cerebraResponseType.FINAL,
         ),
     )
 

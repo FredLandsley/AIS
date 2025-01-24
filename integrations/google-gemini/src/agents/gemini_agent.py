@@ -1,7 +1,7 @@
 # Importing necessary libraries
-from vitruvia import Agent, Context
-from vitruvia.setup import fund_agent_if_low
-from vitruvia import Model
+from cerebra import Agent, Context
+from cerebra.setup import fund_agent_if_low
+from cerebra import Model
 import google.generativeai as genai
 
 

@@ -2,8 +2,8 @@
 from agents.user import user  # Imports the user agent configuration
 from agents.gemini_agent import Gemini_agent  # Imports the Gemini agent configuration
 
-# Importing the Bureau class from the vitruvia package
-from vitruvia import Bureau
+# Importing the Bureau class from the cerebra package
+from cerebra import Bureau
 
 # The main entry point of the script
 if __name__ == "__main__":

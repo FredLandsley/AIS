@@ -1,4 +1,4 @@
-# langchain-wikipedia x vitruvia
+# langchain-wikipedia x cerebra
 
 Welcome to the langchain-wikipedia integration! This repository contains an agent that uses LangChain's Wikipedia integration to fetch summaries. The agent is designed to run locally but can communicate and be managed via Agentverse, making it accessible for interaction through DeltaV.
 
@@ -13,7 +13,7 @@ Welcome to the langchain-wikipedia integration! This repository contains an agen
     
 2. **Install Required Libraries**: Use pip to install the necessary Python packages:
     
-    `pip install vitruvia langchain_community vitruvia-ai-engine`
+    `pip install cerebra langchain_community cerebra-ai-engine`
     
 
 ## Agent Setup
@@ -70,4 +70,4 @@ You can now send Wikipedia queries through DeltaV's interface, and the agent wil
 
 ## Support
 
-For support or more information about Agentverse and DeltaV integration, refer to the official [documentation](https://mostafakhaliid/docs).
+For support or more information about Agentverse and DeltaV integration, refer to the official [documentation](https://dannyglendale/docs).

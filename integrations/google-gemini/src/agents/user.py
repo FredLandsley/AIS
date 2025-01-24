@@ -1,7 +1,7 @@
-# Importing necessary libraries from vitruvia package
-from vitruvia import Agent, Context
-from vitruvia.setup import fund_agent_if_low
-from vitruvia import Model
+# Importing necessary libraries from cerebra package
+from cerebra import Agent, Context
+from cerebra.setup import fund_agent_if_low
+from cerebra import Model
 
 
 # Defining a model for messages

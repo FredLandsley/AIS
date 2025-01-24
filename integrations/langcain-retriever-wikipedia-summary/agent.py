@@ -1,7 +1,7 @@
 from langchain_community.retrievers import WikipediaRetriever
-from vitruvia import Agent, Context, Protocol, Model
+from cerebra import Agent, Context, Protocol, Model
 from pydantic import Field
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 
 
 class WikiRequest(Model):
@@ -23,14 +23,14 @@ wiki_agent = Agent(
 wiki_protocol = Protocol("Wikipedia Protocol")
 
 
-@wiki_protocol.on_message(model=WikiRequest, replies={vitruviaResponse})
+@wiki_protocol.on_message(model=WikiRequest, replies={cerebraResponse})
 async def load_wiki(ctx: Context, sender: str, msg: WikiRequest):
     ctx.logger.info(msg.query)
     retriever = WikipediaRetriever()
     docs = retriever.get_relevant_documents(query=msg.query)
     summary = docs[0].metadata["summary"] if docs else "No summary found."
     await ctx.send(
-        sender, vitruviaResponse(message=summary, type=vitruviaResponseType.FINAL)
+        sender, cerebraResponse(message=summary, type=cerebraResponseType.FINAL)
     )
 
 

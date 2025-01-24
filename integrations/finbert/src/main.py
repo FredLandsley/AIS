@@ -1,4 +1,4 @@
-from vitruvia import Bureau
+from cerebra import Bureau
 
 from agents.finbert_agent import agent
 from agents.finbert_user import user

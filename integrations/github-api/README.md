@@ -1,10 +1,10 @@
 # GitHub Repository Fetcher Agent
 
-This `vitruvia` fetches and lists all repositories for a given GitHub organization using the GitHub API.
+This `cerebra` fetches and lists all repositories for a given GitHub organization using the GitHub API.
 
 ## Overview
 
-This is a deltaV compatible `vitruvia`. The agent takes an organization name as input and returns a list of github repositories for that organization.
+This is a deltaV compatible `cerebra`. The agent takes an organization name as input and returns a list of github repositories for that organization.
 
 ## Prerequisites
 

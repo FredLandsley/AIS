@@ -6,7 +6,7 @@
 import uuid
 from typing import Tuple
 import requests
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 from pydantic import Field
 
 
@@ -43,7 +43,7 @@ def get_data(address: str) -> Tuple or None:
         return None
 
 
-@geocode_protocol.on_message(model=GeoCode, replies=vitruviaResponse)
+@geocode_protocol.on_message(model=GeoCode, replies=cerebraResponse)
 async def on_message(ctx: Context, sender: str, msg: GeoCode):
     ctx.logger.info(f"Received message from {sender}.")
     try:
@@ -55,18 +55,18 @@ async def on_message(ctx: Context, sender: str, msg: GeoCode):
         if latitude and longitude:
             await ctx.send(
                 sender,
-                vitruviaResponse(
+                cerebraResponse(
                     message=option,
-                    type=vitruviaResponseType.FINAL,
+                    type=cerebraResponseType.FINAL,
                     request_id=request_id
                 ),
             )
         else:
             await ctx.send(
                 sender,
-                vitruviaResponse(
+                cerebraResponse(
                     message="No geo coordinates are available for this context",
-                    type=vitruviaResponseType.FINAL,
+                    type=cerebraResponseType.FINAL,
                     request_id=request_id
                 ),
             )
@@ -75,9 +75,9 @@ async def on_message(ctx: Context, sender: str, msg: GeoCode):
         ctx.logger.error(exc)
         await ctx.send(
             sender,
-            vitruviaResponse(
+            cerebraResponse(
                 message=str(exc),
-                type=vitruviaResponseType.ERROR
+                type=cerebraResponseType.ERROR
             )
         )
 

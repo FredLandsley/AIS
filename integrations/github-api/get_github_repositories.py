@@ -1,5 +1,5 @@
 import requests
-from ai_engine import vitruviaResponse, vitruviaResponseType
+from ai_engine import cerebraResponse, cerebraResponseType
 from pydantic import Field
 
 # Get the API key
@@ -55,14 +55,14 @@ async def print_repos(repos):
     return "\n".join(repo_names)
 
 
-@github_protocol.on_message(model=Org_name, replies={vitruviaResponse})
+@github_protocol.on_message(model=Org_name, replies={cerebraResponse})
 async def get_repo_names(ctx: Context, sender: str, msg: Org_name):
     ctx.logger.info(msg.org_name)
 
     all_repos = await fetch_github_repos(msg.org_name, token)
     repo_names = await print_repos(all_repos)
     await ctx.send(
-        sender, vitruviaResponse(message=repo_names, type=vitruviaResponseType.FINAL)
+        sender, cerebraResponse(message=repo_names, type=cerebraResponseType.FINAL)
     )
 
 

@@ -6,7 +6,7 @@
 import uuid
 
 import requests
-from ai_engine import vitruviaResponse, vitruviaResponseType, KeyValue
+from ai_engine import cerebraResponse, cerebraResponseType, KeyValue
 from pydantic import Field
 
 
@@ -109,7 +109,7 @@ def get_data(latitude, longitude, miles_radius) -> list or None:
         print("An unexpected error occurred:", str(e))
 
 
-@parking_protocol_geoapi.on_message(model=GeoParkingRequest, replies=vitruviaResponse)
+@parking_protocol_geoapi.on_message(model=GeoParkingRequest, replies=cerebraResponse)
 async def on_message(ctx: Context, sender: str, msg: GeoParkingRequest):
     ctx.logger.info(f"Received message from {sender}")
     try:
@@ -126,25 +126,25 @@ async def on_message(ctx: Context, sender: str, msg: GeoParkingRequest):
         if options:
             await ctx.send(
                 sender,
-                vitruviaResponse(
+                cerebraResponse(
                     options=options,
-                    type=vitruviaResponseType.SELECT_FROM_OPTIONS,
+                    type=cerebraResponseType.SELECT_FROM_OPTIONS,
                     request_id=request_id,
                 ),
             )
         else:
             await ctx.send(
                 sender,
-                vitruviaResponse(
+                cerebraResponse(
                     message="No options are available for this context",
-                    type=vitruviaResponseType.FINAL,
+                    type=cerebraResponseType.FINAL,
                     request_id=request_id,
                 ),
             )
     except Exception as exc:
         ctx.logger.error(exc)
         await ctx.send(
-            sender, vitruviaResponse(message=str(exc), type=vitruviaResponseType.ERROR)
+            sender, cerebraResponse(message=str(exc), type=cerebraResponseType.ERROR)
         )
 
 
