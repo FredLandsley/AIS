@@ -215,3 +215,4 @@ fn test_multiple_embed_tags() {
         ]
     );
 }
+
