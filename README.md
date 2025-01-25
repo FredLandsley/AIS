@@ -5,7 +5,7 @@ Vitruvia is a library developed by mostafakhaliid that allows for creating auton
 ## 🚀 Features
 
 - 🤖 **Easy creation and management**: Create any type of agent you can think of and implement it in code.
-- 🔗 **Connected**: On startup, each agent automatically joins the fast growing vitruvia netowrk
+- 🔗 **Connected**: On startup, each agent automatically joins the fast growing vitruvia network
 - 🔒 **Secure**: vitruvia messages and wallets are cryptographically secured, so their identities and assets are protected.
 
 ## ⚡ Quickstart
