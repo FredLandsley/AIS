@@ -1,4 +1,4 @@
-## yara-SQLite
+## Yara-SQLite
 
 This companion crate implements a yara vector store based on SQLite. 
 
