@@ -7,7 +7,7 @@
 
 
 ## What is Galactica AI?
-Galactica is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+Galactica is a the world's first Rust library that enables anyone to build and deploy LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
