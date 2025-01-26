@@ -1,21 +1,21 @@
-<h1>Rusty AI</h1>
+<h1>zappy AI</h1>
 
-✨ If you would like to help spread the word about rusty, please consider starring the repo!
+✨ If you would like to help spread the word about zappy, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With rusty evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With zappy evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is rusty?
-Rusty is the world's first Rust library for building scalable, modular, and ergonomic **LLM-powered** sentient applications.
+## What is zappy?
+zappy is the world's first Rust library for building scalable, modular, and ergonomic **LLM-powered** sentient applications.
 
 More information about this crate can be found in the documentations.
 
-Help us improve rusty by contributing to our Feedback form.
+Help us improve zappy by contributing to our Feedback form.
 
 ## Table of contents
 
-- [What is rusty?](#what-is-rusty)
+- [What is zappy?](#what-is-zappy)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -31,12 +31,12 @@ Help us improve rusty by contributing to our Feedback form.
 
 ## Get Started
 ```bash
-cargo add rusty-core
+cargo add zappy-core
 ```
 
 ### Simple example:
 ```rust
-use rusty::{completion::Prompt, providers::openai};
+use zappy::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -58,7 +58,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`rusty-core/examples`](./rusty-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our [Dev.to Blog](https://dev.to/0thtachi) and added to rusty's official documentation [(docs.rusty.rs)](http://docs.rusty.rs).
+You can find more examples each crate's `examples` (ie. [`zappy-core/examples`](./zappy-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our [Dev.to Blog](https://dev.to/0thtachi) and added to zappy's official documentation [(docs.zappy.rs)](http://docs.zappy.rs).
 
 ## Supported Integrations
 
@@ -68,11 +68,11 @@ You can find more examples each crate's `examples` (ie. [`rusty-core/examples`](
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`rusty-mongodb`](https://github.com/DMister01/rusty/tree/main/rusty-mongodb)
-- LanceDB vector store: [`rusty-lancedb`](https://github.com/DMister01/rusty/tree/main/rusty-lancedb)
-- Neo4j vector store: [`rusty-neo4j`](https://github.com/DMister01/rusty/tree/main/rusty-neo4j)
-- Qdrant vector store: [`rusty-qdrant`](https://github.com/DMister01/rusty/tree/main/rusty-qdrant)
-- SQLite vector store: [`rusty-sqlite`](https://github.com/DMister01/rusty/tree/main/rusty-sqlite)
+- MongoDB vector store: [`zappy-mongodb`](https://github.com/marcellimentore/zappy/tree/main/zappy-mongodb)
+- LanceDB vector store: [`zappy-lancedb`](https://github.com/marcellimentore/zappy/tree/main/zappy-lancedb)
+- Neo4j vector store: [`zappy-neo4j`](https://github.com/marcellimentore/zappy/tree/main/zappy-neo4j)
+- Qdrant vector store: [`zappy-qdrant`](https://github.com/marcellimentore/zappy/tree/main/zappy-qdrant)
+- SQLite vector store: [`zappy-sqlite`](https://github.com/marcellimentore/zappy/tree/main/zappy-sqlite)
 
 
 <p align="center">

@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "rusty-core", "rusty-lancedb",
-    "rusty-mongodb", "rusty-neo4j",
-    "rusty-qdrant", "rusty-core/rusty-core-derive",
-    "rusty-sqlite"
+    "zappy-core", "zappy-lancedb",
+    "zappy-mongodb", "zappy-neo4j",
+    "zappy-qdrant", "zappy-core/zappy-core-derive",
+    "zappy-sqlite"
 ]
