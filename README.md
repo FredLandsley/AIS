@@ -7,7 +7,7 @@
 
 
 ## What is zappy?
-zappy is the world's first Rust library for building scalable, modular, and ergonomic **LLM-powered** sentient applications.
+Zappy is a revolutionary Rust library for building and launching LLM agents with one click
 
 More information about this crate can be found in the documentations.
 
