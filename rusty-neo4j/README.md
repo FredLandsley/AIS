@@ -1,7 +1,5 @@
 ## rusty-Neo4j
 
-<br><br>
-
 This companion crate implements a rusty vector store based on Neo4j Graph database. It uses the [neo4rs](https://github.com/neo4j-labs/neo4rs) crate to interact with Neo4j. Note that the neo4rs crate is a work in progress and does not yet support all Neo4j features. Further documentation on Neo4j & vector serustyh integration can be found on the [neo4rs docs](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/).
 
 ## Prerequisites
