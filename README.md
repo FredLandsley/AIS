@@ -17,7 +17,7 @@ Get started with vitruvia by installing it for Python 3.9 to 3.12:
     pip install vitruvia
 
 ### Running a Demo
-
+ 
 #### Creating an Agent
 
 Build your first vitruvia using the following script:
