@@ -10,7 +10,7 @@ Please follow the steps listed below to report your bug:
 - Attach all relevant information that is required to reproduce the bug in a test environment.
 - Include the relevant version information associated with the faulty software of the components along with any other relevant system information such as OS versions.
 - Include suggested solutions and/or mitigations (if known).
-- Send this email to [security@mostafakhaliid](mailto:security@mostafakhaliid) and start the subject with your classification **Critical** or **Non-critical** followed by a short title of the bug.
+- Send this email to [security@mostafakhaliid.com](mailto:security@mostafakhaliid.com) and start the subject with your classification **Critical** or **Non-critical** followed by a short title of the bug.
 
 The Fetch team will review your information and your classification of the bug.
 
