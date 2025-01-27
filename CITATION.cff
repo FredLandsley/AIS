@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use vitruvia in your research or project, please cite it as follows:"
-title: μAgents Library
+title: vitruvia Library
 authors:
   - family-names: mostafakhaliid
 date-released: "2022-09-28"
