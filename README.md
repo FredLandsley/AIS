@@ -1,21 +1,21 @@
-<h1>Lumy AI</h1> 
+<h1>zelly AI</h1> 
 
-✨ If you would like to help spread the word about lumy, please consider starring the repo!
+✨ If you would like to help spread the word about zelly, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With lumy evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With zelly evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is lumy?
-lumy is a revolutionary Rust library for building and launching LLM agents with one click
+## What is zelly?
+zelly is a revolutionary Rust library for building and launching LLM agents with one click
 
 More information about this crate can be found in the documentations.
 
-Help us improve lumy by contributing to our Feedback form.
+Help us improve zelly by contributing to our Feedback form.
 
 ## Table of contents
 
-- [What is lumy?](#what-is-lumy)
+- [What is zelly?](#what-is-zelly)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -31,12 +31,12 @@ Help us improve lumy by contributing to our Feedback form.
 
 ## Get Started
 ```bash
-cargo add lumy-core
+cargo add zelly-core
 ```
 
 ### Simple example:
 ```rust
-use lumy::{completion::Prompt, providers::openai};
+use zelly::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -58,7 +58,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`lumy-core/examples`](./lumy-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our [Dev.to Blog](https://dev.to/0thtachi) and added to lumy's official documentation [(docs.lumy.rs)](http://docs.lumy.rs).
+You can find more examples each crate's `examples` (ie. [`zelly-core/examples`](./zelly-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our [Dev.to Blog](https://dev.to/0thtachi) and added to zelly's official documentation [(docs.zelly.rs)](http://docs.zelly.rs).
 
 ## Supported Integrations
 
@@ -68,11 +68,11 @@ You can find more examples each crate's `examples` (ie. [`lumy-core/examples`](.
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`lumy-mongodb`](https://github.com/m3lmhm98/lumy/tree/main/lumy-mongodb)
-- LanceDB vector store: [`lumy-lancedb`](https://github.com/m3lmhm98/lumy/tree/main/lumy-lancedb)
-- Neo4j vector store: [`lumy-neo4j`](https://github.com/m3lmhm98/lumy/tree/main/lumy-neo4j)
-- Qdrant vector store: [`lumy-qdrant`](https://github.com/m3lmhm98/lumy/tree/main/lumy-qdrant)
-- SQLite vector store: [`lumy-sqlite`](https://github.com/m3lmhm98/lumy/tree/main/lumy-sqlite)
+- MongoDB vector store: [`zelly-mongodb`](https://github.com/SmithRiley0/zelly/tree/main/zelly-mongodb)
+- LanceDB vector store: [`zelly-lancedb`](https://github.com/SmithRiley0/zelly/tree/main/zelly-lancedb)
+- Neo4j vector store: [`zelly-neo4j`](https://github.com/SmithRiley0/zelly/tree/main/zelly-neo4j)
+- Qdrant vector store: [`zelly-qdrant`](https://github.com/SmithRiley0/zelly/tree/main/zelly-qdrant)
+- SQLite vector store: [`zelly-sqlite`](https://github.com/SmithRiley0/zelly/tree/main/zelly-sqlite)
 
 
 <p align="center">

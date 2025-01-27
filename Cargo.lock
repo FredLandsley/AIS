@@ -74,7 +74,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4c95c10ba0b00a02636238b814946408b1322d5ac4760326e6fb8ec956d85775"
 
 [[package]]
-name = "lumy-swap"
+name = "zelly-swap"
 version = "1.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "69f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457"
@@ -5254,7 +5254,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4389f1d5789befaf6029ebd9f7dac4af7f7e3d61b69d4f30e2ac02b57e7712b0"
 
 [[package]]
-name = "lumy-core"
+name = "zelly-core"
 version = "0.6.1"
 dependencies = [
  "anyhow",
@@ -5265,7 +5265,7 @@ dependencies = [
  "ordered-float",
  "rayon",
  "reqwest 0.11.27",
- "lumy-derive",
+ "zelly-derive",
  "schemars",
  "serde",
  "serde_json",
@@ -5278,7 +5278,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "lumy-derive"
+name = "zelly-derive"
 version = "0.1.0"
 dependencies = [
  "indoc",
@@ -5288,7 +5288,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "lumy-lancedb"
+name = "zelly-lancedb"
 version = "0.2.2"
 dependencies = [
  "anyhow",
@@ -5296,21 +5296,21 @@ dependencies = [
  "futures",
  "httpmock",
  "lancedb",
- "lumy-core",
+ "zelly-core",
  "serde",
  "serde_json",
  "tokio",
 ]
 
 [[package]]
-name = "lumy-mongodb"
+name = "zelly-mongodb"
 version = "0.2.2"
 dependencies = [
  "anyhow",
  "futures",
  "httpmock",
  "mongodb",
- "lumy-core",
+ "zelly-core",
  "serde",
  "serde_json",
  "testcontainers",
@@ -5320,14 +5320,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "lumy-neo4j"
+name = "zelly-neo4j"
 version = "0.2.2"
 dependencies = [
  "anyhow",
  "futures",
  "httpmock",
  "neo4rs",
- "lumy-core",
+ "zelly-core",
  "serde",
  "serde_json",
  "term_size",
@@ -5339,13 +5339,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "lumy-qdrant"
+name = "zelly-qdrant"
 version = "0.1.5"
 dependencies = [
  "anyhow",
  "httpmock",
  "qdrant-client",
- "lumy-core",
+ "zelly-core",
  "serde",
  "serde_json",
  "testcontainers",
@@ -5353,13 +5353,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "lumy-sqlite"
+name = "zelly-sqlite"
 version = "0.1.2"
 dependencies = [
  "anyhow",
  "chrono",
  "httpmock",
- "lumy-core",
+ "zelly-core",
  "rusqlite",
  "serde",
  "serde_json",
@@ -6241,7 +6241,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8d0582f186c0a6d55655d24543f15e43607299425c5ad8352c242b914b31856"
 dependencies = [
  "aho-corasick",
- "lumy-swap",
+ "zelly-swap",
  "base64 0.22.1",
  "bitpacking",
  "byteorder",
@@ -7286,8 +7286,8 @@ version = "0.48.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9a2fa6e2155d7247be68c096456083145c183cbbbc2764150dda45a87197940c"
 dependencies = [
- "windows_alumyh64_gnullvm 0.48.5",
- "windows_alumyh64_msvc 0.48.5",
+ "windows_azellyh64_gnullvm 0.48.5",
+ "windows_azellyh64_msvc 0.48.5",
  "windows_i686_gnu 0.48.5",
  "windows_i686_msvc 0.48.5",
  "windows_x86_64_gnu 0.48.5",
@@ -7301,8 +7301,8 @@ version = "0.52.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b724f72796e036ab90c1021d4780d4d3d648aca59e491e6b98e725b84e99973"
 dependencies = [
- "windows_alumyh64_gnullvm 0.52.6",
- "windows_alumyh64_msvc 0.52.6",
+ "windows_azellyh64_gnullvm 0.52.6",
+ "windows_azellyh64_msvc 0.52.6",
  "windows_i686_gnu 0.52.6",
  "windows_i686_gnullvm",
  "windows_i686_msvc 0.52.6",
@@ -7312,25 +7312,25 @@ dependencies = [
 ]
 
 [[package]]
-name = "windows_alumyh64_gnullvm"
+name = "windows_azellyh64_gnullvm"
 version = "0.48.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b38e32f0abccf9987a4e3079dfb67dcd799fb61361e53e2882c3cbaf0d905d8"
 
 [[package]]
-name = "windows_alumyh64_gnullvm"
+name = "windows_azellyh64_gnullvm"
 version = "0.52.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32a4622180e7a0ec044bb555404c800bc9fd9ec262ec147edd5989ccd0c02cd3"
 
 [[package]]
-name = "windows_alumyh64_msvc"
+name = "windows_azellyh64_msvc"
 version = "0.48.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dc35310971f3b2dbbf3f0690a219f40e2d9afcf64f9ab7cc1be722937c26b4bc"
 
 [[package]]
-name = "windows_alumyh64_msvc"
+name = "windows_azellyh64_msvc"
 version = "0.52.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09ec2a7bb152e2252b53fa7803150007879548bc709c039df7627cabbd05d469"
