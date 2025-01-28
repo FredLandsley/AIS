@@ -1,4 +1,4 @@
-## lumy-MongoDB
+## Lumy-MongoDB
 This companion crate implements a lumy vector store based on MongoDB.
 
 ## Usage
