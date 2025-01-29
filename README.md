@@ -2,7 +2,7 @@
 
 Cerebra is a library developed by dannyglendale that allows for creating autonomous AI agents in Python. With simple and expressive decorators, you can have an agent that performs various tasks on a schedule or takes action on various events.
 
-## 🚀 Features
+## 🚀 Features 
 
 - 🤖 **Easy creation and management**: Create any type of agent you can think of and implement it in code.
 - 🔗 **Connected**: On startup, each agent automatically joins the fast growing cerebra network
