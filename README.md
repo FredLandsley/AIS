@@ -1,29 +1,29 @@
-# Vitruvia: AI Agent Framework
+# Cerebra: AI Agent Framework
 
-Vitruvia is a library developed by mostafakhaliid that allows for creating autonomous AI agents in Python. With simple and expressive decorators, you can have an agent that performs various tasks on a schedule or takes action on various events.
+Cerebra is a library developed by dannyglendale that allows for creating autonomous AI agents in Python. With simple and expressive decorators, you can have an agent that performs various tasks on a schedule or takes action on various events.
 
 ## 🚀 Features
 
 - 🤖 **Easy creation and management**: Create any type of agent you can think of and implement it in code.
-- 🔗 **Connected**: On startup, each agent automatically joins the fast growing vitruvia network
-- 🔒 **Secure**: vitruvia messages and wallets are cryptographically secured, so their identities and assets are protected.
+- 🔗 **Connected**: On startup, each agent automatically joins the fast growing cerebra network
+- 🔒 **Secure**: cerebra messages and wallets are cryptographically secured, so their identities and assets are protected.
 
 ## ⚡ Quickstart
 
 ### Installation
 
-Get started with vitruvia by installing it for Python 3.9 to 3.12:
+Get started with cerebra by installing it for Python 3.9 to 3.12:
 
-    pip install vitruvia
+    pip install cerebra
 
 ### Running a Demo
  
 #### Creating an Agent
 
-Build your first vitruvia using the following script:
+Build your first cerebra using the following script:
 
 ```python3
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 alice = Agent(name="alice", seed="alice recovery phrase")
 ```
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
 So far, your code should look like this:
 
 ```python3
-from vitruvia import Agent, Context
+from cerebra import Agent, Context
 
 alice = Agent(name="alice", seed="alice recovery phrase")
 
@@ -73,32 +73,32 @@ Please see the official documentation for full setup instructions and advanced f
 
 ## 🌱 Examples
 
-The [`examples`](https://github.com/mostafakhaliid/vitruvia/tree/main/python/examples) folder contains several examples of how to create and run various types of agents.
+The [`examples`](https://github.com/dannyglendale/cerebra/tree/main/python/examples) folder contains several examples of how to create and run various types of agents.
 
 ## 🌲 Integrations
 
-The [`integrations`](https://github.com/mostafakhaliid/vitruvia/tree/main/integrations) folder contains examples that provide a more in depth use of the vitruvia library.
+The [`integrations`](https://github.com/dannyglendale/cerebra/tree/main/integrations) folder contains examples that provide a more in depth use of the cerebra library.
 
 ## Python Library
 
-Go to the [`python`](https://github.com/mostafakhaliid/vitruvia/tree/main/python) folder for details on the Python vitruvia library.
+Go to the [`python`](https://github.com/dannyglendale/cerebra/tree/main/python) folder for details on the Python cerebra library.
 
 ## ✨ Contributing
 
-All contributions are welcome! Remember, contribution includes not only code, but any help with docs or issues raised by other developers. See our [contribution guidelines](https://github.com/mostafakhaliid/vitruvia/blob/main/CONTRIBUTING.md) for more details.
+All contributions are welcome! Remember, contribution includes not only code, but any help with docs or issues raised by other developers. See our [contribution guidelines](https://github.com/dannyglendale/cerebra/blob/main/CONTRIBUTING.md) for more details.
 
 ### 📄 Development Guidelines
 
-Read our [development guidelines](https://github.com/mostafakhaliid/vitruvia/blob/main/DEVELOPING.md) to learn some useful tips related to development.
+Read our [development guidelines](https://github.com/dannyglendale/cerebra/blob/main/DEVELOPING.md) to learn some useful tips related to development.
 
 ### ❓ Issues, Questions, and Discussions
 
-We use [GitHub Issues](https://github.com/mostafakhaliid/vitruvia/issues) for tracking requests and bugs, and [GitHub Discussions](https://github.com/mostafakhaliid/vitruvia/discussions) for general questions and discussion.
+We use [GitHub Issues](https://github.com/dannyglendale/cerebra/issues) for tracking requests and bugs, and [GitHub Discussions](https://github.com/dannyglendale/cerebra/discussions) for general questions and discussion.
 
 ## 🛡 Disclaimer
 
-This project, vitruvia, is provided "as-is" without any warranty, express or implied. By using this software, you agree to assume all risks associated with its use, including but not limited to unexpected behavior, data loss, or any other issues that may arise. The developers and contributors of this project do not accept any responsibility or liability for any losses, damages, or other consequences that may occur as a result of using this software.
+This project, cerebra, is provided "as-is" without any warranty, express or implied. By using this software, you agree to assume all risks associated with its use, including but not limited to unexpected behavior, data loss, or any other issues that may arise. The developers and contributors of this project do not accept any responsibility or liability for any losses, damages, or other consequences that may occur as a result of using this software.
 
 ## License
 
-The vitruvia project is licensed under [Apache License 2.0](https://github.com/mostafakhaliid/vitruvia/blob/main/LICENSE). 
+The cerebra project is licensed under [Apache License 2.0](https://github.com/dannyglendale/cerebra/blob/main/LICENSE). 
