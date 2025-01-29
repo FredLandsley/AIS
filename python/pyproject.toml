@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "vitruvia"
+name = "cerebra"
 version = "0.18.1"
 description = "Lightweight framework for rapid agent-based development"
 license = "Apache 2.0"
@@ -18,7 +18,7 @@ cosmpy = "^0.9.2"
 websockets = "^10.4"
 
 # extras
-mostafakhaliid-babble = { version = "^0.4.2", optional = true }
+dannyglendale-babble = { version = "^0.4.2", optional = true }
 tortoise-orm = { version = "^0.19.2", optional = true }
 geopy = { version = "^2.3.0", optional = true }
 pyngrok = { version = "^5.2.3", optional = true }
@@ -36,8 +36,8 @@ pre-commit = "^3.6.2"
 pydoc-markdown = "^4.8.2"
 
 [tool.poetry.extras]
-all = ["tortoise-orm", "geopy", "mostafakhaliid-babble", "pyngrok", "fastapi"]
-wallet = ["mostafakhaliid-babble"]
+all = ["tortoise-orm", "geopy", "dannyglendale-babble", "pyngrok", "fastapi"]
+wallet = ["dannyglendale-babble"]
 orm = ["tortoise-orm"]
 geo = ["geopy"]
 remote-agents = ["pyngrok"]

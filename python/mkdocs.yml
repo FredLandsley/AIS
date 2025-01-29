@@ -1,9 +1,9 @@
-site_name: vitruvia
-site_url: https://docs.mostafakhaliid/vitruvia
-site_description: Everything you need to know about vitruvia.
-repo_url: https://github.com/mostafakhaliid/vitruvia
+site_name: cerebra
+site_url: https://docs.dannyglendale/cerebra
+site_description: Everything you need to know about cerebra.
+repo_url: https://github.com/dannyglendale/cerebra
 edit_uri: ""
-site_author: developer@mostafakhaliid
+site_author: developer@dannyglendale
 
 nav:
   - Introduction: 'index.md'
@@ -26,22 +26,22 @@ nav:
     - Exchange protocol: 'protocol.md'
   #  - Marketplace contract:
   - API:
-    - Agent: 'api/vitruvia/agent.md'
-    - Context: 'api/vitruvia/context.md'
-    - Envelope: 'api/vitruvia/envelope.md'
-    - Network and contracts: 'api/vitruvia/network.md'
-    - Protocol: 'api/vitruvia/protocol.md'
-    - Envelope: 'api/vitruvia/envelope.md'
-    - Message models: 'api/vitruvia/models.md'
-    - Dispatcher: 'api/vitruvia/dispatch.md'
-    - Server: 'api/vitruvia/asgi.md'
-    - Mailbox client: 'api/vitruvia/mailbox.md'
-    - Envelope query: 'api/vitruvia/query.md'
-    - Endpoint resolver: 'api/vitruvia/resolver.md'
-    - Agent setup: 'api/vitruvia/setup.md'
-    - Agent configuration: 'api/vitruvia/config.md'
-    - Cryptographic identity: 'api/vitruvia/crypto/__init__.md'
-    - Storage: 'api/vitruvia/storage/__init__.md'
+    - Agent: 'api/cerebra/agent.md'
+    - Context: 'api/cerebra/context.md'
+    - Envelope: 'api/cerebra/envelope.md'
+    - Network and contracts: 'api/cerebra/network.md'
+    - Protocol: 'api/cerebra/protocol.md'
+    - Envelope: 'api/cerebra/envelope.md'
+    - Message models: 'api/cerebra/models.md'
+    - Dispatcher: 'api/cerebra/dispatch.md'
+    - Server: 'api/cerebra/asgi.md'
+    - Mailbox client: 'api/cerebra/mailbox.md'
+    - Envelope query: 'api/cerebra/query.md'
+    - Endpoint resolver: 'api/cerebra/resolver.md'
+    - Agent setup: 'api/cerebra/setup.md'
+    - Agent configuration: 'api/cerebra/config.md'
+    - Cryptographic identity: 'api/cerebra/crypto/__init__.md'
+    - Storage: 'api/cerebra/storage/__init__.md'
 
 theme:
   name: material
@@ -76,7 +76,7 @@ extra_css:
 extra_javascript:
   - js/termynal-fast.js
 
-copyright: Copyright &copy; 2018 - 2022 mostafakhaliid # Copyright notice in footer
+copyright: Copyright &copy; 2018 - 2022 dannyglendale # Copyright notice in footer
 
 strict: true
 
@@ -103,22 +103,22 @@ extra:
   social:
     - icon: fontawesome/brands/twitter
       link: https://bit.ly/3oDuI3f
-      name: mostafakhaliid on twitter
+      name: dannyglendale on twitter
     - icon: fontawesome/brands/telegram
       link: https://t.me/fetch_ai
-      name: mostafakhaliid on telegram
+      name: dannyglendale on telegram
     - icon: fontawesome/brands/discord
       link: https://bit.ly/3ra5uMI
-      name: mostafakhaliid on discord
+      name: dannyglendale on discord
     - icon: fontawesome/brands/github
       link: https://bit.ly/3AFCWxl
-      name: mostafakhaliid on githubs
+      name: dannyglendale on githubs
     - icon: fontawesome/brands/reddit
       link: https://bit.ly/30zS1Tg
-      name: mostafakhaliid on reddit
+      name: dannyglendale on reddit
     - icon: fontawesome/brands/youtube
       link: https://bit.ly/3DxFazs
-      name: mostafakhaliid on youtube
+      name: dannyglendale on youtube
     - icon: fontawesome/brands/linkedin
       link: https://bit.ly/3kNO70p
-      name: mostafakhaliid on linkedin
+      name: dannyglendale on linkedin

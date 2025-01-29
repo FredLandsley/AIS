@@ -1076,14 +1076,14 @@ uvicorn = {version = ">=0.15.0", extras = ["standard"]}
 standard = ["uvicorn[standard] (>=0.15.0)"]
 
 [[package]]
-name = "mostafakhaliid-babble"
+name = "dannyglendale-babble"
 version = "0.4.2"
-description = "A simple python library for interacting with the mostafakhaliid messaging service (called Memorandum)"
+description = "A simple python library for interacting with the dannyglendale messaging service (called Memorandum)"
 optional = true
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "mostafakhaliid_babble-0.4.2-py3-none-any.whl", hash = "sha256:a0694c1b07efed1a169b147f22328328de89f19adc9a58d6d22e4484d93e1d57"},
-    {file = "mostafakhaliid_babble-0.4.2.tar.gz", hash = "sha256:7eee63d96f0d606875c3d324adbf8fc4142f211a17edb613492d851e0d6b1549"},
+    {file = "dannyglendale_babble-0.4.2-py3-none-any.whl", hash = "sha256:a0694c1b07efed1a169b147f22328328de89f19adc9a58d6d22e4484d93e1d57"},
+    {file = "dannyglendale_babble-0.4.2.tar.gz", hash = "sha256:7eee63d96f0d606875c3d324adbf8fc4142f211a17edb613492d851e0d6b1549"},
 ]
 
 [package.dependencies]
@@ -3736,12 +3736,12 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 type = ["pytest-mypy"]
 
 [extras]
-all = ["fastapi", "mostafakhaliid-babble", "geopy", "pyngrok", "tortoise-orm"]
+all = ["fastapi", "dannyglendale-babble", "geopy", "pyngrok", "tortoise-orm"]
 geo = ["geopy"]
 orm = ["tortoise-orm"]
 proxy = ["fastapi"]
 remote-agents = ["pyngrok"]
-wallet = ["mostafakhaliid-babble"]
+wallet = ["dannyglendale-babble"]
 
 [metadata]
 lock-version = "2.0"
