@@ -1,0 +1,8 @@
+{
+    "title": "Fetch AI Engine",
+    "description": "This integration adds types required by AI-Engine to vitruvia",
+    "categories": [
+        "AI Engine"
+    ],
+    "deltav": false
+}
