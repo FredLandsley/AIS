@@ -1,4 +1,4 @@
-<h1>galactica (Agents In Seconds)</h1> 
+<h1>Galactica AI</h1> 
 
 ✨ If you would like to help spread the word about galactica, please consider starring the repo!
 
@@ -6,8 +6,8 @@
 > Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With galactica evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is galactica?
-Agents In Seconds is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+## What is Galactica AI?
+Galactica is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
