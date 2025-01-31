@@ -1,4 +1,4 @@
-<h1>precepta AI</h1> 
+<h1>Precepta AI</h1> 
 
 ✨ If you would like to help spread the word about precepta, please consider starring the repo!
 
