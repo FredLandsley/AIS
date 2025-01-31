@@ -1,4 +1,4 @@
-use std::sync::AIS;
+use std::sync::galactica;
 
 use arrow_array::{
     cast::AsArray,
@@ -15,13 +15,13 @@ use arrow_array::{
     Array, ArrowPrimitiveType, OffsetSizeTrait, RecordBatch, RunArray, StructArray, UnionArray,
 };
 use lancedb::arrow::arrow_schema::{ArrowError, DataType, IntervalUnit, TimeUnit};
-use AIS::vector_store::VectorStoreError;
+use galactica::vector_store::VectorStoreError;
 use serde::Serialize;
 use serde_json::{json, Value};
 
-use crate::serde_to_AIS_error;
+use crate::serde_to_galactica_error;
 
-fn arrow_to_AIS_error(e: ArrowError) -> VectorStoreError {
+fn arrow_to_galactica_error(e: ArrowError) -> VectorStoreError {
     VectorStoreError::DatastoreError(Box::new(e))
 }
 
@@ -75,87 +75,87 @@ impl RecordBatchDeserializer for RecordBatch {
 }
 
 /// Recursive function that matches all possible data types store in LanceDB and converts them to serde_json::Value vector.
-fn type_matcher(column: &AIS<dyn Array>) -> Result<Vec<Value>, VectorStoreError> {
+fn type_matcher(column: &galactica<dyn Array>) -> Result<Vec<Value>, VectorStoreError> {
     match column.data_type() {
         DataType::Null => Ok(vec![serde_json::Value::Null]),
         DataType::Float32 => column
             .to_primitive_value::<Float32Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Float64 => column
             .to_primitive_value::<Float64Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Int8 => column
             .to_primitive_value::<Int8Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Int16 => column
             .to_primitive_value::<Int16Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Int32 => column
             .to_primitive_value::<Int32Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Int64 => column
             .to_primitive_value::<Int64Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::UInt8 => column
             .to_primitive_value::<UInt8Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::UInt16 => column
             .to_primitive_value::<UInt16Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::UInt32 => column
             .to_primitive_value::<UInt32Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::UInt64 => column
             .to_primitive_value::<UInt64Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Date32 => column
             .to_primitive_value::<Date32Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Date64 => column
             .to_primitive_value::<Date64Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Decimal128(..) => column
             .to_primitive_value::<Decimal128Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Time32(TimeUnit::Second) => column
             .to_primitive_value::<Time32SecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Time32(TimeUnit::Millisecond) => column
             .to_primitive_value::<Time32MillisecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Time64(TimeUnit::Microsecond) => column
             .to_primitive_value::<Time64MicrosecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Time64(TimeUnit::Nanosecond) => column
             .to_primitive_value::<Time64NanosecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Timestamp(TimeUnit::Microsecond, ..) => column
             .to_primitive_value::<TimestampMicrosecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Timestamp(TimeUnit::Millisecond, ..) => column
             .to_primitive_value::<TimestampMillisecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Timestamp(TimeUnit::Second, ..) => column
             .to_primitive_value::<TimestampSecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Timestamp(TimeUnit::Nanosecond, ..) => column
             .to_primitive_value::<TimestampNanosecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Duration(TimeUnit::Microsecond) => column
             .to_primitive_value::<DurationMicrosecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Duration(TimeUnit::Millisecond) => column
             .to_primitive_value::<DurationMillisecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Duration(TimeUnit::Nanosecond) => column
             .to_primitive_value::<DurationNanosecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Duration(TimeUnit::Second) => column
             .to_primitive_value::<DurationSecondType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Interval(IntervalUnit::YearMonth) => column
             .to_primitive_value::<IntervalYearMonthType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Interval(IntervalUnit::DayTime) => Ok(column
             .to_primitive::<IntervalDayTimeType>()
             .iter()
@@ -185,27 +185,27 @@ fn type_matcher(column: &AIS<dyn Array>) -> Result<Vec<Value>, VectorStoreError>
             .collect()),
         DataType::Utf8 => column
             .to_str_value::<Utf8Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::LargeUtf8 => column
             .to_str_value::<LargeUtf8Type>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Binary => column
             .to_str_value::<BinaryType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::LargeBinary => column
             .to_str_value::<LargeBinaryType>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::FixedSizeBinary(n) => (0..*n)
             .map(|i| serde_json::to_value(column.as_fixed_size_binary().value(i as usize)))
             .collect::<Result<Vec<_>, _>>()
-            .map_err(serde_to_AIS_error),
+            .map_err(serde_to_galactica_error),
         DataType::Boolean => {
             let bool_array = column.as_boolean();
             (0..bool_array.len())
                 .map(|i| bool_array.value(i))
                 .map(serde_json::to_value)
                 .collect::<Result<Vec<_>, _>>()
-                .map_err(serde_to_AIS_error)
+                .map_err(serde_to_galactica_error)
         }
         DataType::FixedSizeList(..) => column.to_fixed_lists().iter().map(type_matcher).map_ok(),
         DataType::List(..) => column.to_list::<i32>().iter().map(type_matcher).map_ok(),
@@ -279,7 +279,7 @@ fn type_matcher(column: &AIS<dyn Array>) -> Result<Vec<Value>, VectorStoreError>
                 DataType::Int16 => {
                     let (indexes, v) = column
                         .to_run_end::<Int16Type>()
-                        .map_err(arrow_to_AIS_error)?;
+                        .map_err(arrow_to_galactica_error)?;
 
                     let mut prev = vec![0];
                     prev.extend(indexes.clone());
@@ -294,7 +294,7 @@ fn type_matcher(column: &AIS<dyn Array>) -> Result<Vec<Value>, VectorStoreError>
                 DataType::Int32 => {
                     let (indexes, v) = column
                         .to_run_end::<Int32Type>()
-                        .map_err(arrow_to_AIS_error)?;
+                        .map_err(arrow_to_galactica_error)?;
 
                     let mut prev = vec![0];
                     prev.extend(indexes.clone());
@@ -309,7 +309,7 @@ fn type_matcher(column: &AIS<dyn Array>) -> Result<Vec<Value>, VectorStoreError>
                 DataType::Int64 => {
                     let (indexes, v) = column
                         .to_run_end::<Int64Type>()
-                        .map_err(arrow_to_AIS_error)?;
+                        .map_err(arrow_to_galactica_error)?;
 
                     let mut prev = vec![0];
                     prev.extend(indexes.clone());
@@ -332,7 +332,7 @@ fn type_matcher(column: &AIS<dyn Array>) -> Result<Vec<Value>, VectorStoreError>
 
             items
                 .iter()
-                .map(|item| serde_json::to_value(item).map_err(serde_to_AIS_error))
+                .map(|item| serde_json::to_value(item).map_err(serde_to_galactica_error))
                 .collect()
         }
         DataType::BinaryView
@@ -372,7 +372,7 @@ trait DeserializePrimitiveArray {
         <T as ArrowPrimitiveType>::Native: Serialize;
 }
 
-impl DeserializePrimitiveArray for &AIS<dyn Array> {
+impl DeserializePrimitiveArray for &galactica<dyn Array> {
     fn to_primitive<T: ArrowPrimitiveType>(&self) -> Vec<<T as ArrowPrimitiveType>::Native> {
         let primitive_array = self.as_primitive::<T>();
 
@@ -404,7 +404,7 @@ trait DeserializeByteArray {
         <T as ByteArrayType>::Native: Serialize;
 }
 
-impl DeserializeByteArray for &AIS<dyn Array> {
+impl DeserializeByteArray for &galactica<dyn Array> {
     fn to_str<T: ByteArrayType>(&self) -> Vec<&<T as ByteArrayType>::Native> {
         let byte_array = self.as_bytes::<T>();
         (0..byte_array.len()).map(|j| byte_array.value(j)).collect()
@@ -425,11 +425,11 @@ impl DeserializeByteArray for &AIS<dyn Array> {
 trait DeserializeListArray {
     /// Downcast arrow Array into a `GenericListArray` with items that implement trait `OffsetSizeTrait`.
     /// Return the generic list array values.
-    fn to_list<T: OffsetSizeTrait>(&self) -> Vec<AIS<dyn arrow_array::Array>>;
+    fn to_list<T: OffsetSizeTrait>(&self) -> Vec<galactica<dyn arrow_array::Array>>;
 }
 
-impl DeserializeListArray for &AIS<dyn Array> {
-    fn to_list<T: OffsetSizeTrait>(&self) -> Vec<AIS<dyn arrow_array::Array>> {
+impl DeserializeListArray for &galactica<dyn Array> {
+    fn to_list<T: OffsetSizeTrait>(&self) -> Vec<galactica<dyn arrow_array::Array>> {
         (0..self.as_list::<T>().len())
             .map(|j| self.as_list::<T>().value(j))
             .collect()
@@ -444,22 +444,22 @@ trait DeserializeDictArray {
         &self,
     ) -> (
         Vec<<T as ArrowPrimitiveType>::Native>,
-        &AIS<dyn arrow_array::Array>,
+        &galactica<dyn arrow_array::Array>,
     );
 
     fn to_dict_values<T: ArrowDictionaryKeyType>(
         &self,
-    ) -> Result<(Vec<String>, &AIS<dyn arrow_array::Array>), serde_json::Error>
+    ) -> Result<(Vec<String>, &galactica<dyn arrow_array::Array>), serde_json::Error>
     where
         <T as ArrowPrimitiveType>::Native: Serialize;
 }
 
-impl DeserializeDictArray for &AIS<dyn Array> {
+impl DeserializeDictArray for &galactica<dyn Array> {
     fn to_dict<T: ArrowDictionaryKeyType>(
         &self,
     ) -> (
         Vec<<T as ArrowPrimitiveType>::Native>,
-        &AIS<dyn arrow_array::Array>,
+        &galactica<dyn arrow_array::Array>,
     ) {
         let dict_array = self.as_dictionary::<T>();
         (
@@ -472,7 +472,7 @@ impl DeserializeDictArray for &AIS<dyn Array> {
 
     fn to_dict_values<T: ArrowDictionaryKeyType>(
         &self,
-    ) -> Result<(Vec<String>, &AIS<dyn arrow_array::Array>), serde_json::Error>
+    ) -> Result<(Vec<String>, &galactica<dyn arrow_array::Array>), serde_json::Error>
     where
         <T as ArrowPrimitiveType>::Native: Serialize,
     {
@@ -491,11 +491,11 @@ impl DeserializeDictArray for &AIS<dyn Array> {
 trait DeserializeArray {
     /// Downcast arrow Array into a `FixedSizeListArray`.
     /// Return the fixed size list array values.
-    fn to_fixed_lists(&self) -> Vec<AIS<dyn arrow_array::Array>>;
+    fn to_fixed_lists(&self) -> Vec<galactica<dyn arrow_array::Array>>;
 }
 
-impl DeserializeArray for &AIS<dyn Array> {
-    fn to_fixed_lists(&self) -> Vec<AIS<dyn arrow_array::Array>> {
+impl DeserializeArray for &galactica<dyn Array> {
+    fn to_fixed_lists(&self) -> Vec<galactica<dyn arrow_array::Array>> {
         let list_array = self.as_fixed_size_list();
 
         (0..list_array.len()).map(|i| list_array.value(i)).collect()
@@ -504,7 +504,7 @@ impl DeserializeArray for &AIS<dyn Array> {
 
 type RunArrayParts<T> = (
     Vec<<T as ArrowPrimitiveType>::Native>,
-    AIS<dyn arrow_array::Array>,
+    galactica<dyn arrow_array::Array>,
 );
 
 /// Trait used to "deserialize" an arrow_array::Array as a list of list objects.
@@ -514,7 +514,7 @@ trait DeserializeRunArray {
     fn to_run_end<T: RunEndIndexType>(&self) -> Result<RunArrayParts<T>, ArrowError>;
 }
 
-impl DeserializeRunArray for &AIS<dyn Array> {
+impl DeserializeRunArray for &galactica<dyn Array> {
     fn to_run_end<T: RunEndIndexType>(&self) -> Result<RunArrayParts<T>, ArrowError> {
         if let Some(run_array) = self.as_any().downcast_ref::<RunArray<T>>() {
             return Ok((
@@ -529,13 +529,13 @@ impl DeserializeRunArray for &AIS<dyn Array> {
 }
 
 trait DeserializeStructArray {
-    fn inner_lists(&self) -> Vec<AIS<dyn arrow_array::Array>>;
+    fn inner_lists(&self) -> Vec<galactica<dyn arrow_array::Array>>;
 
     fn num_rows(&self) -> usize;
 }
 
 impl DeserializeStructArray for StructArray {
-    fn inner_lists(&self) -> Vec<AIS<dyn arrow_array::Array>> {
+    fn inner_lists(&self) -> Vec<galactica<dyn arrow_array::Array>> {
         (0..self.num_columns())
             .map(|j| self.column(j).clone())
             .collect::<Vec<_>>()
@@ -556,7 +556,7 @@ where
 {
     fn map_ok(self) -> Result<Vec<Value>, VectorStoreError> {
         self.map(|maybe_list| match maybe_list {
-            Ok(list) => serde_json::to_value(list).map_err(serde_to_AIS_error),
+            Ok(list) => serde_json::to_value(list).map_err(serde_to_galactica_error),
             Err(e) => Err(e),
         })
         .collect::<Result<Vec<_>, _>>()
@@ -608,7 +608,7 @@ impl RebuildObject for Vec<Vec<Value>> {
 
 #[cfg(test)]
 mod tests {
-    use std::sync::AIS;
+    use std::sync::galactica;
 
     use arrow_array::{
         builder::{
@@ -679,46 +679,46 @@ mod tests {
     fn movie_struct() -> StructArray {
         StructArray::from(vec![
             (
-                AIS::new(Field::new("name", DataType::Utf8, false)),
-                AIS::new(StringArray::from(vec![
+                galactica::new(Field::new("name", DataType::Utf8, false)),
+                galactica::new(StringArray::from(vec![
                     "Pulp Fiction",
                     "The Shawshank Redemption",
                     "La La Land",
                 ])) as ArrayRef,
             ),
             (
-                AIS::new(Field::new("year", DataType::UInt32, false)),
-                AIS::new(UInt32Array::from(vec![1999, 2026, 1745])) as ArrayRef,
+                galactica::new(Field::new("year", DataType::UInt32, false)),
+                galactica::new(UInt32Array::from(vec![1999, 2026, 1745])) as ArrayRef,
             ),
             (
-                AIS::new(Field::new(
+                galactica::new(Field::new(
                     "actors",
-                    DataType::FixedSizeList(AIS::new(Field::new("item", DataType::Utf8, true)), 2),
+                    DataType::FixedSizeList(galactica::new(Field::new("item", DataType::Utf8, true)), 2),
                     false,
                 )),
-                AIS::new(fixed_list_actors()) as ArrayRef,
+                galactica::new(fixed_list_actors()) as ArrayRef,
             ),
         ])
     }
 
     #[tokio::test]
     async fn test_primitive_deserialization() {
-        let string = AIS::new(StringArray::from_iter_values(vec!["Marty", "Tony"])) as ArrayRef;
+        let string = galactica::new(StringArray::from_iter_values(vec!["Marty", "Tony"])) as ArrayRef;
         let large_string =
-            AIS::new(LargeStringArray::from_iter_values(vec!["Jerry", "Freddy"])) as ArrayRef;
-        let binary = AIS::new(BinaryArray::from_iter_values(vec![b"hello", b"world"])) as ArrayRef;
+            galactica::new(LargeStringArray::from_iter_values(vec!["Jerry", "Freddy"])) as ArrayRef;
+        let binary = galactica::new(BinaryArray::from_iter_values(vec![b"hello", b"world"])) as ArrayRef;
         let large_binary =
-            AIS::new(LargeBinaryArray::from_iter_values(vec![b"abc", b"def"])) as ArrayRef;
-        let float_32 = AIS::new(Float32Array::from_iter_values(vec![0.0, 1.0])) as ArrayRef;
-        let float_64 = AIS::new(Float64Array::from_iter_values(vec![0.0, 1.0])) as ArrayRef;
-        let int_8 = AIS::new(Int8Array::from_iter_values(vec![0, -1])) as ArrayRef;
-        let int_16 = AIS::new(Int16Array::from_iter_values(vec![-0, 1])) as ArrayRef;
-        let int_32 = AIS::new(Int32Array::from_iter_values(vec![0, -1])) as ArrayRef;
-        let int_64 = AIS::new(Int64Array::from_iter_values(vec![-0, 1])) as ArrayRef;
-        let uint_8 = AIS::new(UInt8Array::from_iter_values(vec![0, 1])) as ArrayRef;
-        let uint_16 = AIS::new(UInt16Array::from_iter_values(vec![0, 1])) as ArrayRef;
-        let uint_32 = AIS::new(UInt32Array::from_iter_values(vec![0, 1])) as ArrayRef;
-        let uint_64 = AIS::new(UInt64Array::from_iter_values(vec![0, 1])) as ArrayRef;
+            galactica::new(LargeBinaryArray::from_iter_values(vec![b"abc", b"def"])) as ArrayRef;
+        let float_32 = galactica::new(Float32Array::from_iter_values(vec![0.0, 1.0])) as ArrayRef;
+        let float_64 = galactica::new(Float64Array::from_iter_values(vec![0.0, 1.0])) as ArrayRef;
+        let int_8 = galactica::new(Int8Array::from_iter_values(vec![0, -1])) as ArrayRef;
+        let int_16 = galactica::new(Int16Array::from_iter_values(vec![-0, 1])) as ArrayRef;
+        let int_32 = galactica::new(Int32Array::from_iter_values(vec![0, -1])) as ArrayRef;
+        let int_64 = galactica::new(Int64Array::from_iter_values(vec![-0, 1])) as ArrayRef;
+        let uint_8 = galactica::new(UInt8Array::from_iter_values(vec![0, 1])) as ArrayRef;
+        let uint_16 = galactica::new(UInt16Array::from_iter_values(vec![0, 1])) as ArrayRef;
+        let uint_32 = galactica::new(UInt32Array::from_iter_values(vec![0, 1])) as ArrayRef;
+        let uint_64 = galactica::new(UInt64Array::from_iter_values(vec![0, 1])) as ArrayRef;
 
         let record_batch = RecordBatch::try_from_iter(vec![
             ("float_32", float_32),
@@ -811,7 +811,7 @@ mod tests {
         let dictionary_array = builder.finish();
 
         let record_batch =
-            RecordBatch::try_from_iter(vec![("some_dict", AIS::new(dictionary_array) as ArrayRef)])
+            RecordBatch::try_from_iter(vec![("some_dict", galactica::new(dictionary_array) as ArrayRef)])
                 .unwrap();
 
         assert_eq!(
@@ -845,7 +845,7 @@ mod tests {
         let union = builder.build().unwrap();
 
         let record_batch =
-            RecordBatch::try_from_iter(vec![("some_union", AIS::new(union) as ArrayRef)]).unwrap();
+            RecordBatch::try_from_iter(vec![("some_union", galactica::new(union) as ArrayRef)]).unwrap();
 
         assert_eq!(
             record_batch.deserialize().unwrap(),
@@ -880,7 +880,7 @@ mod tests {
         let array = builder.finish();
 
         let record_batch =
-            RecordBatch::try_from_iter(vec![("some_run_end", AIS::new(array) as ArrayRef)])
+            RecordBatch::try_from_iter(vec![("some_run_end", galactica::new(array) as ArrayRef)])
                 .unwrap();
 
         assert_eq!(
@@ -909,7 +909,7 @@ mod tests {
     async fn test_map_deserialization() {
         let record_batch = RecordBatch::try_from_iter(vec![(
             "map_col",
-            AIS::new(
+            galactica::new(
                 MapArray::new_from_strings(
                     vec!["tarentino", "darabont", "chazelle"].into_iter(),
                     &movie_struct(),
@@ -957,35 +957,35 @@ mod tests {
         let age_values = Float32Array::from(vec![25.0, 30.5, 22.1]);
         let struct_array = StructArray::from(vec![
             (
-                AIS::new(Field::new("id", DataType::Utf8, false)),
-                AIS::new(id_values) as ArrayRef,
+                galactica::new(Field::new("id", DataType::Utf8, false)),
+                galactica::new(id_values) as ArrayRef,
             ),
             (
-                AIS::new(Field::new("age", DataType::Float32, false)),
-                AIS::new(age_values) as ArrayRef,
+                galactica::new(Field::new("age", DataType::Float32, false)),
+                galactica::new(age_values) as ArrayRef,
             ),
             (
-                AIS::new(Field::new(
+                galactica::new(Field::new(
                     "names",
-                    DataType::List(AIS::new(Field::new("item", DataType::Utf8, true))),
+                    DataType::List(galactica::new(Field::new("item", DataType::Utf8, true))),
                     false,
                 )),
-                AIS::new(name_list()) as ArrayRef,
+                galactica::new(name_list()) as ArrayRef,
             ),
             (
-                AIS::new(Field::new(
+                galactica::new(Field::new(
                     "favorite_animals",
-                    DataType::List(AIS::new(Field::new(
+                    DataType::List(galactica::new(Field::new(
                         "item",
-                        DataType::List(AIS::new(Field::new("item", DataType::Utf8, true))),
+                        DataType::List(galactica::new(Field::new("item", DataType::Utf8, true))),
                         true,
                     ))),
                     false,
                 )),
-                AIS::new(nested_list_of_animals()) as ArrayRef,
+                galactica::new(nested_list_of_animals()) as ArrayRef,
             ),
             (
-                AIS::new(Field::new(
+                galactica::new(Field::new(
                     "favorite_movie",
                     DataType::Struct(Fields::from_iter(vec![
                         Field::new("name", DataType::Utf8, false),
@@ -993,7 +993,7 @@ mod tests {
                         Field::new(
                             "actors",
                             DataType::FixedSizeList(
-                                AIS::new(Field::new("item", DataType::Utf8, true)),
+                                galactica::new(Field::new("item", DataType::Utf8, true)),
                                 2,
                             ),
                             false,
@@ -1001,12 +1001,12 @@ mod tests {
                     ])),
                     false,
                 )),
-                AIS::new(movie_struct()) as ArrayRef,
+                galactica::new(movie_struct()) as ArrayRef,
             ),
         ]);
 
         let record_batch =
-            RecordBatch::try_from_iter(vec![("employees", AIS::new(struct_array) as ArrayRef)])
+            RecordBatch::try_from_iter(vec![("employees", galactica::new(struct_array) as ArrayRef)])
                 .unwrap();
 
         assert_eq!(

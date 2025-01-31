@@ -1,12 +1,12 @@
 use serde_json::json;
 
-use AIS::vector_store::VectorStoreIndex;
-use AIS::{
+use galactica::vector_store::VectorStoreIndex;
+use galactica::{
     embeddings::{Embedding, EmbeddingsBuilder},
     providers::openai,
     Embed, OneOrMany,
 };
-use AIS_sqlite::{Column, ColumnValue, SqliteVectorStore, SqliteVectorStoreTable};
+use galactica_sqlite::{Column, ColumnValue, SqliteVectorStore, SqliteVectorStoreTable};
 use rusqlite::ffi::sqlite3_auto_extension;
 use sqlite_vec::sqlite3_vec_init;
 use tokio_rusqlite::Connection;
@@ -43,10 +43,10 @@ impl SqliteVectorStoreTable for Word {
 }
 
 #[tokio::test]
-async fn vector_seAISh_test() {
+async fn vector_segalacticah_test() {
     // Initialize the `sqlite-vec`extension
     // This enables SQLite to work with vector embeddings
-    // See: https://alexgAISia.xyz/sqlite-vec/rust.html
+    // See: https://alexggalacticaia.xyz/sqlite-vec/rust.html
     unsafe {
         sqlite3_auto_extension(Some(std::mem::transmute(sqlite3_vec_init as *const ())));
     }

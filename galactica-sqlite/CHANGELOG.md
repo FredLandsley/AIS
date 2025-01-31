@@ -7,25 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.2](https://github.com/FredLandsley/AIS/compare/AIS-sqlite-v0.1.1...AIS-sqlite-v0.1.2) - 2025-01-13
+## [0.1.2](https://github.com/OFFICIALDBLR/galactica/compare/galactica-sqlite-v0.1.1...galactica-sqlite-v0.1.2) - 2025-01-13
 
 ### Other
 
-- updated the following local packages: AIS-core
+- updated the following local packages: galactica-core
 
-## [0.1.1](https://github.com/FredLandsley/AIS/compare/AIS-sqlite-v0.1.0...AIS-sqlite-v0.1.1) - 2024-12-19
+## [0.1.1](https://github.com/OFFICIALDBLR/galactica/compare/galactica-sqlite-v0.1.0...galactica-sqlite-v0.1.1) - 2024-12-19
 
 ### Other
 
 - update Cargo.lock dependencies
 
-## [0.1.0](https://github.com/FredLandsley/AIS/releases/tag/AIS-sqlite-v0.1.0) - 2024-12-03
+## [0.1.0](https://github.com/OFFICIALDBLR/galactica/releases/tag/galactica-sqlite-v0.1.0) - 2024-12-03
 
 ### Added
 
-- Add support for Sqlite vector store ([#122](https://github.com/FredLandsley/AIS/pull/122))
+- Add support for Sqlite vector store ([#122](https://github.com/OFFICIALDBLR/galactica/pull/122))
 
 ### Fixed
 
-- AIS-sqlite missing version in Cargo.toml ([#137](https://github.com/FredLandsley/AIS/pull/137))
-- *(AIS-sqlite)* Fix missing AIS-core version
+- galactica-sqlite missing version in Cargo.toml ([#137](https://github.com/OFFICIALDBLR/galactica/pull/137))
+- *(galactica-sqlite)* Fix missing galactica-core version

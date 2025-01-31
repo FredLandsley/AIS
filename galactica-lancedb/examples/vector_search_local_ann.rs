@@ -1,14 +1,14 @@
-use std::sync::AIS;
+use std::sync::galactica;
 
 use arrow_array::RecordBatchIterator;
 use fixture::{as_record_batch, schema, words, Word};
 use lancedb::index::vector::IvfPqIndexBuilder;
-use AIS::{
+use galactica::{
     embeddings::{EmbeddingModel, EmbeddingsBuilder},
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
     vector_store::VectorStoreIndex,
 };
-use AIS_lancedb::{LanceDbVectorIndex, SeAIShParams};
+use galactica_lancedb::{LanceDbVectorIndex, SegalacticahParams};
 
 #[path = "./fixtures/lib.rs"]
 mod fixture;
@@ -43,7 +43,7 @@ async fn main() -> Result<(), anyhow::Error> {
             "definitions",
             RecordBatchIterator::new(
                 vec![as_record_batch(embeddings, model.ndims())],
-                AIS::new(schema(model.ndims())),
+                galactica::new(schema(model.ndims())),
             ),
         )
         .execute()
@@ -58,9 +58,9 @@ async fn main() -> Result<(), anyhow::Error> {
         .execute()
         .await?;
 
-    // Define seAISh_params params that will be used by the vector store to perform the vector seAISh
-    let seAISh_params = SeAIShParams::default();
-    let vector_store_index = LanceDbVectorIndex::new(table, model, "id", seAISh_params).await?;
+    // Define segalacticah_params params that will be used by the vector store to perform the vector segalacticah
+    let segalacticah_params = SegalacticahParams::default();
+    let vector_store_index = LanceDbVectorIndex::new(table, model, "id", segalacticah_params).await?;
 
     // Query the index
     let results = vector_store_index

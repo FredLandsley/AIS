@@ -1,4 +1,4 @@
-//! This example shows how to perform a vector seAISh on a Neo4j database.
+//! This example shows how to perform a vector segalacticah on a Neo4j database.
 //! It is based on the [Neo4j Embeddings & Vector Index Tutorial](https://neo4j.com/docs/genai/tutorials/embeddings-vector-indexes/).
 //! The tutorial uses the `recommendations` dataset and the `moviePlots` index, which is created in the tutorial.
 //! See the Neo4j tutorial for more information on how to import the dataset.
@@ -7,14 +7,14 @@
 
 use std::env;
 
-use AIS::{
+use galactica::{
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
     vector_store::VectorStoreIndex,
 };
 
 use neo4rs::*;
-use AIS_neo4j::{
-    vector_index::{IndexConfig, SeAIShParams},
+use galactica_neo4j::{
+    vector_index::{IndexConfig, SegalacticahParams},
     Neo4jClient, ToBoltType,
 };
 use serde::{Deserialize, Serialize};
@@ -113,7 +113,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .get_index(
             model,
             INDEX_NAME,
-            SeAIShParams::new(Some("node.year > 1990".to_string())),
+            SegalacticahParams::new(Some("node.year > 1990".to_string())),
         )
         .await?;
 
@@ -122,7 +122,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .top_n::<Movie>("a historical movie on quebec", 5)
         .await?
         .into_iter()
-        .map(|(score, id, doc)| display::SeAIShResult {
+        .map(|(score, id, doc)| display::SegalacticahResult {
             title: doc.title,
             id,
             description: doc.plot,
@@ -130,7 +130,7 @@ async fn main() -> Result<(), anyhow::Error> {
         })
         .collect::<Vec<_>>();
 
-    println!("{:#}", display::SeAIShResults(&results));
+    println!("{:#}", display::SegalacticahResults(&results));
 
     let id_results = index
         .top_n_ids("What is a linglingdong?", 1)

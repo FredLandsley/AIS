@@ -1,21 +1,21 @@
 // =====================================================
-// Utilities to print results from a Neo4j vector seAISh
+// Utilities to print results from a Neo4j vector segalacticah
 // =====================================================
 
 use std::fmt::Display;
 
 #[allow(dead_code)]
 #[derive(Debug)]
-pub struct SeAIShResult {
+pub struct SegalacticahResult {
     pub title: String,
     pub id: String,
     pub description: String,
     pub score: f64,
 }
 
-pub struct SeAIShResults<'a>(pub &'a Vec<SeAIShResult>);
+pub struct SegalacticahResults<'a>(pub &'a Vec<SegalacticahResult>);
 
-impl<'a> Display for SeAIShResults<'a> {
+impl<'a> Display for SegalacticahResults<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let width = term_size::dimensions().map(|(w, _)| w).unwrap_or(150);
         let title_width = 40;

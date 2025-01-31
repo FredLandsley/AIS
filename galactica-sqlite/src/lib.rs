@@ -1,6 +1,6 @@
-use AIS::embeddings::{Embedding, EmbeddingModel};
-use AIS::vector_store::{VectorStoreError, VectorStoreIndex};
-use AIS::OneOrMany;
+use galactica::embeddings::{Embedding, EmbeddingModel};
+use galactica::vector_store::{VectorStoreError, VectorStoreIndex};
+use galactica::OneOrMany;
 use serde::Deserialize;
 use std::marker::PhantomData;
 use tokio_rusqlite::Connection;
@@ -42,9 +42,9 @@ impl Column {
 
 /// Example of a document type that can be used with SqliteVectorStore
 /// ```rust
-/// use AIS::Embed;
+/// use galactica::Embed;
 /// use serde::Deserialize;
-/// use AIS_sqlite::{Column, ColumnValue, SqliteVectorStoreTable};
+/// use galactica_sqlite::{Column, ColumnValue, SqliteVectorStoreTable};
 ///
 /// #[derive(Embed, Clone, Debug, Deserialize)]
 /// struct Document {
@@ -233,20 +233,20 @@ impl<E: EmbeddingModel + 'static, T: SqliteVectorStoreTable + 'static> SqliteVec
     }
 }
 
-/// SQLite vector store implementation for AIS.
+/// SQLite vector store implementation for galactica.
 ///
-/// This crate provides a SQLite-based vector store implementation that can be used with AIS.
-/// It uses the `sqlite-vec` extension to enable vector similarity seAISh capabilities.
+/// This crate provides a SQLite-based vector store implementation that can be used with galactica.
+/// It uses the `sqlite-vec` extension to enable vector similarity segalacticah capabilities.
 ///
 /// # Example
 /// ```rust
-/// use AIS::{
+/// use galactica::{
 ///     embeddings::EmbeddingsBuilder,
 ///     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
 ///     vector_store::VectorStoreIndex,
 ///     Embed,
 /// };
-/// use AIS_sqlite::{Column, ColumnValue, SqliteVectorStore, SqliteVectorStoreTable};
+/// use galactica_sqlite::{Column, ColumnValue, SqliteVectorStore, SqliteVectorStoreTable};
 /// use serde::Deserialize;
 /// use tokio_rusqlite::Connection;
 ///
@@ -309,7 +309,7 @@ impl<E: EmbeddingModel + 'static, T: SqliteVectorStoreTable + 'static> SqliteVec
 /// // Add to vector store
 /// vector_store.add_rows(embeddings).await?;
 ///
-/// // Create index and seAISh
+/// // Create index and segalacticah
 /// let index = vector_store.index(model);
 /// let results = index
 ///     .top_n::<Document>("Example query", 2)

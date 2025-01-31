@@ -3,14 +3,14 @@ use mongodb::{
     options::ClientOptions,
     Client as MongoClient, Collection,
 };
-use AIS::providers::openai::TEXT_EMBEDDING_ADA_002;
+use galactica::providers::openai::TEXT_EMBEDDING_ADA_002;
 use serde::Deserialize;
 use std::env;
 
-use AIS::{
+use galactica::{
     embeddings::EmbeddingsBuilder, providers::openai::Client, vector_store::VectorStoreIndex, Embed,
 };
-use AIS_mongodb::{MongoDbVectorIndex, SeAIShParams};
+use galactica_mongodb::{MongoDbVectorIndex, SegalacticahParams};
 
 // Shape of data that needs to be RAG'ed.
 // The definition field will be used to generate embeddings.
@@ -86,7 +86,7 @@ async fn main() -> Result<(), anyhow::Error> {
     // Note: a vector index called "vector_index" must exist on the MongoDB collection you are querying.
     // IMPORTANT: Reuse the same model that was used to generate the embeddings
     let index =
-        MongoDbVectorIndex::new(collection, model, "vector_index", SeAIShParams::new()).await?;
+        MongoDbVectorIndex::new(collection, model, "vector_index", SegalacticahParams::new()).await?;
 
     // Query the index
     let results = index.top_n::<Word>("What is a linglingdong?", 1).await?;

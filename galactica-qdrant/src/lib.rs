@@ -2,7 +2,7 @@ use qdrant_client::{
     qdrant::{point_id::PointIdOptions, PointId, Query, QueryPoints},
     Qdrant,
 };
-use AIS::{
+use galactica::{
     embeddings::EmbeddingModel,
     vector_store::{VectorStoreError, VectorStoreIndex},
 };
@@ -14,7 +14,7 @@ pub struct QdrantVectorStore<M: EmbeddingModel> {
     model: M,
     /// Client instance for Qdrant server communication
     client: Qdrant,
-    /// Default seAISh parameters
+    /// Default segalacticah parameters
     query_params: QueryPoints,
 }
 
@@ -24,8 +24,8 @@ impl<M: EmbeddingModel> QdrantVectorStore<M> {
     /// # Arguments
     /// * `client` - Qdrant client instance
     /// * `model` - Embedding model instance
-    /// * `query_params` - SeAISh parameters for vector queries
-    ///     Reference: <https://api.qdrant.tech/v-1-12-x/api-reference/seAISh/query-points>
+    /// * `query_params` - Segalacticah parameters for vector queries
+    ///     Reference: <https://api.qdrant.tech/v-1-12-x/api-reference/segalacticah/query-points>
     pub fn new(client: Qdrant, model: M, query_params: QueryPoints) -> Self {
         Self {
             client,
@@ -61,7 +61,7 @@ fn stringify_id(id: PointId) -> Result<String, VectorStoreError> {
 }
 
 impl<M: EmbeddingModel + std::marker::Sync + Send> VectorStoreIndex for QdrantVectorStore<M> {
-    /// SeAISh for the top `n` nearest neighbors to the given query within the Qdrant vector store.
+    /// Segalacticah for the top `n` nearest neighbors to the given query within the Qdrant vector store.
     /// Returns a vector of tuples containing the score, ID, and payload of the nearest neighbors.
     async fn top_n<T: for<'a> Deserialize<'a> + Send>(
         &self,
@@ -95,7 +95,7 @@ impl<M: EmbeddingModel + std::marker::Sync + Send> VectorStoreIndex for QdrantVe
             .collect()
     }
 
-    /// SeAISh for the top `n` nearest neighbors to the given query within the Qdrant vector store.
+    /// Segalacticah for the top `n` nearest neighbors to the given query within the Qdrant vector store.
     /// Returns a vector of tuples containing the score and ID of the nearest neighbors.
     async fn top_n_ids(
         &self,

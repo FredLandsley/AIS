@@ -1,16 +1,16 @@
-## AIS-MongoDB
-This companion crate implements a AIS vector store based on MongoDB.
+## galactica-MongoDB
+This companion crate implements a galactica vector store based on MongoDB.
 
 ## Usage
 
-Add the companion crate to your `Cargo.toml`, along with the AIS-core crate:
+Add the companion crate to your `Cargo.toml`, along with the galactica-core crate:
 
 ```toml
 [dependencies]
-AIS-mongodb = "0.1.3"
-AIS-core = "0.4.0"
+galactica-mongodb = "0.1.3"
+galactica-core = "0.4.0"
 ```
 
-You can also run `cargo add AIS-mongodb AIS-core` to add the most recent versions of the dependencies to your project.
+You can also run `cargo add galactica-mongodb galactica-core` to add the most recent versions of the dependencies to your project.
 
 See the [`/examples`](./examples) folder for usage examples.

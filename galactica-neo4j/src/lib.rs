@@ -1,9 +1,9 @@
-//! A AIS vector store for Neo4j.
+//! A galactica vector store for Neo4j.
 //!
-//! This crate is a companion crate to the [AIS-core crate](https://github.com/AIS-ai/AIS-core).
+//! This crate is a companion crate to the [galactica-core crate](https://github.com/galactica-ai/galactica-core).
 //! It provides a vector store implementation that uses Neo4j as the underlying datastore.
 //!
-//! See the [README](https://github.com/FredLandsley/AIS/tree/main/AIS-neo4j) for more information.
+//! See the [README](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-neo4j) for more information.
 //!
 //! ## Prerequisites
 //!
@@ -38,11 +38,11 @@
 //! ```
 //!
 //! ## Simple example:
-//! More examples can be found in the [/examples](https://github.com/FredLandsley/AIS/tree/main/AIS-neo4j/examples) folder.
+//! More examples can be found in the [/examples](https://github.com/OFFICIALDBLR/galactica/tree/main/galactica-neo4j/examples) folder.
 //! ```
-//! use AIS_neo4j::{vector_index::*, Neo4jClient};
+//! use galactica_neo4j::{vector_index::*, Neo4jClient};
 //! use neo4rs::ConfigBuilder;
-//! use AIS::{providers::openai::*, vector_store::VectorStoreIndex};
+//! use galactica::{providers::openai::*, vector_store::VectorStoreIndex};
 //! use serde::Deserialize;
 //! use std::env;
 //!
@@ -73,7 +73,7 @@
 //!     let index = client.get_index(
 //!         model,
 //!         "moviePlotsEmbedding",
-//!         SeAIShParams::default()
+//!         SegalacticahParams::default()
 //!     ).await.unwrap();
 //!
 //!     #[derive(Debug, Deserialize)]
@@ -90,15 +90,15 @@ use std::str::FromStr;
 
 use futures::TryStreamExt;
 use neo4rs::*;
-use AIS::{embeddings::EmbeddingModel, vector_store::VectorStoreError};
+use galactica::{embeddings::EmbeddingModel, vector_store::VectorStoreError};
 use serde::Deserialize;
-use vector_index::{IndexConfig, Neo4jVectorIndex, SeAIShParams, VectorSimilarityFunction};
+use vector_index::{IndexConfig, Neo4jVectorIndex, SegalacticahParams, VectorSimilarityFunction};
 
 pub struct Neo4jClient {
     pub graph: Graph,
 }
 
-fn neo4j_to_AIS_error(e: neo4rs::Error) -> VectorStoreError {
+fn neo4j_to_galactica_error(e: neo4rs::Error) -> VectorStoreError {
     VectorStoreError::DatastoreError(Box::new(e))
 }
 
@@ -185,7 +185,7 @@ impl Neo4jClient {
         graph
             .execute(query)
             .await
-            .map_err(neo4j_to_AIS_error)?
+            .map_err(neo4j_to_galactica_error)?
             .into_stream_as::<T>()
             .try_collect::<Vec<T>>()
             .await
@@ -202,7 +202,7 @@ impl Neo4jClient {
         &self,
         model: M,
         index_name: &str,
-        seAISh_params: SeAIShParams,
+        segalacticah_params: SegalacticahParams,
     ) -> Result<Neo4jVectorIndex<M>, VectorStoreError> {
         #[derive(Deserialize)]
         struct IndexInfo {
@@ -235,7 +235,7 @@ impl Neo4jClient {
         let index_config = if let Some(index) = index_info.first() {
             if index.options.index_config.vector_dimensions != model.ndims() as i64 {
                 tracing::warn!(
-                    "The embedding vector dimensions of the existing Neo4j DB index ({}) do not match the provided model dimensions ({}). This may affect seAISh performance.",
+                    "The embedding vector dimensions of the existing Neo4j DB index ({}) do not match the provided model dimensions ({}). This may affect segalacticah performance.",
                     index.options.index_config.vector_dimensions,
                     model.ndims()
                 );
@@ -265,7 +265,7 @@ impl Neo4jClient {
             self.graph.clone(),
             model,
             index_config,
-            seAISh_params,
+            segalacticah_params,
         ))
     }
 

@@ -1,7 +1,7 @@
 use futures::StreamExt;
 use mongodb::bson::{self, doc};
 
-use AIS::{
+use galactica::{
     embeddings::embedding::{Embedding, EmbeddingModel},
     vector_store::{VectorStoreError, VectorStoreIndex},
 };
@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct SeAIShIndex {
+struct SegalacticahIndex {
     id: String,
     name: String,
     #[serde(rename = "type")]
@@ -19,21 +19,21 @@ struct SeAIShIndex {
     latest_definition: LatestDefinition,
 }
 
-impl SeAIShIndex {
-    async fn get_seAISh_index<C: Send + Sync>(
+impl SegalacticahIndex {
+    async fn get_segalacticah_index<C: Send + Sync>(
         collection: mongodb::Collection<C>,
         index_name: &str,
-    ) -> Result<SeAIShIndex, VectorStoreError> {
+    ) -> Result<SegalacticahIndex, VectorStoreError> {
         collection
-            .list_seAISh_indexes()
+            .list_segalacticah_indexes()
             .name(index_name)
             .await
-            .map_err(mongodb_to_AIS_error)?
-            .with_type::<SeAIShIndex>()
+            .map_err(mongodb_to_galactica_error)?
+            .with_type::<SegalacticahIndex>()
             .next()
             .await
             .transpose()
-            .map_err(mongodb_to_AIS_error)?
+            .map_err(mongodb_to_galactica_error)?
             .ok_or(VectorStoreError::DatastoreError("Index not found".into()))
     }
 }
@@ -53,15 +53,15 @@ struct Field {
     similarity: String,
 }
 
-fn mongodb_to_AIS_error(e: mongodb::error::Error) -> VectorStoreError {
+fn mongodb_to_galactica_error(e: mongodb::error::Error) -> VectorStoreError {
     VectorStoreError::DatastoreError(Box::new(e))
 }
 
 /// A vector index for a MongoDB collection.
 /// # Example
 /// ```rust
-/// use AIS_mongodb::{MongoDbVectorIndex, SeAIShParams};
-/// use AIS::{providers::openai, vector_store::VectorStoreIndex};
+/// use galactica_mongodb::{MongoDbVectorIndex, SegalacticahParams};
+/// use galactica::{providers::openai, vector_store::VectorStoreIndex};
 ///
 /// # tokio_test::block_on(async {
 /// #[derive(serde::Deserialize, serde::Serialize, Debug)]
@@ -82,7 +82,7 @@ fn mongodb_to_AIS_error(e: mongodb::error::Error) -> VectorStoreError {
 ///     collection,
 ///     model,
 ///     "vector_index", // <-- replace with the name of the index in your mongodb collection.
-///     SeAIShParams::new(), // <-- field name in `Document` that contains the embeddings.
+///     SegalacticahParams::new(), // <-- field name in `Document` that contains the embeddings.
 /// )
 /// .await?;
 ///
@@ -98,21 +98,21 @@ pub struct MongoDbVectorIndex<M: EmbeddingModel, C: Send + Sync> {
     model: M,
     index_name: String,
     embedded_field: String,
-    seAISh_params: SeAIShParams,
+    segalacticah_params: SegalacticahParams,
 }
 
 impl<M: EmbeddingModel, C: Send + Sync> MongoDbVectorIndex<M, C> {
-    /// Vector seAISh stage of aggregation pipeline of mongoDB collection.
+    /// Vector segalacticah stage of aggregation pipeline of mongoDB collection.
     /// To be used by implementations of top_n and top_n_ids methods on VectorStoreIndex trait for MongoDbVectorIndex.
-    fn pipeline_seAISh_stage(&self, prompt_embedding: &Embedding, n: usize) -> bson::Document {
-        let SeAIShParams {
+    fn pipeline_segalacticah_stage(&self, prompt_embedding: &Embedding, n: usize) -> bson::Document {
+        let SegalacticahParams {
             filter,
             exact,
             num_candidates,
-        } = &self.seAISh_params;
+        } = &self.segalacticah_params;
 
         doc! {
-          "$vectorSeAISh": {
+          "$vectorSegalacticah": {
             "index": &self.index_name,
             "path": self.embedded_field.clone(),
             "queryVector": &prompt_embedding.vec,
@@ -129,7 +129,7 @@ impl<M: EmbeddingModel, C: Send + Sync> MongoDbVectorIndex<M, C> {
     fn pipeline_score_stage(&self) -> bson::Document {
         doc! {
           "$addFields": {
-            "score": { "$meta": "vectorSeAIShScore" }
+            "score": { "$meta": "vectorSegalacticahScore" }
           }
         }
     }
@@ -139,22 +139,22 @@ impl<M: EmbeddingModel, C: Send + Sync> MongoDbVectorIndex<M, C> {
     /// Create a new `MongoDbVectorIndex`.
     ///
     /// The index (of type "vector") must already exist for the MongoDB collection.
-    /// See the MongoDB [documentation](https://www.mongodb.com/docs/atlas/atlas-vector-seAISh/vector-seAISh-type/) for more information on creating indexes.
+    /// See the MongoDB [documentation](https://www.mongodb.com/docs/atlas/atlas-vector-segalacticah/vector-segalacticah-type/) for more information on creating indexes.
     pub async fn new(
         collection: mongodb::Collection<C>,
         model: M,
         index_name: &str,
-        seAISh_params: SeAIShParams,
+        segalacticah_params: SegalacticahParams,
     ) -> Result<Self, VectorStoreError> {
-        let seAISh_index = SeAIShIndex::get_seAISh_index(collection.clone(), index_name).await?;
+        let segalacticah_index = SegalacticahIndex::get_segalacticah_index(collection.clone(), index_name).await?;
 
-        if !seAISh_index.queryable {
+        if !segalacticah_index.queryable {
             return Err(VectorStoreError::DatastoreError(
                 "Index is not queryable".into(),
             ));
         }
 
-        let embedded_field = seAISh_index
+        let embedded_field = segalacticah_index
             .latest_definition
             .fields
             .into_iter()
@@ -170,22 +170,22 @@ impl<M: EmbeddingModel, C: Send + Sync> MongoDbVectorIndex<M, C> {
             model,
             index_name: index_name.to_string(),
             embedded_field,
-            seAISh_params,
+            segalacticah_params,
         })
     }
 }
 
-/// See [MongoDB Vector SeAISh](`https://www.mongodb.com/docs/atlas/atlas-vector-seAISh/vector-seAISh-stage/`) for more information
+/// See [MongoDB Vector Segalacticah](`https://www.mongodb.com/docs/atlas/atlas-vector-segalacticah/vector-segalacticah-stage/`) for more information
 /// on each of the fields
 #[derive(Default)]
-pub struct SeAIShParams {
+pub struct SegalacticahParams {
     filter: mongodb::bson::Document,
     exact: Option<bool>,
     num_candidates: Option<u32>,
 }
 
-impl SeAIShParams {
-    /// Initializes a new `SeAIShParams` with default values.
+impl SegalacticahParams {
+    /// Initializes a new `SegalacticahParams` with default values.
     pub fn new() -> Self {
         Self {
             filter: doc! {},
@@ -194,26 +194,26 @@ impl SeAIShParams {
         }
     }
 
-    /// Sets the pre-filter field of the seAISh params.
-    /// See [MongoDB vector SeAISh](https://www.mongodb.com/docs/atlas/atlas-vector-seAISh/vector-seAISh-stage/) for more information.
+    /// Sets the pre-filter field of the segalacticah params.
+    /// See [MongoDB vector Segalacticah](https://www.mongodb.com/docs/atlas/atlas-vector-segalacticah/vector-segalacticah-stage/) for more information.
     pub fn filter(mut self, filter: mongodb::bson::Document) -> Self {
         self.filter = filter;
         self
     }
 
-    /// Sets the exact field of the seAISh params.
-    /// If exact is true, an ENN vector seAISh will be performed, otherwise, an ANN seAISh will be performed.
+    /// Sets the exact field of the segalacticah params.
+    /// If exact is true, an ENN vector segalacticah will be performed, otherwise, an ANN segalacticah will be performed.
     /// By default, exact is false.
-    /// See [MongoDB vector SeAISh](https://www.mongodb.com/docs/atlas/atlas-vector-seAISh/vector-seAISh-stage/) for more information.
+    /// See [MongoDB vector Segalacticah](https://www.mongodb.com/docs/atlas/atlas-vector-segalacticah/vector-segalacticah-stage/) for more information.
     pub fn exact(mut self, exact: bool) -> Self {
         self.exact = Some(exact);
         self
     }
 
-    /// Sets the num_candidates field of the seAISh params.
+    /// Sets the num_candidates field of the segalacticah params.
     /// Only set this field if exact is set to false.
-    /// Number of nearest neighbors to use during the seAISh.
-    /// See [MongoDB vector SeAISh](https://www.mongodb.com/docs/atlas/atlas-vector-seAISh/vector-seAISh-stage/) for more information.
+    /// Number of nearest neighbors to use during the segalacticah.
+    /// See [MongoDB vector Segalacticah](https://www.mongodb.com/docs/atlas/atlas-vector-segalacticah/vector-segalacticah-stage/) for more information.
     pub fn num_candidates(mut self, num_candidates: u32) -> Self {
         self.num_candidates = Some(num_candidates);
         self
@@ -234,7 +234,7 @@ impl<M: EmbeddingModel + Sync + Send, C: Sync + Send> VectorStoreIndex
         let mut cursor = self
             .collection
             .aggregate([
-                self.pipeline_seAISh_stage(&prompt_embedding, n),
+                self.pipeline_segalacticah_stage(&prompt_embedding, n),
                 self.pipeline_score_stage(),
                 {
                     doc! {
@@ -245,19 +245,19 @@ impl<M: EmbeddingModel + Sync + Send, C: Sync + Send> VectorStoreIndex
                 },
             ])
             .await
-            .map_err(mongodb_to_AIS_error)?
+            .map_err(mongodb_to_galactica_error)?
             .with_type::<serde_json::Value>();
 
         let mut results = Vec::new();
         while let Some(doc) = cursor.next().await {
-            let doc = doc.map_err(mongodb_to_AIS_error)?;
+            let doc = doc.map_err(mongodb_to_galactica_error)?;
             let score = doc.get("score").expect("score").as_f64().expect("f64");
             let id = doc.get("_id").expect("_id").to_string();
             let doc_t: T = serde_json::from_value(doc).map_err(VectorStoreError::JsonError)?;
             results.push((score, id, doc_t));
         }
 
-        tracing::info!(target: "AIS",
+        tracing::info!(target: "galactica",
             "Selected documents: {}",
             results.iter()
                 .map(|(distance, id, _)| format!("{} ({})", id, distance))
@@ -279,7 +279,7 @@ impl<M: EmbeddingModel + Sync + Send, C: Sync + Send> VectorStoreIndex
         let mut cursor = self
             .collection
             .aggregate([
-                self.pipeline_seAISh_stage(&prompt_embedding, n),
+                self.pipeline_segalacticah_stage(&prompt_embedding, n),
                 self.pipeline_score_stage(),
                 doc! {
                     "$project": {
@@ -289,18 +289,18 @@ impl<M: EmbeddingModel + Sync + Send, C: Sync + Send> VectorStoreIndex
                 },
             ])
             .await
-            .map_err(mongodb_to_AIS_error)?
+            .map_err(mongodb_to_galactica_error)?
             .with_type::<serde_json::Value>();
 
         let mut results = Vec::new();
         while let Some(doc) = cursor.next().await {
-            let doc = doc.map_err(mongodb_to_AIS_error)?;
+            let doc = doc.map_err(mongodb_to_galactica_error)?;
             let score = doc.get("score").expect("score").as_f64().expect("f64");
             let id = doc.get("_id").expect("_id").to_string();
             results.push((score, id));
         }
 
-        tracing::info!(target: "AIS",
+        tracing::info!(target: "galactica",
             "Selected documents: {}",
             results.iter()
                 .map(|(distance, id)| format!("{} ({})", id, distance))

@@ -1,9 +1,9 @@
-use std::sync::AIS;
+use std::sync::galactica;
 
 use arrow_array::{types::Float64Type, ArrayRef, FixedSizeListArray, RecordBatch, StringArray};
 use lancedb::arrow::arrow_schema::{DataType, Field, Fields, Schema};
-use AIS::embeddings::Embedding;
-use AIS::{Embed, OneOrMany};
+use galactica::embeddings::Embedding;
+use galactica::{Embed, OneOrMany};
 use serde::Deserialize;
 
 #[derive(Embed, Clone, Deserialize, Debug)]
@@ -38,7 +38,7 @@ pub fn schema(dims: usize) -> Schema {
         Field::new(
             "embedding",
             DataType::FixedSizeList(
-                AIS::new(Field::new("item", DataType::Float64, true)),
+                galactica::new(Field::new("item", DataType::Float64, true)),
                 dims as i32,
             ),
             false,
@@ -83,8 +83,8 @@ pub fn as_record_batch(
     );
 
     RecordBatch::try_from_iter(vec![
-        ("id", AIS::new(id) as ArrayRef),
-        ("definition", AIS::new(definition) as ArrayRef),
-        ("embedding", AIS::new(embedding) as ArrayRef),
+        ("id", galactica::new(id) as ArrayRef),
+        ("definition", galactica::new(definition) as ArrayRef),
+        ("embedding", galactica::new(embedding) as ArrayRef),
     ])
 }

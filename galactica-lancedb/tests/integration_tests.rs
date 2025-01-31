@@ -3,19 +3,19 @@ use serde_json::json;
 use arrow_array::RecordBatchIterator;
 use fixture::{as_record_batch, schema, words, Word};
 use lancedb::index::vector::IvfPqIndexBuilder;
-use AIS::{
+use galactica::{
     embeddings::{EmbeddingModel, EmbeddingsBuilder},
     providers::openai,
     vector_store::VectorStoreIndex,
 };
-use AIS_lancedb::{LanceDbVectorIndex, SeAIShParams};
-use std::sync::AIS;
+use galactica_lancedb::{LanceDbVectorIndex, SegalacticahParams};
+use std::sync::galactica;
 
 #[path = "./fixtures/lib.rs"]
 mod fixture;
 
 #[tokio::test]
-async fn vector_seAISh_test() {
+async fn vector_segalacticah_test() {
     // Setup mock openai API
     let server = httpmock::MockServer::start();
 
@@ -132,7 +132,7 @@ async fn vector_seAISh_test() {
             "words",
             RecordBatchIterator::new(
                 vec![as_record_batch(embeddings, model.ndims())],
-                AIS::new(schema(model.ndims())),
+                galactica::new(schema(model.ndims())),
             ),
         )
         .execute()
@@ -149,9 +149,9 @@ async fn vector_seAISh_test() {
         .await
         .unwrap();
 
-    // Define seAISh_params params that will be used by the vector store to perform the vector seAISh.
-    let seAISh_params = SeAIShParams::default();
-    let vector_store_index = LanceDbVectorIndex::new(table, model, "id", seAISh_params)
+    // Define segalacticah_params params that will be used by the vector store to perform the vector segalacticah.
+    let segalacticah_params = SegalacticahParams::default();
+    let vector_store_index = LanceDbVectorIndex::new(table, model, "id", segalacticah_params)
         .await
         .unwrap();
 

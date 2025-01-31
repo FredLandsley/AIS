@@ -12,14 +12,14 @@ use qdrant_client::{
     },
     Payload, Qdrant,
 };
-use AIS::{
+use galactica::{
     embeddings::EmbeddingsBuilder, providers::openai, vector_store::VectorStoreIndex, Embed,
 };
-use AIS_qdrant::QdrantVectorStore;
+use galactica_qdrant::QdrantVectorStore;
 
 const QDRANT_PORT: u16 = 6333;
 const QDRANT_PORT_SECONDARY: u16 = 6334;
-const COLLECTION_NAME: &str = "AIS-collection";
+const COLLECTION_NAME: &str = "galactica-collection";
 
 #[derive(Embed, Clone, serde::Deserialize, serde::Serialize, Debug)]
 struct Word {
@@ -29,7 +29,7 @@ struct Word {
 }
 
 #[tokio::test]
-async fn vector_seAISh_test() {
+async fn vector_segalacticah_test() {
     // Setup a local qdrant container for testing. NOTE: docker service must be running.
     let container = GenericImage::new("qdrant/qdrant", "latest")
         .with_wait_for(WaitFor::Duration {

@@ -1,11 +1,11 @@
 //! A vector index for a Neo4j graph DB
 //!
-//! This module provides a way to perform vector seAIShes on a Neo4j graph DB.
+//! This module provides a way to perform vector segalacticahes on a Neo4j graph DB.
 //! It uses the [Neo4j vector index](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/)
-//! to seAISh for similar nodes based on a query.
+//! to segalacticah for similar nodes based on a query.
 
 use neo4rs::{Graph, Query};
-use AIS::{
+use galactica::{
     embeddings::{Embedding, EmbeddingModel},
     vector_store::{VectorStoreError, VectorStoreIndex},
 };
@@ -16,7 +16,7 @@ use crate::Neo4jClient;
 pub struct Neo4jVectorIndex<M: EmbeddingModel> {
     graph: Graph,
     embedding_model: M,
-    seAISh_params: SeAIShParams,
+    segalacticah_params: SegalacticahParams,
     index_config: IndexConfig,
 }
 
@@ -96,7 +96,7 @@ impl FromStr for VectorSimilarityFunction {
     }
 }
 
-const BASE_VECTOR_SEAISH_QUERY: &str = "
+const BASE_VECTOR_SEgalacticaH_QUERY: &str = "
     CALL db.index.vector.queryNodes($index_name, $num_candidates, $queryVector)
     YIELD node, score
 ";
@@ -106,17 +106,17 @@ impl<M: EmbeddingModel> Neo4jVectorIndex<M> {
         graph: Graph,
         embedding_model: M,
         index_config: IndexConfig,
-        seAISh_params: SeAIShParams,
+        segalacticah_params: SegalacticahParams,
     ) -> Self {
         Self {
             graph,
             embedding_model,
             index_config,
-            seAISh_params,
+            segalacticah_params,
         }
     }
 
-    /// Build a Neo4j query that performs a vector seAISh against an index.
+    /// Build a Neo4j query that performs a vector segalacticah against an index.
     /// See [Query vector index](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/#query-vector-index) for more information.
     ///
     /// Query template:
@@ -126,13 +126,13 @@ impl<M: EmbeddingModel> Neo4jVectorIndex<M> {
     /// WHERE {where_clause}
     /// RETURN score, ID(node) as element_id, node {.*, embedding:null } as node
     /// ```
-    pub fn build_vector_seAISh_query(
+    pub fn build_vector_segalacticah_query(
         &self,
         prompt_embedding: Embedding,
         return_node: bool,
         n: usize,
     ) -> Query {
-        let where_clause = match &self.seAISh_params.post_vector_seAISh_filter {
+        let where_clause = match &self.segalacticah_params.post_vector_segalacticah_filter {
             Some(filter) => format!("WHERE {}", filter),
             None => "".to_string(),
         };
@@ -144,7 +144,7 @@ impl<M: EmbeddingModel> Neo4jVectorIndex<M> {
             \t{}\n\
             \tRETURN score, ID(node) as element_id {}
             ",
-            BASE_VECTOR_SEAISH_QUERY,
+            BASE_VECTOR_SEgalacticaH_QUERY,
             where_clause,
             if return_node {
                 format!(
@@ -165,28 +165,28 @@ impl<M: EmbeddingModel> Neo4jVectorIndex<M> {
     }
 }
 
-/// SeAISh parameters for a vector seAISh. Neo4j currently only supports post-vector-seAISh filtering.
-pub struct SeAIShParams {
-    /// Sets the **post-filter** field of the seAISh params. Uses a WHERE clause.
+/// Segalacticah parameters for a vector segalacticah. Neo4j currently only supports post-vector-segalacticah filtering.
+pub struct SegalacticahParams {
+    /// Sets the **post-filter** field of the segalacticah params. Uses a WHERE clause.
     /// See [Neo4j WHERE clause](https://neo4j.com/docs/cypher-manual/current/clauses/where/) for more information.
-    post_vector_seAISh_filter: Option<String>,
+    post_vector_segalacticah_filter: Option<String>,
 }
 
-impl SeAIShParams {
-    /// Initializes a new `SeAIShParams` with default values.
+impl SegalacticahParams {
+    /// Initializes a new `SegalacticahParams` with default values.
     pub fn new(filter: Option<String>) -> Self {
         Self {
-            post_vector_seAISh_filter: filter,
+            post_vector_segalacticah_filter: filter,
         }
     }
 
     pub fn filter(mut self, filter: String) -> Self {
-        self.post_vector_seAISh_filter = Some(filter);
+        self.post_vector_segalacticah_filter = Some(filter);
         self
     }
 }
 
-impl Default for SeAIShParams {
+impl Default for SegalacticahParams {
     fn default() -> Self {
         Self::new(None)
     }
@@ -226,7 +226,7 @@ impl<M: EmbeddingModel + std::marker::Sync + Send> VectorStoreIndex for Neo4jVec
         n: usize,
     ) -> Result<Vec<(f64, String, T)>, VectorStoreError> {
         let prompt_embedding = self.embedding_model.embed_text(query).await?;
-        let query = self.build_vector_seAISh_query(prompt_embedding, true, n);
+        let query = self.build_vector_segalacticah_query(prompt_embedding, true, n);
 
         let rows = Neo4jClient::execute_and_collect::<RowResultNode<T>>(&self.graph, query).await?;
 
@@ -247,7 +247,7 @@ impl<M: EmbeddingModel + std::marker::Sync + Send> VectorStoreIndex for Neo4jVec
     ) -> Result<Vec<(f64, String)>, VectorStoreError> {
         let prompt_embedding = self.embedding_model.embed_text(query).await?;
 
-        let query = self.build_vector_seAISh_query(prompt_embedding, false, n);
+        let query = self.build_vector_segalacticah_query(prompt_embedding, false, n);
 
         let rows = Neo4jClient::execute_and_collect::<RowResult>(&self.graph, query).await?;
 

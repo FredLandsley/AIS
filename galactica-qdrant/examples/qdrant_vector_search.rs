@@ -2,7 +2,7 @@
 //
 // export OPENAI_API_KEY=<YOUR-API-KEY>
 // docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
-// cargo run --release --example qdrant_vector_seAISh
+// cargo run --release --example qdrant_vector_segalacticah
 //
 // You can view the data at http://localhost:6333/dashboard 
 
@@ -15,13 +15,13 @@ use qdrant_client::{
     },
     Payload, Qdrant,
 };
-use AIS::{
+use galactica::{
     embeddings::EmbeddingsBuilder,
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
     vector_store::VectorStoreIndex,
     Embed,
 };
-use AIS_qdrant::QdrantVectorStore;
+use galactica_qdrant::QdrantVectorStore;
 
 #[derive(Embed, serde::Deserialize, serde::Serialize, Debug)]
 struct Word {
@@ -32,7 +32,7 @@ struct Word {
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    const COLLECTION_NAME: &str = "AIS-collection";
+    const COLLECTION_NAME: &str = "galactica-collection";
 
     let client = Qdrant::from_url("http://localhost:6334").build()?;
 

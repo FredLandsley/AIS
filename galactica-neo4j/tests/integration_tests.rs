@@ -6,13 +6,13 @@ use testcontainers::{
 };
 
 use futures::{StreamExt, TryStreamExt};
-use AIS::vector_store::VectorStoreIndex;
-use AIS::{
+use galactica::vector_store::VectorStoreIndex;
+use galactica::{
     embeddings::{Embedding, EmbeddingsBuilder},
     providers::openai,
     Embed, OneOrMany,
 };
-use AIS_neo4j::{vector_index::SeAIShParams, Neo4jClient, ToBoltType};
+use galactica_neo4j::{vector_index::SegalacticahParams, Neo4jClient, ToBoltType};
 
 const BOLT_PORT: u16 = 7687;
 const HTTP_PORT: u16 = 7474;
@@ -25,7 +25,7 @@ struct Word {
 }
 
 #[tokio::test]
-async fn vector_seAISh_test() {
+async fn vector_segalacticah_test() {
     // Setup a local Neo 4J container for testing. NOTE: docker service must be running.
     let container = GenericImage::new("neo4j", "latest")
         .with_wait_for(WaitFor::Duration {
@@ -185,7 +185,7 @@ async fn vector_seAISh_test() {
     // Create a vector index on our vector store
     // IMPORTANT: Reuse the same model that was used to generate the embeddings
     let index = neo4j_client
-        .get_index(model, "vector_index", SeAIShParams::default())
+        .get_index(model, "vector_index", SegalacticahParams::default())
         .await
         .expect("");
 

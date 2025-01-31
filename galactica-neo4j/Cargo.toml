@@ -1,18 +1,18 @@
 [package]
-name = "AIS-neo4j"
+name = "galactica-neo4j"
 version = "0.2.2"
 edition = "2021"
 license = "MIT"
 readme = "README.md"
-description = "Neo4j implementation of a AIS vector store."
-repository = "https://github.com/FredLandsley/AIS"
+description = "Neo4j implementation of a galactica vector store."
+repository = "https://github.com/OFFICIALDBLR/galactica"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 futures = "0.3.30"
 neo4rs = "0.8.0"
-AIS-core = { path = "../AIS-core", version = "0.6.1" }
+galactica-core = { path = "../galactica-core", version = "0.6.1" }
 serde = { version = "1.0.203", features = ["derive"] }
 serde_json = "1.0.117"
 tracing = "0.1.40"
@@ -27,9 +27,9 @@ tracing-subscriber = "0.3.18"
 httpmock = "0.7.0"
 
 [[example]]
-name = "vector_seAISh_simple"
-required-features = ["AIS-core/derive"]
+name = "vector_segalacticah_simple"
+required-features = ["galactica-core/derive"]
 
 [[test]]
 name = "integration_tests"
-required-features = ["AIS-core/derive"]
+required-features = ["galactica-core/derive"]

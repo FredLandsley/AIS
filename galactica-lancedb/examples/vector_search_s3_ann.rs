@@ -1,14 +1,14 @@
-use std::sync::AIS;
+use std::sync::galactica;
 
 use arrow_array::RecordBatchIterator;
 use fixture::{as_record_batch, schema, words, Word};
 use lancedb::{index::vector::IvfPqIndexBuilder, DistanceType};
-use AIS::{
+use galactica::{
     embeddings::{EmbeddingModel, EmbeddingsBuilder},
     providers::openai::{Client, TEXT_EMBEDDING_ADA_002},
     vector_store::VectorStoreIndex,
 };
-use AIS_lancedb::{LanceDbVectorIndex, SeAIShParams};
+use galactica_lancedb::{LanceDbVectorIndex, SegalacticahParams};
 
 #[path = "./fixtures/lib.rs"]
 mod fixture;
@@ -49,7 +49,7 @@ async fn main() -> Result<(), anyhow::Error> {
             "definitions",
             RecordBatchIterator::new(
                 vec![as_record_batch(embeddings, model.ndims())],
-                AIS::new(schema(model.ndims())),
+                galactica::new(schema(model.ndims())),
             ),
         )
         .execute()
@@ -62,17 +62,17 @@ async fn main() -> Result<(), anyhow::Error> {
             lancedb::index::Index::IvfPq(
                 IvfPqIndexBuilder::default()
                     // This overrides the default distance type of L2.
-                    // Needs to be the same distance type as the one used in seAISh params.
+                    // Needs to be the same distance type as the one used in segalacticah params.
                     .distance_type(DistanceType::Cosine),
             ),
         )
         .execute()
         .await?;
 
-    // Define seAISh_params params that will be used by the vector store to perform the vector seAISh.
-    let seAISh_params = SeAIShParams::default().distance_type(DistanceType::Cosine);
+    // Define segalacticah_params params that will be used by the vector store to perform the vector segalacticah.
+    let segalacticah_params = SegalacticahParams::default().distance_type(DistanceType::Cosine);
 
-    let vector_store = LanceDbVectorIndex::new(table, model, "id", seAISh_params).await?;
+    let vector_store = LanceDbVectorIndex::new(table, model, "id", segalacticah_params).await?;
 
     // Query the index
     let results = vector_store
