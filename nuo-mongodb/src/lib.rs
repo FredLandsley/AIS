@@ -64,7 +64,7 @@ fn mongodb_to_nuo_error(e: mongodb::error::Error) -> VectorStoreError {
 /// use nuo::{providers::openai, vector_store::VectorStoreIndex};
 ///
 /// # tokio_test::block_on(async {
-/// #[derive(serde::Deserialize, serde::Serialize, Debug)]
+/// #[derive(serde::Deserialize, serde::Serialize, Debug)] 
 /// struct WordDefinition {
 ///     #[serde(rename = "_id")]
 ///     id: String,
