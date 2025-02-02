@@ -1,4 +1,4 @@
-<h1>izzy AI</h1> 
+<h1>Izzy AI</h1> 
 
 ✨ If you would like to help spread the word about izzy, please consider starring the repo!
 
@@ -7,7 +7,7 @@
 
 
 ## What is izzy?
-izzy is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+Izzy is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
