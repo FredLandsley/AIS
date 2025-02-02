@@ -1,21 +1,21 @@
-<h1>Zelly AI</h1> 
+<h1>yara AI</h1> 
 
-✨ If you would like to help spread the word about zelly, please consider starring the repo!
+✨ If you would like to help spread the word about yara, please consider starring the repo!
 
 > [!WARNING]
-> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With zelly evolving, we'll annotate changes and highlight migration paths as we encounter them.
+> Here be dragons! As we plan to ship a torrent of features in the following months, future updates **will** contain **breaking changes**. With yara evolving, we'll annotate changes and highlight migration paths as we encounter them.
 
 
-## What is Zelly?
-Zelly is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
+## What is yara?
+yara is a the world's first Rust library that enables anyone to build and deply LLM-powered sentient AI agents in seconds!
 
 More information about this crate can be found in the documentations.
 
-Help us improve zelly by contributing to our Feedback form.
+Help us improve yara by contributing to our Feedback form.
 
 ## Table of contents
 
-- [What is zelly?](#what-is-zelly)
+- [What is yara?](#what-is-yara)
 - [Table of contents](#table-of-contents)
 - [High-level features](#high-level-features)
 - [Get Started](#get-started)
@@ -31,12 +31,12 @@ Help us improve zelly by contributing to our Feedback form.
 
 ## Get Started
 ```bash
-cargo add zelly-core
+cargo add yara-core
 ```
 
 ### Simple example:
 ```rust
-use zelly::{completion::Prompt, providers::openai};
+use yara::{completion::Prompt, providers::openai};
 
 #[tokio::main]
 async fn main() {
@@ -58,7 +58,7 @@ async fn main() {
 Note using `#[tokio::main]` requires you enable tokio's `macros` and `rt-multi-thread` features
 or just `full` to enable all features (`cargo add tokio --features macros,rt-multi-thread`).
 
-You can find more examples each crate's `examples` (ie. [`zelly-core/examples`](./zelly-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to zelly's official documentation.
+You can find more examples each crate's `examples` (ie. [`yara-core/examples`](./yara-core/examples)) directory. More detailed use cases walkthroughs are regularly published on our Blog and added to yara's official documentation.
 
 ## Supported Integrations
 
@@ -68,11 +68,11 @@ You can find more examples each crate's `examples` (ie. [`zelly-core/examples`](
 
 
 Vector stores are available as separate companion-crates:
-- MongoDB vector store: [`zelly-mongodb`](https://github.com/SmithRiley0/zelly/tree/main/zelly-mongodb)
-- LanceDB vector store: [`zelly-lancedb`](https://github.com/SmithRiley0/zelly/tree/main/zelly-lancedb)
-- Neo4j vector store: [`zelly-neo4j`](https://github.com/SmithRiley0/zelly/tree/main/zelly-neo4j)
-- Qdrant vector store: [`zelly-qdrant`](https://github.com/SmithRiley0/zelly/tree/main/zelly-qdrant)
-- SQLite vector store: [`zelly-sqlite`](https://github.com/SmithRiley0/zelly/tree/main/zelly-sqlite)
+- MongoDB vector store: [`yara-mongodb`](https://github.com/hivemindanthony/yara/tree/main/yara-mongodb)
+- LanceDB vector store: [`yara-lancedb`](https://github.com/hivemindanthony/yara/tree/main/yara-lancedb)
+- Neo4j vector store: [`yara-neo4j`](https://github.com/hivemindanthony/yara/tree/main/yara-neo4j)
+- Qdrant vector store: [`yara-qdrant`](https://github.com/hivemindanthony/yara/tree/main/yara-qdrant)
+- SQLite vector store: [`yara-sqlite`](https://github.com/hivemindanthony/yara/tree/main/yara-sqlite)
 
 
 <p align="center">

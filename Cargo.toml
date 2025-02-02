@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "zelly-core", "zelly-lancedb",
-    "zelly-mongodb", "zelly-neo4j",
-    "zelly-qdrant", "zelly-core/zelly-core-derive",
-    "zelly-sqlite"
+    "yara-core", "yara-lancedb",
+    "yara-mongodb", "yara-neo4j",
+    "yara-qdrant", "yara-core/yara-core-derive",
+    "yara-sqlite"
 ]
